@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Márcia Campello, Psicóloga | Orientação psicanalítica</title>
 <!--
-Função: site da Márcia Campello (psicóloga, CRP 07/09259), página única na espinha do blueprint de LP de médico. Rodadas 1 e 2: header, hero, beneficios, servicos, porque, prova e rodape, mais o widget de WhatsApp. O texto mora em copy.md (um bloco ## chave por pedaço) e o gabarito verifica.py cobra que o que está aqui bate com ele.
+Função: site da Márcia Campello (psicóloga, CRP 07/09259), página única na espinha do blueprint de LP de médico. Rodadas 1 a 3: espinha completa (header, hero, beneficios, servicos, porque, prova, faq, local, cta-final e rodape), mais o widget de WhatsApp. O texto mora em copy.md (um bloco ## chave por pedaço) e o gabarito verifica.py cobra que o que está aqui bate com ele.
 Data: 2026-10-13. Marca: external/doctors/marcia/wiki/concepts/marca-marcia (tokens.css copiado para assets/tokens.css, copia de deploy, não se edita aqui).
 Preview com noindex. O noindex sai por último, junto com o domínio.
 -->
@@ -75,7 +75,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 @keyframes mt-entra{from{transform:rotate(-1.1deg) scaleX(0);transform-origin:left center}to{transform:rotate(-1.1deg) scaleX(1);transform-origin:left center}}
 
 /* ---------- botao: capsula terracota, um por dobra ---------- */
-.btn{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:var(--marcia-toque);padding:17px 30px 17px 32px;border:0;border-radius:var(--marcia-r-btn);font-family:var(--marcia-body);font-weight:var(--marcia-peso-botao);font-size:var(--marcia-t-botao);line-height:1.2;letter-spacing:.02em;color:var(--marcia-on-accent);background-color:var(--marcia-accent);box-shadow:var(--marcia-sombra-btn);cursor:pointer;text-decoration:none;white-space:nowrap;transition:transform var(--marcia-dur) var(--marcia-ease),box-shadow var(--marcia-dur) var(--marcia-ease)}
+.btn{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:var(--marcia-toque);padding:17px 30px 17px 32px;border:0;border-radius:var(--marcia-r-btn);font-family:var(--marcia-body);font-weight:var(--marcia-peso-botao);font-size:var(--marcia-t-botao);line-height:1.3;letter-spacing:.02em;color:var(--marcia-on-accent);background-color:var(--marcia-accent);box-shadow:var(--marcia-sombra-btn);cursor:pointer;text-decoration:none;white-space:nowrap;transition:transform var(--marcia-dur) var(--marcia-ease),box-shadow var(--marcia-dur) var(--marcia-ease)}
 .btn::before,.btn::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1}
 .btn::before{background:var(--marcia-cta-gradient)}
 .btn::after{background:var(--marcia-cta-gradient-hover);opacity:0;transition:opacity var(--marcia-dur) var(--marcia-ease)}
@@ -148,9 +148,12 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 /* ---------- porque: titulo de um lado, voz e credenciais do outro, credencial em regua ---------- */
 .porque{padding:var(--marcia-e-5) 0 var(--marcia-e-6)}
 .porque .wrap{display:grid;gap:var(--marcia-e-4)}
+.porque .cab{grid-area:cab}
+.porque .texto{grid-area:texto}
+.porque .creds{grid-area:creds}
 .porque .texto p{margin:0 0 var(--marcia-e-3);max-width:34em;color:var(--marcia-ink-2)}
 .porque .texto p:first-child{font-size:var(--marcia-t-lede);line-height:1.6;color:var(--marcia-ink)}
-.creds{list-style:none;margin:var(--marcia-e-5) 0 0;padding:0;border-top:1px solid var(--marcia-hair-forte);max-width:34em}
+.creds{list-style:none;margin:0;padding:0;border-top:1px solid var(--marcia-hair-forte);max-width:34em}
 .creds li{padding:var(--marcia-e-2) 0;border-bottom:1px solid var(--marcia-hair);color:var(--marcia-ink);font-weight:var(--marcia-peso-legenda);line-height:1.5}
 .creds li:first-child{font-weight:var(--marcia-peso-botao)}
 
@@ -168,9 +171,40 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 .frases li:last-child{padding-bottom:0}
 .frases blockquote{margin:0;max-width:24em;font-family:var(--marcia-display);font-size:clamp(24px,2.8vw,34px);line-height:1.4;letter-spacing:.01em;color:var(--marcia-ink);text-wrap:balance}
 
+/* ---------- faq: details/summary, funciona sem JavaScript. Linha de 44px ou mais ---------- */
+.faq{padding:var(--marcia-e-6) 0 var(--marcia-e-5)}
+.faq .lista{margin-top:var(--marcia-e-5);max-width:48em;border-bottom:1px solid var(--marcia-hair-forte)}
+.faq details{border-top:1px solid var(--marcia-hair-forte)}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:var(--marcia-e-3);min-height:var(--marcia-toque);padding:var(--marcia-e-3) 0;cursor:pointer;list-style:none;font-size:var(--marcia-t-lede);font-weight:var(--marcia-peso-botao);line-height:1.4;color:var(--marcia-ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:18px;height:18px;color:var(--marcia-graphite);background:linear-gradient(currentColor,currentColor) center/100% 1.5px no-repeat,linear-gradient(currentColor,currentColor) center/1.5px 100% no-repeat;transition:transform var(--marcia-dur) var(--marcia-ease)}
+.faq details[open] summary::after{background:linear-gradient(currentColor,currentColor) center/100% 1.5px no-repeat;transform:rotate(180deg)}
+.faq summary:hover{color:var(--marcia-accent-deep)}
+.faq details p{margin:0;padding:0 0 var(--marcia-e-3);max-width:38em;color:var(--marcia-ink-2)}
+
+/* ---------- local: online para todo o Brasil; ela em Garopaba/SC ---------- */
+.local{background:var(--marcia-paper-2);padding:var(--marcia-e-5) 0}
+.local .wrap{display:grid;gap:var(--marcia-e-4)}
+.local .cab p{margin:var(--marcia-e-3) 0 0;max-width:34em;color:var(--marcia-ink-2)}
+.local dl{margin:0;border-bottom:1px solid var(--marcia-hair-forte)}
+.local .linha-l{display:grid;gap:4px;padding:var(--marcia-e-3) 0;border-top:1px solid var(--marcia-hair-forte)}
+.local dt{font-size:var(--marcia-t-legenda);font-weight:var(--marcia-peso-botao);line-height:1.4;color:var(--marcia-ink-3)}
+.local dd{margin:0;font-size:var(--marcia-t-lede);line-height:1.5;color:var(--marcia-ink)}
+
+/* ---------- cta-final: fecha a descida, mesma gramatica do hero (glow e aneis) ---------- */
+.cta-final{position:relative;overflow:hidden;text-align:center;padding:var(--marcia-e-6) 0 calc(var(--marcia-e-6) + var(--marcia-e-3))}
+.cta-final .glow{position:absolute;inset:0;background:radial-gradient(70% 90% at 50% 100%,var(--marcia-surface) 0%,transparent 70%);pointer-events:none}
+.cta-final .aneis{left:50%;bottom:-320px;width:420px;height:420px;margin-left:-210px}
+.cta-final .wrap{position:relative;display:grid;justify-items:center;gap:var(--marcia-e-3)}
+.cta-final h2{font-size:var(--marcia-t-display);letter-spacing:var(--marcia-track-titulo);max-width:18em}
+.cta-final p{margin:0;max-width:34em;color:var(--marcia-ink-2)}
+.cta-final .btn{margin-top:var(--marcia-e-2)}
+
 /* ---------- rodape ---------- */
 .rodape{border-top:1px solid var(--marcia-hair);padding:var(--marcia-e-5) 0 var(--marcia-e-5)}
 .rodape .wrap{display:grid;gap:var(--marcia-e-3)}
+.rodape .id{display:grid;gap:var(--marcia-e-2);align-content:start}
+.rodape .esp{color:var(--marcia-ink-2)}
 .rodape .marca img{width:40px;height:40px}
 .rodape p{margin:0;max-width:52em}
 
@@ -196,9 +230,12 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   .beneficios ul{grid-template-columns:repeat(3,minmax(0,1fr))}
   .beneficios li{padding:var(--marcia-e-3) var(--marcia-e-4);border-top:0;border-left:1px solid var(--marcia-hair)}
   .beneficios li:first-child{border-left:0;padding-left:0}
-  .porque .wrap{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:var(--marcia-e-6);align-items:start}
-  .porque .cab{position:sticky;top:112px}
-  .fato{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:var(--marcia-e-5);align-items:baseline}
+  .local .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:var(--marcia-e-6);align-items:start}
+  .local .linha-l{grid-template-columns:minmax(0,.4fr) minmax(0,1fr);gap:var(--marcia-e-4);align-items:baseline;padding:var(--marcia-e-3) 0}
+  .rodape .wrap{grid-template-columns:auto minmax(0,1fr);gap:var(--marcia-e-6);align-items:start}
+  .porque .wrap{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);grid-template-areas:"cab texto" "creds texto";grid-template-rows:auto 1fr;column-gap:var(--marcia-e-6);row-gap:var(--marcia-e-5);align-items:start}
+  .fato{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:var(--marcia-e-5);align-items:baseline}
+  .fato{padding:var(--marcia-e-3) 0}
   .servicos .fecho{grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:var(--marcia-e-5)}
 }
 @media (min-width:1060px){
@@ -207,6 +244,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   .topo-site .marca{flex:none}
   .topo-site .linha{flex:1;max-width:30em;margin-right:auto}
 }
+@media (max-width:359px){.wm{--wm:17px}.marca img{width:40px;height:40px}.btn{padding-left:22px;padding-right:22px}}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
@@ -402,13 +440,13 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
       <p>Não ensino regra para segurar ou largar alguém. Quem decide é você. O que faço é ir com você atrás do padrão: o que se repete na sua história amorosa, e de onde isso vem.</p>
       <p>Atendo em consultório desde 1999, pela orientação psicanalítica freudiana. É uma escola só, e é ela que organiza a conversa: a gente escuta o que você diz e também o que se repete no jeito de dizer.</p>
       <p>Na sessão, a gente conversa de verdade: 1 hora, por vídeo, a partir do que você traz. Eu escuto, pergunto e, às vezes, devolvo uma pergunta que você ainda não tinha feito. A resposta, quando vem, vem depois.</p>
-      <ul class="creds">
-        <li>Especialista em Psicoterapia de Orientação Psicanalítica (pós-graduação lato sensu, ITI, 2000 a 2003)</li>
-        <li>Formada em Psicologia pela PUCRS (1998)</li>
-        <li>Consultório particular desde 1999</li>
-        <li>Atendimento online desde 2019</li>
-      </ul>
     </div>
+    <ul class="creds">
+      <li>Especialista em Psicoterapia de Orientação Psicanalítica (pós-graduação lato sensu, ITI, 2000 a 2003)</li>
+      <li>Formada em Psicologia pela PUCRS (1998)</li>
+      <li>Consultório particular desde 1999</li>
+      <li>Atendimento online desde 2019</li>
+    </ul>
   </div>
 </section>
 
@@ -436,7 +474,47 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   </div>
 </section>
 
-<!-- rodada 3: faq, local, cta-final. O copy.md já tem as chaves. -->
+<section class="faq" data-bloco="faq">
+  <div class="wrap">
+    <h2>Dúvidas antes de começar</h2>
+    <span class="filete-g" role="presentation"></span>
+    <div class="lista">
+      <details open><summary>Como começa a conversa?</summary><p>Você manda uma mensagem pelo WhatsApp. Pode ser só um oi. Por lá, você escolhe um horário para a primeira sessão. Não precisa chegar com a queixa organizada.</p></details>
+      <details><summary>Como funciona o atendimento?</summary><p>As sessões são por vídeo, pelo Google Meet, e duram 1 hora. Atendo de segunda a sexta, das 9h às 21h. Você precisa de internet e de um lugar onde possa falar sem ser interrompida.</p></details>
+      <details><summary>A conversa por vídeo é sigilosa?</summary><p>Sim. Guardar sigilo é um dever da psicóloga, previsto no Código de Ética da psicologia. Antes de começarmos, explico como cuido disso no atendimento por vídeo. Para a conversa ficar reservada, cada uma de nós fica num lugar onde ninguém ouça.</p></details>
+      <details><summary>É para mim?</summary><p>Atendo mulheres adultas. É para você se algo se repete nas suas relações e você quer entender o quê. Se procura uma regra para segurar ou largar alguém, não é isso que faço.</p></details>
+      <details><summary>É psicanálise?</summary><p>É psicoterapia de orientação psicanalítica freudiana. Na prática, a conversa não fica só no que aconteceu esta semana: procura o que se repete na sua história. Eu me apresento como psicóloga, CRP 07/09259.</p></details>
+      <details><summary>Quanto tempo dura a terapia?</summary><p>Não dá para prever, porque depende da história de cada pessoa. O que posso dizer é como começa: sessões de 1 hora, e a gente vai conversando sobre o ritmo ao longo do caminho.</p></details>
+      <details><summary>E o valor?</summary><p>Informo por mensagem, quando você perguntar, antes de começar. Pode perguntar já na primeira conversa pelo WhatsApp. Assim você decide sabendo.</p></details>
+      <details><summary>E se eu estiver em crise agora?</summary><p>Se você está em risco agora, ligue para o SAMU, 192, ou para o CVV, 188. O WhatsApp deste site serve para marcar a conversa, não para emergência.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="local" data-bloco="local">
+  <div class="wrap">
+    <div class="cab">
+      <h2>Onde eu atendo</h2>
+      <span class="filete-g" role="presentation"></span>
+      <p>Moro em Garopaba, em Santa Catarina, e atendo online para todo o Brasil, por vídeo. Você precisa de um celular ou computador com internet e de um lugar onde possa falar sem ser interrompida.</p>
+    </div>
+    <dl>
+      <div class="linha-l reveal"><dt>Formato</dt><dd>Online, por vídeo (Google Meet), sessões de 1 hora</dd></div>
+      <div class="linha-l reveal"><dt>Dias e horários</dt><dd>Segunda a sexta, das 9h às 21h</dd></div>
+      <div class="linha-l reveal"><dt>Onde eu estou</dt><dd>Garopaba, SC, com atendimento online para todo o Brasil</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="cta-final" data-bloco="cta-final">
+  <div class="glow"></div>
+  <svg class="aneis" viewBox="0 0 300 300" aria-hidden="true"><circle cx="150" cy="150" r="148"/><circle cx="150" cy="150" r="118"/><circle cx="150" cy="150" r="88"/></svg>
+  <div class="wrap">
+    <h2>Vamos conversar sobre o que se repete?</h2>
+    <p>Mande uma mensagem pelo WhatsApp quando quiser. Você escolhe o horário da primeira sessão. O resto a gente conversa lá, no vídeo, no seu ritmo.</p>
+    <button class="btn" type="button" data-wa>Conversar no WhatsApp <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
+</section>
 
 </main>
 
@@ -446,7 +524,10 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
       <img src="assets/simbolo-cor.svg" width="40" height="40" alt="" loading="lazy" decoding="async">
       <span class="wm"><b>Márcia Campello</b><span>Psicóloga · CRP 07/09259</span></span>
     </a>
-    <p class="leg">Este site tem caráter informativo e não substitui uma avaliação psicológica. Psicoterapia é um processo, e ninguém pode prometer aonde ele chega.</p>
+    <div class="id">
+      <p class="esp leg">Psicoterapia de orientação psicanalítica · Garopaba/SC e online para todo o Brasil</p>
+      <p class="leg">Este site tem caráter informativo e não substitui uma avaliação psicológica. Psicoterapia é um processo, e ninguém pode prometer aonde ele chega.</p>
+    </div>
   </div>
 </footer>
 
