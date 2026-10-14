@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Márcia Campello, Psicóloga | Orientação psicanalítica</title>
 <!--
-Função: site da Márcia Campello (psicóloga, CRP 07/09259), página única na espinha do blueprint de LP de médico. Rodada 1: header, hero, servicos e rodape, mais o widget de WhatsApp. O texto mora em copy.md (um bloco ## chave por pedaço) e o gabarito verifica.py cobra que o que está aqui bate com ele.
+Função: site da Márcia Campello (psicóloga, CRP 07/09259), página única na espinha do blueprint de LP de médico. Rodadas 1 e 2: header, hero, beneficios, servicos, porque, prova e rodape, mais o widget de WhatsApp. O texto mora em copy.md (um bloco ## chave por pedaço) e o gabarito verifica.py cobra que o que está aqui bate com ele.
 Data: 2026-10-13. Marca: external/doctors/marcia/wiki/concepts/marca-marcia (tokens.css copiado para assets/tokens.css, copia de deploy, não se edita aqui).
 Preview com noindex. O noindex sai por último, junto com o domínio.
 -->
@@ -35,6 +35,7 @@ Preview com noindex. O noindex sai por último, junto com o domínio.
 <link rel="preload" href="assets/fonts/TenorSans.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="assets/fonts/Figtree.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="assets/tokens.css">
+<noscript><style>button[data-wa],.wafloat{display:none!important}.sticky{display:flex!important}body{padding-bottom:calc(var(--sticky-h) + env(safe-area-inset-bottom))!important}</style></noscript>
 <style>
 @font-face{font-family:'Tenor Sans';src:url('assets/fonts/TenorSans.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:'Figtree';src:url('assets/fonts/Figtree.ttf') format('truetype');font-weight:300 900;font-style:normal;font-display:swap}
@@ -104,23 +105,24 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 .btn-linha:hover{background:var(--marcia-ink);color:var(--marcia-paper)}
 
 /* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;padding:var(--marcia-e-5) 0 var(--marcia-e-6)}
+.hero{position:relative;overflow:hidden;padding:var(--marcia-e-4) 0 var(--marcia-e-6)}
 .hero .glow{position:absolute;inset:0 0 auto 0;height:75%;background:radial-gradient(90% 90% at 50% 0%,var(--marcia-surface) 0%,transparent 70%);pointer-events:none}
 .aneis{position:absolute;pointer-events:none}
 .aneis circle{fill:none;stroke:var(--marcia-line);stroke-width:1}
 .hero .aneis{right:-150px;top:-40px;width:340px;height:340px}
-.hero .wrap{position:relative;display:grid;gap:var(--marcia-e-5)}
+.hero .wrap{position:relative;display:grid;gap:var(--marcia-e-3)}
 .hero h1{max-width:20ch}
 .hero .lede{margin:var(--marcia-e-3) 0 0;max-width:30em}
-.hero .cred{margin:var(--marcia-e-3) 0 0;padding-top:var(--marcia-e-2);border-top:1px solid var(--marcia-hair);max-width:34em;color:var(--marcia-ink-2)}
+.hero .cred{margin:var(--marcia-e-3) 0 0;padding-top:var(--marcia-e-2);border-top:1px solid var(--marcia-hair);max-width:34em;color:var(--marcia-ink-2);font-size:var(--marcia-t-corpo);font-weight:var(--marcia-peso-legenda);line-height:1.55}
 .hero .permissao{margin:var(--marcia-e-4) 0 0;max-width:30em;color:var(--marcia-ink)}
 .hero .acoes{display:flex;flex-wrap:wrap;align-items:center;gap:6px 28px;margin-top:var(--marcia-e-3)}
 .hero .micro{margin:var(--marcia-e-2) 0 0}
-.moldura{position:relative;width:176px;height:224px;justify-self:center}
-.moldura .contorno{position:absolute;left:0;top:0;width:176px;height:224px;overflow:visible;pointer-events:none;z-index:0}
+/* celular: o rosto vem antes do H1 (order:-1), pequeno, alinhado a esquerda com o texto. Desktop volta ao lado (order:0) */
+.moldura{position:relative;order:-1;width:120px;height:153px;justify-self:start}
+.moldura .contorno{position:absolute;left:0;top:0;width:120px;height:153px;overflow:visible;pointer-events:none;z-index:0}
 .moldura .contorno path{fill:none;stroke:var(--marcia-line);stroke-width:1;stroke-linecap:round}
 .moldura .contorno.d{display:none}
-.retrato{position:relative;z-index:1;width:176px;height:224px;border-radius:var(--marcia-r-foto);overflow:hidden;box-shadow:var(--marcia-sombra-foto);background:var(--marcia-paper-2)}
+.retrato{position:relative;z-index:1;width:120px;height:153px;border-radius:var(--marcia-r-foto);overflow:hidden;box-shadow:var(--marcia-sombra-foto);background:var(--marcia-paper-2)}
 .retrato img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
 
 /* ---------- servicos ---------- */
@@ -135,6 +137,36 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 /* o .reveal nasce visivel: so some depois que o script confirma que roda */
 .reveal{transition:opacity .7s var(--marcia-ease),transform .7s var(--marcia-ease)}
 .js .reveal:not(.in){opacity:0;transform:translateY(10px)}
+
+/* ---------- beneficios: faixa fina, 3 respostas a "consigo ser atendida?" ---------- */
+.beneficios{border-top:1px solid var(--marcia-hair);border-bottom:1px solid var(--marcia-hair);padding:var(--marcia-e-1) 0}
+.beneficios ul{list-style:none;margin:0;padding:0;display:grid}
+.beneficios li{padding:var(--marcia-e-2) 0;border-top:1px solid var(--marcia-hair);color:var(--marcia-ink-2);line-height:1.5}
+.beneficios li:first-child{border-top:0}
+.beneficios b{font-weight:var(--marcia-peso-botao);color:var(--marcia-ink)}
+
+/* ---------- porque: titulo de um lado, voz e credenciais do outro, credencial em regua ---------- */
+.porque{padding:var(--marcia-e-5) 0 var(--marcia-e-6)}
+.porque .wrap{display:grid;gap:var(--marcia-e-4)}
+.porque .texto p{margin:0 0 var(--marcia-e-3);max-width:34em;color:var(--marcia-ink-2)}
+.porque .texto p:first-child{font-size:var(--marcia-t-lede);line-height:1.6;color:var(--marcia-ink)}
+.creds{list-style:none;margin:var(--marcia-e-5) 0 0;padding:0;border-top:1px solid var(--marcia-hair-forte);max-width:34em}
+.creds li{padding:var(--marcia-e-2) 0;border-bottom:1px solid var(--marcia-hair);color:var(--marcia-ink);font-weight:var(--marcia-peso-legenda);line-height:1.5}
+.creds li:first-child{font-weight:var(--marcia-peso-botao)}
+
+/* ---------- prova: fatos em linhas com regua, depois a voz dela em tipografia grande. Sem cartao, sem depoimento ---------- */
+.prova{background:var(--marcia-paper-2);padding:var(--marcia-e-6) 0 var(--marcia-e-5)}
+.prova .cab{max-width:38em}
+.prova .cab p{margin:var(--marcia-e-3) 0 0;color:var(--marcia-ink-2)}
+.fatos{list-style:none;margin:var(--marcia-e-5) 0 0;padding:0;border-bottom:1px solid var(--marcia-hair-forte)}
+.fato{display:grid;gap:var(--marcia-e-1);padding:var(--marcia-e-4) 0;border-top:1px solid var(--marcia-hair-forte)}
+.fato h3{margin:0;font-family:var(--marcia-display);font-weight:400;font-size:clamp(26px,3vw,34px);letter-spacing:.04em;line-height:1.3}
+.fato p{margin:0;max-width:34em;color:var(--marcia-ink-2)}
+.voz{margin-top:var(--marcia-e-6)}
+.frases{list-style:none;margin:var(--marcia-e-4) 0 0;padding:0}
+.frases li{padding:var(--marcia-e-4) 0;border-top:1px solid var(--marcia-hair-forte)}
+.frases li:last-child{padding-bottom:0}
+.frases blockquote{margin:0;max-width:24em;font-family:var(--marcia-display);font-size:clamp(24px,2.8vw,34px);line-height:1.4;letter-spacing:.01em;color:var(--marcia-ink);text-wrap:balance}
 
 /* ---------- rodape ---------- */
 .rodape{border-top:1px solid var(--marcia-hair);padding:var(--marcia-e-5) 0 var(--marcia-e-5)}
@@ -152,14 +184,21 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   .topo-site .wrap{padding-top:14px;padding-bottom:14px}
   .topo-site .btn-linha{display:inline-flex}
   .marca img{width:52px;height:52px}
-  .hero{padding:var(--marcia-e-6) 0}
+  .hero{padding:var(--marcia-e-6) 0 var(--marcia-e-5)}
   .hero .aneis{right:-80px;top:20px;width:460px;height:460px}
   .hero .wrap{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:var(--marcia-e-6);align-items:center}
-  .moldura{width:260px;height:328px;justify-self:end;margin-right:var(--marcia-e-4)}
+  .moldura{order:0;width:260px;height:328px;justify-self:end;margin-right:var(--marcia-e-4)}
   .moldura .contorno.m{display:none}
   .moldura .contorno.d{display:block;width:260px;height:328px}
   .retrato{width:260px;height:328px}
   .itens{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .beneficios{padding:0}
+  .beneficios ul{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .beneficios li{padding:var(--marcia-e-3) var(--marcia-e-4);border-top:0;border-left:1px solid var(--marcia-hair)}
+  .beneficios li:first-child{border-left:0;padding-left:0}
+  .porque .wrap{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:var(--marcia-e-6);align-items:start}
+  .porque .cab{position:sticky;top:112px}
+  .fato{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:var(--marcia-e-5);align-items:baseline}
   .servicos .fecho{grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:var(--marcia-e-5)}
 }
 @media (min-width:1060px){
@@ -306,7 +345,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
     <div class="copia">
       <h1>Entender o que você <span class="mt">repete</span> no amor.</h1>
       <p class="lede">Se a pergunta é “o que ele sente?”, a conversa fica no outro. Comigo, ela vira: “o que se repete em mim?”</p>
-      <p class="cred leg">Psicoterapia de orientação psicanalítica freudiana, com consultório particular desde 1999.</p>
+      <p class="cred">Psicoterapia de orientação psicanalítica freudiana, com consultório particular desde 1999.</p>
       <p class="permissao">Nem sempre é fácil contar. Comigo, você pode começar por onde der.</p>
       <div class="acoes">
         <button class="btn" type="button" data-wa>Conversar no WhatsApp <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -320,6 +359,16 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
       <svg class="contorno d" viewBox="0 0 260 328" aria-hidden="true"><path transform="translate(18 18)" d="M0,183.7A130,183.7 0 0 1 260,183.7A130,144.3 0 0 1 0,183.7Z"/></svg>
       <div class="retrato"><img src="fotos/marcia-busto.jpg" width="385" height="700" alt="Márcia Campello, psicóloga, de cabelo solto e sorrindo, com blusa azul acinzentada e plantas ao fundo." fetchpriority="high"></div>
     </div>
+  </div>
+</section>
+
+<section class="beneficios" data-bloco="beneficios" aria-label="Como funciona o atendimento">
+  <div class="wrap">
+    <ul>
+      <li>Horários marcados <b>até as 21h</b></li>
+      <li>Sessão de <b>1 hora</b>, por vídeo (Google Meet)</li>
+      <li>Você começa <b>pelo WhatsApp</b>, com uma mensagem</li>
+    </ul>
   </div>
 </section>
 
@@ -343,7 +392,51 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   </div>
 </section>
 
-<!-- rodada 2: beneficios, porque, prova. rodada 3: faq, local, cta-final. O copy.md já tem as chaves. -->
+<section class="porque" data-bloco="porque">
+  <div class="wrap">
+    <div class="cab">
+      <h2>Como eu trabalho</h2>
+      <span class="filete-g" role="presentation"></span>
+    </div>
+    <div class="texto">
+      <p>Não ensino regra para segurar ou largar alguém. Quem decide é você. O que faço é ir com você atrás do padrão: o que se repete na sua história amorosa, e de onde isso vem.</p>
+      <p>Atendo em consultório desde 1999, pela orientação psicanalítica freudiana. É uma escola só, e é ela que organiza a conversa: a gente escuta o que você diz e também o que se repete no jeito de dizer.</p>
+      <p>Na sessão, a gente conversa de verdade: 1 hora, por vídeo, a partir do que você traz. Eu escuto, pergunto e, às vezes, devolvo uma pergunta que você ainda não tinha feito. A resposta, quando vem, vem depois.</p>
+      <ul class="creds">
+        <li>Especialista em Psicoterapia de Orientação Psicanalítica (pós-graduação lato sensu, ITI, 2000 a 2003)</li>
+        <li>Formada em Psicologia pela PUCRS (1998)</li>
+        <li>Consultório particular desde 1999</li>
+        <li>Atendimento online desde 2019</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- prova SEM relato, print, caso ou avaliacao de paciente (CFP e regra da marca). Realiza com fatos dela e a voz dela. Desvio registrado no README. As fontes das frases ficam em comentario. -->
+<section class="prova" data-bloco="prova">
+  <div class="wrap">
+    <div class="cab">
+      <h2>O que posso mostrar</h2>
+      <span class="filete-g" role="presentation"></span>
+      <p>Em psicoterapia o sigilo vem primeiro. O que posso mostrar são fatos meus: tempo de consultório, formação e o jeito como falo de relação.</p>
+    </div>
+    <ol class="fatos">
+      <li class="fato reveal"><h3>Desde 1999</h3><p>Consultório particular de orientação psicanalítica freudiana, com adultos. Mais de 25 anos de clínica.</p></li>
+      <li class="fato reveal"><h3>Uma escola só</h3><p>Atendo pela orientação psicanalítica freudiana desde que abri o consultório. É dela que vem a pergunta sobre o que se repete.</p></li>
+      <li class="fato reveal"><h3>Formação</h3><p>Psicologia pela PUCRS (1998) e pós-graduação em Psicoterapia de Orientação Psicanalítica no ITI (2000 a 2003).</p></li>
+    </ol>
+    <div class="voz">
+      <h3>Como eu falo de relação</h3>
+      <ul class="frases">
+        <li class="reveal"><blockquote>“O que faz você continuar voltando para esse mesmo lugar?”</blockquote><!-- fonte: https://www.instagram.com/reel/Ddo6JwoJECt/ --></li>
+        <li class="reveal"><blockquote>“Uma mensagem não é mudança. Saudade não é compromisso. Ciúme não é amor.”</blockquote><!-- fonte: https://www.instagram.com/reel/DdUbUrUp8KO/ --></li>
+        <li class="reveal"><blockquote>“Ele não fez nada. Mas alguém antes dele fez.”</blockquote><!-- fonte: https://www.instagram.com/reel/DcwhiM7tC5n/ --></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- rodada 3: faq, local, cta-final. O copy.md já tem as chaves. -->
 
 </main>
 
@@ -365,6 +458,8 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 <!-- sticky (mobile) -->
 <div class="sticky">
   <button class="btn" type="button" data-wa>Conversar no WhatsApp <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <!-- sem JavaScript o widget nao abre: o noscript mostra um link simples. O numero aqui e o UNICO literal fora de WA_PHONE (JS desligado nao le a constante). Trocou o numero? Troque tambem este, o gabarito confere que sao iguais. -->
+  <noscript><a class="btn" href="https://wa.me/5551999524202">Conversar no WhatsApp</a></noscript>
 </div>
 
 <!-- tracker de click id. Fonte unica: marketing-agency/sites/_shared/tracker.snippet.html. Nao editar aqui, editar no canonico. -->
