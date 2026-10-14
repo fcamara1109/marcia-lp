@@ -1,0 +1,114 @@
+/* ============================================================
+   Márcia Campello, psicóloga (CRP 07/09259)
+   Identidade visual "Sala acesa", versão 2, 12/10/2026
+
+   Função: fonte única das cores, tipos, formas e movimento da marca.
+   Base: exploração A1 (direcoes-a-refinada.html, .e1), com a paleta neutra
+   de 07/10. O grafite da A4 (.e4) é a cor de detalhe mais rara: pequeno no site e fundo
+   do cartão alternativo de Instagram. Decisões do Felipe de 07 e 08/10/2026 e de 12/10/2026.
+   Regras de uso: manual-marca.html.
+
+   Importe por caminho, nunca copie os valores:
+       <link rel="stylesheet" href=".../marca-marcia/tokens.css">
+
+   Gabarito: python3.13 _shared/tools/gabarito_marca.py tokens.css manual-marca.html
+   ============================================================ */
+
+:root{
+  /* ---------- superfície ---------- */
+  --marcia-paper:     #F6F4F0;   /* off-white, fundo de toda página */
+  --marcia-paper-2:   #ECE9E5;   /* dobra cinza, segunda superfície clara */
+  --marcia-surface:   #FBFAF8;   /* cartão e campo sobre o off-white */
+  --marcia-hair:      #CFCCC7;   /* linha fina, só ornamento. 1.46:1 sobre o off-white: nunca delimita controle */
+  --marcia-hair-forte:#85827D;   /* borda de controle, 3.48:1 sobre o off-white, 3.67:1 sobre o cartão, 3.16:1 sobre a dobra */
+
+  /* ---------- tinta ---------- */
+  --marcia-ink:       #1F2124;   /* grafite de texto, 14.69:1 sobre o off-white */
+  --marcia-ink-2:     #4A4947;   /* texto secundário, 8.19:1 sobre o off-white, 7.43:1 sobre a dobra */
+  --marcia-ink-3:     #5E5C59;   /* rótulo e legenda, 6.07:1 sobre o off-white, 5.51:1 sobre a dobra */
+
+  /* ---------- ação: terracota ---------- */
+  --marcia-accent:       #A5502F;   /* terracota do botão, ponta clara do gradiente */
+  --marcia-accent-deep:  #8B4026;   /* terracota funda, ponta escura do gradiente e texto de link: 6.69:1 sobre o off-white */
+  --marcia-on-accent:    #FFFAF5;   /* texto do botão: 5.34:1 na ponta clara, 7.08:1 na funda */
+  --marcia-accent-hover: #AC5532;   /* hover, ponta clara: 4.94:1 com o texto do botão */
+  --marcia-accent-hover-deep: #924529;   /* hover, ponta escura: 6.52:1 */
+  --marcia-cta-gradient:       linear-gradient(180deg, var(--marcia-accent) 0%, var(--marcia-accent-deep) 100%);
+  --marcia-cta-gradient-hover: linear-gradient(180deg, var(--marcia-accent-hover) 0%, var(--marcia-accent-hover-deep) 100%);
+
+  /* ---------- marca-texto e detalhe ---------- */
+  --marcia-highlight: #EBCDBA;   /* marca-texto atrás de UMA palavra. Tinta sobre ele: 10.74:1 */
+  --marcia-line:      var(--marcia-hair);   /* linha fina dos grafismos sobre o claro */
+  --marcia-blue:      #3F5666;   /* azul do sofá, só detalhe: 6.99:1 sobre o off-white. Nunca fundo, nunca botão */
+
+  /* ---------- grafite: detalhe raro no site, fundo só no Instagram ----------
+     Hierarquia: off-white e cinza dominam, a terracota é o toque, o grafite é o detalhe
+     mais raro, sempre menos presente que a terracota (Felipe, 12/10/2026).
+     No site: só seta de link, filete e rótulo pequeno, sobre o claro (11.98:1 sobre o off-white,
+     10.88:1 sobre a dobra, 12.62:1 sobre o cartão). Nunca fundo de seção, topo, rodapé nem botão principal.
+     Fundo: só no cartão alternativo de Instagram. */
+  --marcia-graphite:        #2B3136;   /* detalhe no site (seta, filete, rótulo) e cartão escuro alternativo de Instagram */
+  --marcia-on-graphite:     #F6F4F0;   /* texto principal sobre o grafite, 11.98:1. Só Instagram */
+  --marcia-on-graphite-2:   #D9D6D1;   /* texto secundário sobre o grafite, 9.08:1. Só Instagram */
+  --marcia-graphite-line:   #5B6369;   /* linha fina sobre o grafite, só ornamento: 2.15:1. Só Instagram */
+  --marcia-copper:          #C9805D;   /* filete sobre o grafite, só Instagram, 4.22:1. Nunca letra pequena */
+
+  /* ---------- semântico ----------
+     Faz e não faz. A cor nunca vem sozinha: o rótulo escrito também diz. */
+  --marcia-ok:        #2F6641;   /* 6.17:1 sobre o off-white */
+  --marcia-erro:      #A03A34;   /* 6.07:1 sobre o off-white */
+
+  /* ---------- tipografia ---------- */
+  --marcia-display: 'Tenor Sans', Georgia, serif;
+  --marcia-body:    'Figtree', system-ui, sans-serif;
+
+  /* Escala. Público de 45+: o corpo é 19px, o piso de legenda é 16px.
+     Nada abaixo de 15px existe nesta marca, rótulo incluso. */
+  --marcia-t-display: clamp(28px, 3.6vw, 44px);
+  --marcia-t-h2:      clamp(22px, 2.6vw, 30px);
+  --marcia-t-h3:      20px;
+  --marcia-t-lede:    21px;
+  --marcia-t-corpo:   19px;
+  --marcia-t-legenda: 16px;
+  --marcia-t-rotulo:  15px;
+  --marcia-t-botao:   17px;
+
+  --marcia-lh-titulo:  1.35;
+  --marcia-lh-corpo:   1.65;
+  --marcia-lh-legenda: 1.6;
+
+  --marcia-peso-corpo:  300;   /* Figtree fino no texto corrido */
+  --marcia-peso-legenda:400;   /* abaixo de 19px o 300 afina demais: legenda e rótulo sobem para 400 */
+  --marcia-peso-botao:  500;
+
+  /* caixa-alta espaçada: o jeito da marca de escrever título e wordmark */
+  --marcia-track-titulo:    .06em;
+  --marcia-track-h2:        .1em;
+  --marcia-track-wordmark:  .14em;
+  --marcia-track-rotulo:    .08em;
+
+  /* ---------- espaço ---------- */
+  --marcia-e-1:  8px;
+  --marcia-e-2: 14px;
+  --marcia-e-3: 22px;
+  --marcia-e-4: 34px;
+  --marcia-e-5: 56px;
+  --marcia-e-6: clamp(64px, 7vw, 104px);
+
+  --marcia-toque: 44px;   /* alvo mínimo de toque, WCAG 2.5.5 */
+
+  /* ---------- forma ---------- */
+  --marcia-r-btn:  999px;                                      /* cápsula */
+  --marcia-r-foto: 50% 50% 50% 50% / 56% 56% 44% 44%;          /* oval macio do retrato */
+  --marcia-r-campo: 12px;
+
+  /* ---------- sombra: deslocada e macia, nunca halo ---------- */
+  --marcia-sombra-btn:       0 10px 22px -10px rgba(31,33,36,.45), inset 0 1px 0 rgba(255,255,255,.2);
+  --marcia-sombra-btn-hover: 0 16px 28px -10px rgba(31,33,36,.5), inset 0 1px 0 rgba(255,255,255,.25);
+  --marcia-sombra-foto:      0 18px 30px -18px rgba(31,33,36,.4);
+  --marcia-sombra-on-graphite: 0 14px 22px -14px rgba(0,0,0,.5);   /* só Instagram, alternativo */
+
+  /* ---------- movimento ---------- */
+  --marcia-ease: cubic-bezier(.2,.7,.2,1);   /* saída exponencial */
+  --marcia-dur:  .35s;
+}

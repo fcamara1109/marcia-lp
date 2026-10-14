@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Márcia Campello, Psicóloga | Orientação psicanalítica</title>
+<!--
+Função: site da Márcia Campello (psicóloga, CRP 07/09259), página única na espinha do blueprint de LP de médico. Rodada 1: header, hero, servicos e rodape, mais o widget de WhatsApp. O texto mora em copy.md (um bloco ## chave por pedaço) e o gabarito verifica.py cobra que o que está aqui bate com ele.
+Data: 2026-10-13. Marca: external/doctors/marcia/wiki/concepts/marca-marcia (tokens.css copiado para assets/tokens.css, copia de deploy, não se edita aqui).
+Preview com noindex. O noindex sai por último, junto com o domínio.
+-->
+<meta name="description" content="Psicóloga Márcia Campello (CRP 07/09259). Entender o que você repete no amor, em psicoterapia de orientação psicanalítica. Online para todo o Brasil.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F6F4F0">
+<link rel="canonical" href="https://fcamara1109.github.io/marcia-lp/">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Márcia Campello">
+<meta property="og:title" content="Entender o que você repete no amor | Márcia Campello, Psicóloga">
+<meta property="og:description" content="Psicoterapia de orientação psicanalítica, com consultório desde 1999. Márcia Campello, Psicóloga, CRP 07/09259. Online para todo o Brasil.">
+<meta property="og:url" content="https://fcamara1109.github.io/marcia-lp/">
+<meta property="og:image" content="https://fcamara1109.github.io/marcia-lp/assets/og-marcia-1200x630.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Entender o que você repete no amor | Márcia Campello, Psicóloga">
+<meta name="twitter:description" content="Psicoterapia de orientação psicanalítica, com consultório desde 1999. Márcia Campello, Psicóloga, CRP 07/09259. Online para todo o Brasil.">
+<meta name="twitter:image" content="https://fcamara1109.github.io/marcia-lp/assets/og-marcia-1200x630.png">
+
+<!-- GTM-PONTO-DE-INSERCAO (head): ainda sem container. Quando o container existir, colar aqui o script do GTM e, logo depois da abertura do body, o noscript. Anotado no README. -->
+
+<link rel="preload" href="assets/fonts/TenorSans.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/Figtree.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="assets/tokens.css">
+<style>
+@font-face{font-family:'Tenor Sans';src:url('assets/fonts/TenorSans.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Figtree';src:url('assets/fonts/Figtree.ttf') format('truetype');font-weight:300 900;font-style:normal;font-display:swap}
+
+/* ---------- base ---------- */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:96px;scrollbar-color:var(--marcia-hair-forte) var(--marcia-paper-2)}
+body{margin:0;background:var(--marcia-paper);color:var(--marcia-ink);font-family:var(--marcia-body);font-weight:var(--marcia-peso-corpo);font-size:var(--marcia-t-corpo);line-height:var(--marcia-lh-corpo);-webkit-font-smoothing:antialiased;font-synthesis:none;padding-bottom:calc(var(--sticky-h) + env(safe-area-inset-bottom))}
+::selection{background:var(--marcia-highlight);color:var(--marcia-ink)}
+:focus-visible{outline:3px solid var(--marcia-ink);outline-offset:3px}
+img{max-width:100%;height:auto}
+svg{display:block}
+p{margin:0 0 1.1em;max-width:62ch;text-wrap:pretty}
+a{color:var(--marcia-accent-deep);text-underline-offset:.2em;text-decoration-thickness:1px}
+button{font:inherit;color:inherit}
+:root{
+  --sticky-h:76px;
+  --site-t-item:23px;          /* degrau proprio do site: titulo de item, entre o corpo (19) e o h2 (22 a 30), a 2px ou mais de cada vizinho */
+  --wrap-pad:clamp(16px,4vw,40px);
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 var(--wrap-pad)}
+.pular{position:absolute;left:-9999px;top:8px;z-index:100;background:var(--marcia-ink);color:var(--marcia-paper);padding:12px 18px;border-radius:var(--marcia-r-campo)}
+.pular:focus{left:12px}
+
+/* ---------- tipos ---------- */
+h1,h2{margin:0;font-family:var(--marcia-display);font-weight:400;text-transform:uppercase;text-wrap:balance;line-height:var(--marcia-lh-titulo)}
+h1{font-size:var(--marcia-t-display);letter-spacing:var(--marcia-track-titulo)}
+h2{font-size:var(--marcia-t-h2);letter-spacing:var(--marcia-track-h2)}
+h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(--marcia-peso-botao);font-size:var(--site-t-item);line-height:1.3;text-wrap:balance}
+.lede{font-size:var(--marcia-t-lede);line-height:1.6;color:var(--marcia-ink-2)}
+.leg{font-size:var(--marcia-t-legenda);line-height:var(--marcia-lh-legenda);font-weight:var(--marcia-peso-legenda);color:var(--marcia-ink-3)}
+
+/* marca-texto: uma palavra por titulo. Entra uma vez, na carga, e para */
+.mt{position:relative;display:inline-block;z-index:0;white-space:nowrap}
+.mt::before{content:"";position:absolute;z-index:-1;left:-.12em;right:-.06em;bottom:.1em;height:.5em;background:var(--marcia-highlight);border-radius:.15em .5em .2em .55em;transform:rotate(-1.1deg)}
+.js .mt::before{animation:mt-entra 1s .3s var(--marcia-ease) both}
+@keyframes mt-entra{from{transform:rotate(-1.1deg) scaleX(0);transform-origin:left center}to{transform:rotate(-1.1deg) scaleX(1);transform-origin:left center}}
+
+/* ---------- botao: capsula terracota, um por dobra ---------- */
+.btn{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:var(--marcia-toque);padding:17px 30px 17px 32px;border:0;border-radius:var(--marcia-r-btn);font-family:var(--marcia-body);font-weight:var(--marcia-peso-botao);font-size:var(--marcia-t-botao);line-height:1.2;letter-spacing:.02em;color:var(--marcia-on-accent);background-color:var(--marcia-accent);box-shadow:var(--marcia-sombra-btn);cursor:pointer;text-decoration:none;white-space:nowrap;transition:transform var(--marcia-dur) var(--marcia-ease),box-shadow var(--marcia-dur) var(--marcia-ease)}
+.btn::before,.btn::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1}
+.btn::before{background:var(--marcia-cta-gradient)}
+.btn::after{background:var(--marcia-cta-gradient-hover);opacity:0;transition:opacity var(--marcia-dur) var(--marcia-ease)}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--marcia-sombra-btn-hover)}
+.btn:hover::after{opacity:1}
+.btn .seta-b{width:18px;height:18px;flex:none;transition:transform var(--marcia-dur) var(--marcia-ease)}
+.btn:hover .seta-b{transform:translateX(4px)}
+@media (max-width:480px){.btn{white-space:normal}}
+/* link de apoio: texto em tinta, seta em grafite (um dos dois detalhes de grafite da dobra) */
+.link-seta{display:inline-flex;align-items:center;gap:10px;min-height:var(--marcia-toque);padding:0 4px;color:var(--marcia-ink);font-size:var(--marcia-t-botao);font-weight:var(--marcia-peso-botao);line-height:1.2;text-decoration:underline;text-decoration-color:var(--marcia-hair-forte);text-decoration-thickness:1px;text-underline-offset:.3em}
+.link-seta:hover{text-decoration-thickness:2px}
+.link-seta .seta{width:18px;height:18px;flex:none;color:var(--marcia-graphite);transition:transform var(--marcia-dur) var(--marcia-ease)}
+.link-seta:hover .seta{transform:translateX(4px)}
+.filete-g{display:block;width:44px;height:2px;margin:var(--marcia-e-2) 0 0;background:var(--marcia-graphite)}
+
+/* ---------- wordmark e header ---------- */
+.wm{display:inline-block;--wm:21px;text-decoration:none;color:var(--marcia-ink)}
+.wm b{display:block;white-space:nowrap;font-family:var(--marcia-display);font-weight:400;font-size:var(--wm);line-height:1.1;letter-spacing:var(--marcia-track-wordmark);text-transform:uppercase}
+.wm span{display:block;margin-top:.4em;font-size:max(var(--marcia-t-legenda),calc(var(--wm) * .5));line-height:1.3;font-weight:var(--marcia-peso-legenda);letter-spacing:.01em;color:var(--marcia-ink-2)}
+.topo-site{position:sticky;top:0;z-index:40;background:var(--marcia-paper);border-bottom:1px solid var(--marcia-hair)}
+.topo-site .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--marcia-e-3);padding-top:11px;padding-bottom:11px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.marca img{width:46px;height:46px;flex:none}
+.topo-site .linha{display:none;margin:0;max-width:none;padding-left:var(--marcia-e-3);border-left:1px solid var(--marcia-hair);color:var(--marcia-ink-3);font-size:var(--marcia-t-legenda);line-height:1.4;font-weight:var(--marcia-peso-legenda)}
+.topo-site .btn-linha{display:none}
+.btn-linha{align-items:center;min-height:var(--marcia-toque);padding:9px 24px;border:1px solid var(--marcia-ink);border-radius:var(--marcia-r-btn);background:transparent;color:var(--marcia-ink);font-family:var(--marcia-body);font-weight:var(--marcia-peso-botao);font-size:var(--marcia-t-botao);letter-spacing:.02em;cursor:pointer;transition:background var(--marcia-dur) var(--marcia-ease),color var(--marcia-dur) var(--marcia-ease)}
+.btn-linha:hover{background:var(--marcia-ink);color:var(--marcia-paper)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;padding:var(--marcia-e-5) 0 var(--marcia-e-6)}
+.hero .glow{position:absolute;inset:0 0 auto 0;height:75%;background:radial-gradient(90% 90% at 50% 0%,var(--marcia-surface) 0%,transparent 70%);pointer-events:none}
+.aneis{position:absolute;pointer-events:none}
+.aneis circle{fill:none;stroke:var(--marcia-line);stroke-width:1}
+.hero .aneis{right:-150px;top:-40px;width:340px;height:340px}
+.hero .wrap{position:relative;display:grid;gap:var(--marcia-e-5)}
+.hero h1{max-width:20ch}
+.hero .lede{margin:var(--marcia-e-3) 0 0;max-width:30em}
+.hero .cred{margin:var(--marcia-e-3) 0 0;padding-top:var(--marcia-e-2);border-top:1px solid var(--marcia-hair);max-width:34em;color:var(--marcia-ink-2)}
+.hero .permissao{margin:var(--marcia-e-4) 0 0;max-width:30em;color:var(--marcia-ink)}
+.hero .acoes{display:flex;flex-wrap:wrap;align-items:center;gap:6px 28px;margin-top:var(--marcia-e-3)}
+.hero .micro{margin:var(--marcia-e-2) 0 0}
+.moldura{position:relative;width:176px;height:224px;justify-self:center}
+.moldura .contorno{position:absolute;left:0;top:0;width:176px;height:224px;overflow:visible;pointer-events:none;z-index:0}
+.moldura .contorno path{fill:none;stroke:var(--marcia-line);stroke-width:1;stroke-linecap:round}
+.moldura .contorno.d{display:none}
+.retrato{position:relative;z-index:1;width:176px;height:224px;border-radius:var(--marcia-r-foto);overflow:hidden;box-shadow:var(--marcia-sombra-foto);background:var(--marcia-paper-2)}
+.retrato img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+
+/* ---------- servicos ---------- */
+.servicos{background:var(--marcia-paper-2);padding:var(--marcia-e-6) 0}
+.servicos .cab{max-width:38em}
+.servicos .cab p{margin:var(--marcia-e-3) 0 0;color:var(--marcia-ink-2)}
+.itens{list-style:none;margin:var(--marcia-e-5) 0 0;padding:0;display:grid;gap:var(--marcia-e-4) var(--marcia-e-5)}
+.item{padding-top:var(--marcia-e-3);border-top:1px solid var(--marcia-hair-forte)}
+.item p{margin:0;color:var(--marcia-ink-2)}
+.servicos .fecho{margin-top:var(--marcia-e-5);display:grid;gap:var(--marcia-e-3);justify-items:start}
+.servicos .fecho p{margin:0;max-width:34em}
+/* o .reveal nasce visivel: so some depois que o script confirma que roda */
+.reveal{transition:opacity .7s var(--marcia-ease),transform .7s var(--marcia-ease)}
+.js .reveal:not(.in){opacity:0;transform:translateY(10px)}
+
+/* ---------- rodape ---------- */
+.rodape{border-top:1px solid var(--marcia-hair);padding:var(--marcia-e-5) 0 var(--marcia-e-5)}
+.rodape .wrap{display:grid;gap:var(--marcia-e-3)}
+.rodape .marca img{width:40px;height:40px}
+.rodape p{margin:0;max-width:52em}
+
+/* ---------- float (desktop) e sticky (mobile) ---------- */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;justify-content:center;background:var(--marcia-paper);border-top:1px solid var(--marcia-hair);padding:10px 16px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -12px 24px -18px rgba(31,33,36,.35)}
+.sticky .btn{min-width:min(100%,300px)}
+
+@media (min-width:880px){
+  body{padding-bottom:0}
+  .sticky{display:none}
+  .topo-site .wrap{padding-top:14px;padding-bottom:14px}
+  .topo-site .btn-linha{display:inline-flex}
+  .marca img{width:52px;height:52px}
+  .hero{padding:var(--marcia-e-6) 0}
+  .hero .aneis{right:-80px;top:20px;width:460px;height:460px}
+  .hero .wrap{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:var(--marcia-e-6);align-items:center}
+  .moldura{width:260px;height:328px;justify-self:end;margin-right:var(--marcia-e-4)}
+  .moldura .contorno.m{display:none}
+  .moldura .contorno.d{display:block;width:260px;height:328px}
+  .retrato{width:260px;height:328px}
+  .itens{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .servicos .fecho{grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:var(--marcia-e-5)}
+}
+@media (min-width:1060px){
+  .topo-site .linha{display:block}
+  .topo-site .wrap{gap:var(--marcia-e-4)}
+  .topo-site .marca{flex:none}
+  .topo-site .linha{flex:1;max-width:30em;margin-right:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
+  .js .reveal:not(.in){opacity:1;transform:none}
+}
+</style>
+<style>
+/* widget:inicio */
+  /* tema do widget — defaults neutros via :where() (especificidade 0) pra que
+     um override #wa-modal{...} na LP sempre vença, em qualquer ordem no documento */
+  :where(#wa-modal), :where(.wafloat){
+    --wa:#25D366;                 /* verde WhatsApp (fixo) */
+    --wa-head-a:#3a6ea5;          /* gradiente do header (claro) */
+    --wa-head-b:#1f3b5c;          /* gradiente do header (escuro) + texto forte */
+    --wa-accent:#f5a623;          /* destaque: foco do input, número em evidência */
+    --wa-accent-d:#d98614;
+    --wa-band:#eef2f6;            /* faixa clara (barra online) */
+    --wa-surface:#fff;
+    --wa-line:#e6e6e6;
+    --wa-ink:#333;
+    --wa-muted:#8a8a8a;
+    --wa-head-font:'Poppins',system-ui,sans-serif;
+    --wa-body-font:'Montserrat',system-ui,sans-serif;
+  }
+
+  /* botão flutuante (gatilho default; opcional) */
+  .wafloat{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:var(--wa);
+    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.25);z-index:45;cursor:pointer;border:0;}
+  .wafloat svg{width:30px;height:30px;fill:#fff;}
+
+  #wa-modal{border:none;background:transparent;padding:0;max-width:100%;position:fixed;inset:0;margin:auto;height:max-content;overflow:visible;}
+  #wa-modal::backdrop{background:rgba(20,20,20,.55);}
+  #wa-modal .widget{width:360px;max-width:92vw;background:var(--wa-surface);border-radius:22px;box-shadow:0 30px 70px -25px rgba(0,0,0,.45);overflow:hidden;position:relative;font-family:var(--wa-body-font);color:var(--wa-ink);}
+  #wa-modal .wa-close{position:absolute;top:11px;right:13px;z-index:5;width:30px;height:30px;border:none;border-radius:50%;background:rgba(255,255,255,.22);color:#fff;font-size:14px;cursor:pointer;line-height:1;display:grid;place-items:center;}
+  #wa-modal .wa-close:hover{background:rgba(255,255,255,.4);}
+  #wa-modal .screen{display:none;}
+  #wa-modal .screen.active{display:block;animation:wafade .3s ease;}
+  @keyframes wafade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+  #wa-modal .whead{background:linear-gradient(135deg,var(--wa-head-a),var(--wa-head-b));color:#fff;padding:1.15rem 1.25rem 1.25rem;display:flex;align-items:center;gap:.85rem;}
+  #wa-modal .avatar{flex:none;width:56px;height:56px;border-radius:50%;position:relative;background:rgba(255,255,255,.18);border:2.5px solid rgba(255,255,255,.85);display:grid;place-items:center;}
+  #wa-modal .avatar svg{width:30px;height:30px;}
+  #wa-modal .avatar .on{position:absolute;right:1px;bottom:1px;width:13px;height:13px;border-radius:50%;background:var(--wa);border:2.5px solid var(--wa-head-b);}
+  #wa-modal .who{display:flex;flex-direction:column;gap:2px;min-width:0;}
+  #wa-modal .nm{font-family:var(--wa-head-font);font-weight:700;font-size:1.15rem;letter-spacing:-.01em;}
+  #wa-modal .cred{font-size:.72rem;font-weight:500;color:rgba(255,255,255,.92);line-height:1.35;}
+  #wa-modal .online{display:flex;align-items:center;gap:.45rem;padding:.55rem 1.25rem;background:var(--wa-band);font-size:.74rem;font-weight:600;color:var(--wa-head-b);}
+  #wa-modal .online .dot{width:7px;height:7px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 3px rgba(37,211,102,.25);}
+  #wa-modal .wbody{padding:1.2rem 1.25rem 1.4rem;}
+  #wa-modal .lead-line{font-family:var(--wa-head-font);font-size:1.3rem;font-weight:600;line-height:1.25;letter-spacing:-.01em;margin-bottom:1rem;color:var(--wa-head-b);}
+  #wa-modal .field{display:block;margin-bottom:1rem;}
+  #wa-modal .field .lbl{display:block;font-size:.74rem;font-weight:600;color:var(--wa-head-b);margin-bottom:.35rem;}
+  #wa-modal .field input{width:100%;height:48px;border-radius:12px;border:1.5px solid var(--wa-line);background:#fff;color:var(--wa-ink);padding:0 .9rem;font-size:1rem;font-family:var(--wa-body-font);outline:none;transition:border-color .15s,box-shadow .15s;}
+  #wa-modal .field input::placeholder{color:#b3b3b3;}
+  #wa-modal .field input:focus{border-color:var(--wa-accent);box-shadow:0 0 0 3px rgba(245,166,35,.22);}
+  #wa-modal .field input.wa-err,#wa-modal .field input.wa-err:focus{border-color:#e5484d;box-shadow:0 0 0 3px rgba(229,72,77,.2);}
+  #wa-modal .wa-err-msg{display:block;margin-top:.4rem;font-size:.74rem;font-weight:600;color:#e5484d;line-height:1.35;}
+  #wa-modal .btn{width:100%;height:52px;border:none;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.55rem;font-family:var(--wa-head-font);font-size:1rem;font-weight:600;color:#fff;background:var(--wa);transition:filter .15s,transform .1s;}
+  #wa-modal .btn:hover{filter:brightness(1.05);}
+  #wa-modal .btn:active{transform:translateY(1px);}
+  #wa-modal .btn .wa-ic{width:21px;height:21px;}
+  #wa-modal .warn-body{padding:1.2rem 1.25rem 1.4rem;}
+  #wa-modal .notice{background:#FFF4E8;border:1.5px solid #FFD8AC;border-radius:16px;padding:1.15rem 1.2rem 1.25rem;margin-bottom:1.1rem;}
+  #wa-modal .notice-head{display:inline-flex;align-items:center;gap:.55rem;padding:.5rem .95rem;margin-bottom:.95rem;border-radius:999px;background:var(--wa-accent-d);color:#fff;font-family:var(--wa-head-font);font-weight:700;font-size:.98rem;letter-spacing:.01em;}
+  #wa-modal .notice-head .ic{width:1.2rem;height:1.2rem;}
+  #wa-modal .notice p{font-size:1rem;line-height:1.55;color:var(--wa-ink);margin:0 0 .65rem;}
+  #wa-modal .notice p:last-child{margin-bottom:0;}
+  #wa-modal .notice b{font-weight:700;}
+  #wa-modal .notice .num{font-family:var(--wa-head-font);font-weight:700;color:var(--wa-accent-d);white-space:nowrap;}
+  #wa-modal .num-reinforce{text-align:center;font-size:.9rem;color:var(--wa-accent-d);margin:.8rem 0 0;}
+  #wa-modal .num-reinforce b{font-family:var(--wa-head-font);font-weight:700;color:var(--wa-head-b);white-space:nowrap;}
+  #wa-modal .back{display:block;width:100%;text-align:center;margin-top:.75rem;background:none;border:none;color:var(--wa-muted);font-size:.8rem;cursor:pointer;font-family:var(--wa-body-font);}
+  #wa-modal .back:hover{color:var(--wa-head-b);}
+
+/* tema Marcia sobre o widget canonico. Os --wa-* tem especificidade 0 la em cima, este bloco sempre vence.
+   Fonte maior (publico 50+: piso de 15px), Tenor Sans sem negrito sintetico e alvos de 44px. */
+#wa-modal,.wafloat{
+  --wa:#25D366;
+  --wa-head-a:var(--marcia-accent);--wa-head-b:var(--marcia-accent-deep);
+  --wa-accent:var(--marcia-accent);--wa-accent-d:var(--marcia-accent-deep);
+  --wa-band:var(--marcia-paper-2);--wa-surface:var(--marcia-surface);--wa-line:var(--marcia-hair-forte);
+  --wa-ink:var(--marcia-ink);--wa-muted:var(--marcia-ink-3);
+  --wa-head-font:var(--marcia-display);--wa-body-font:var(--marcia-body);
+}
+#wa-modal::backdrop{background:rgba(31,33,36,.55)}
+#wa-modal .widget{box-shadow:var(--marcia-sombra-foto)}
+#wa-modal .wa-close{width:44px;height:44px;top:8px;right:8px;font-size:16px}
+#wa-modal .nm{font-weight:400;font-size:1.25rem;letter-spacing:.06em;text-transform:uppercase}
+#wa-modal .cred{font-size:.9375rem;font-weight:400}
+#wa-modal .online{font-size:.9375rem;font-weight:500;color:var(--marcia-ink)}
+#wa-modal .lead-line{font-weight:400;font-size:1.4rem;letter-spacing:.02em;line-height:1.3}
+#wa-modal .field .lbl{font-size:1rem;font-weight:500;color:var(--marcia-ink)}
+#wa-modal .field input{font-size:1.125rem;height:52px;border-color:var(--marcia-hair-forte)}
+#wa-modal .field input::placeholder{color:var(--marcia-ink-3)}
+#wa-modal .field input:focus{border-color:var(--marcia-ink);box-shadow:0 0 0 3px rgba(165,80,47,.3)}
+#wa-modal .wa-err-msg{font-size:1rem;font-weight:500;color:var(--marcia-erro)}
+#wa-modal .field input.wa-err,#wa-modal .field input.wa-err:focus{border-color:var(--marcia-erro);box-shadow:0 0 0 3px rgba(160,58,52,.2)}
+#wa-modal .btn{font-family:var(--marcia-body);font-weight:500;font-size:1.0625rem;letter-spacing:.01em;color:var(--marcia-on-accent);background:var(--marcia-cta-gradient);box-shadow:var(--marcia-sombra-btn)}
+#wa-modal .btn .wa-ic{fill:currentColor}
+#wa-modal .notice{background:var(--marcia-paper);border-color:var(--marcia-hair-forte)}
+#wa-modal .notice-head{font-family:var(--marcia-body);font-weight:500;font-size:1rem;letter-spacing:.02em}
+#wa-modal .notice p{font-size:1.0625rem}
+#wa-modal .notice .num,#wa-modal .num-reinforce b{font-family:var(--marcia-body);font-weight:500}
+#wa-modal .num-reinforce{font-size:1rem;color:var(--marcia-ink-2)}
+#wa-modal .back{font-size:1rem;min-height:44px;color:var(--marcia-ink-2)}
+/* float do desktop: terracota da marca, so a partir de 880px (no celular quem assume e o sticky) */
+.wafloat{display:none;right:28px;bottom:28px;width:60px;height:60px;background:var(--marcia-cta-gradient);box-shadow:var(--marcia-sombra-btn);transition:transform var(--marcia-dur) var(--marcia-ease),box-shadow var(--marcia-dur) var(--marcia-ease)}
+.wafloat svg{fill:var(--marcia-on-accent)}
+.wafloat:hover{transform:translateY(-2px);box-shadow:var(--marcia-sombra-btn-hover)}
+@media (min-width:880px){.wafloat{display:flex}}
+@media (prefers-reduced-motion:reduce){#wa-modal .screen.active{animation:none}}
+/* widget:fim */
+</style>
+</head>
+<body>
+<!-- GTM-PONTO-DE-INSERCAO (body): o noscript do GTM entra aqui, logo na abertura do body. -->
+<script>document.documentElement.classList.add('js');</script>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topo-site" data-bloco="header">
+  <div class="wrap">
+    <a class="marca" href="#conteudo" aria-label="Márcia Campello, Psicóloga · CRP 07/09259">
+      <img src="assets/simbolo-cor.svg" width="52" height="52" alt="" decoding="async">
+      <span class="wm"><b>Márcia Campello</b><span>Psicóloga · CRP 07/09259</span></span>
+    </a>
+    <p class="linha">Psicoterapia de orientação psicanalítica · Garopaba/SC e online para todo o Brasil</p>
+    <button class="btn-linha" type="button" data-wa>Conversar</button>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<section class="hero" data-bloco="hero">
+  <div class="glow"></div>
+  <svg class="aneis" viewBox="0 0 300 300" aria-hidden="true"><circle cx="150" cy="150" r="148"/><circle cx="150" cy="150" r="118"/><circle cx="150" cy="150" r="88"/></svg>
+  <div class="wrap">
+    <div class="copia">
+      <h1>Entender o que você <span class="mt">repete</span> no amor.</h1>
+      <p class="lede">Se a pergunta é “o que ele sente?”, a conversa fica no outro. Comigo, ela vira: “o que se repete em mim?”</p>
+      <p class="cred leg">Psicoterapia de orientação psicanalítica freudiana, com consultório particular desde 1999.</p>
+      <p class="permissao">Nem sempre é fácil contar. Comigo, você pode começar por onde der.</p>
+      <div class="acoes">
+        <button class="btn" type="button" data-wa>Conversar no WhatsApp <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <a class="link-seta" href="#servicos">Sobre o que conversamos <svg class="seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <p class="micro leg">Não precisa explicar tudo. Um “oi” no WhatsApp basta.</p>
+    </div>
+    <!-- PLACEHOLDER: foto provisória (marcia-busto.jpg, teste de layout). Ensaio previsto: tricô cinza, gola alta branca, luz natural de janela, madeira e plantas. A foto sai trocando o arquivo, a moldura já está na proporção final. -->
+    <div class="moldura">
+      <svg class="contorno m" viewBox="0 0 176 224" aria-hidden="true"><path transform="translate(14 14)" d="M0,125.4A88,125.4 0 0 1 176,125.4A88,98.6 0 0 1 0,125.4Z"/></svg>
+      <svg class="contorno d" viewBox="0 0 260 328" aria-hidden="true"><path transform="translate(18 18)" d="M0,183.7A130,183.7 0 0 1 260,183.7A130,144.3 0 0 1 0,183.7Z"/></svg>
+      <div class="retrato"><img src="fotos/marcia-busto.jpg" width="385" height="700" alt="Márcia Campello, psicóloga, de cabelo solto e sorrindo, com blusa azul acinzentada e plantas ao fundo." fetchpriority="high"></div>
+    </div>
+  </div>
+</section>
+
+<section class="servicos" id="servicos" data-bloco="servicos">
+  <div class="wrap">
+    <div class="cab">
+      <h2>Sobre o que a gente conversa</h2>
+      <span class="filete-g" role="presentation"></span>
+      <p>Quatro situações que você talvez reconheça. Não são diagnósticos: são pontos de partida para entender o que se repete na sua história.</p>
+    </div>
+    <ul class="itens">
+      <li class="item reveal"><h3>Ele reaparece e tudo volta ao começo</h3><p>Quando alguém reaparece, a pergunta costuma ser “será que ele ainda gosta de mim?”. Talvez valha perguntar também: o que faz esse recomeço parecer tão familiar?</p></li>
+      <li class="item reveal"><h3>Você espera a mensagem e o dia gira em torno disso</h3><p>Esperar a resposta, interpretar o silêncio, explicar o que ninguém pediu. Talvez esse esforço tenha uma história mais antiga que ele. Onde você aprendeu a amar assim?</p></li>
+      <li class="item reveal"><h3>As pessoas mudam, mas a história parece a mesma</h3><p>Muda o rosto, muda o nome, e o final lembra o anterior. Talvez você não esteja escolhendo mal: talvez esteja reconhecendo o que já conhece. O que há de familiar nisso?</p></li>
+      <li class="item reveal"><h3>Você sabe que faz mal, e mesmo assim fica</h3><p>Saber que algo faz mal nem sempre basta para deixá-lo. A gente repete formas de amar e de se proteger que vêm de longe. De onde vem a sua?</p></li>
+    </ul>
+    <div class="fecho">
+      <p>Se alguma soou familiar, a gente pode conversar. É só mandar uma mensagem pelo WhatsApp.</p>
+      <button class="btn" type="button" data-wa>Conversar no WhatsApp <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- rodada 2: beneficios, porque, prova. rodada 3: faq, local, cta-final. O copy.md já tem as chaves. -->
+
+</main>
+
+<footer class="rodape" data-bloco="rodape">
+  <div class="wrap">
+    <a class="marca" href="#conteudo" aria-label="Márcia Campello, Psicóloga · CRP 07/09259">
+      <img src="assets/simbolo-cor.svg" width="40" height="40" alt="" loading="lazy" decoding="async">
+      <span class="wm"><b>Márcia Campello</b><span>Psicóloga · CRP 07/09259</span></span>
+    </a>
+    <p class="leg">Este site tem caráter informativo e não substitui uma avaliação psicológica. Psicoterapia é um processo, e ninguém pode prometer aonde ele chega.</p>
+  </div>
+</footer>
+
+<!-- float (desktop): fixo na tela em toda a rolagem. Nao e bloco, e elemento permanente. -->
+<button class="wafloat" data-bloco="cta-flutuante" data-wa aria-label="Falar pelo WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.5c1.8.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3z"/></svg>
+</button>
+
+<!-- sticky (mobile) -->
+<div class="sticky">
+  <button class="btn" type="button" data-wa>Conversar no WhatsApp <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+</div>
+
+<!-- tracker de click id. Fonte unica: marketing-agency/sites/_shared/tracker.snippet.html. Nao editar aqui, editar no canonico. -->
+<!-- SEMPRE antes do script do widget, porque o widget chama clickIds(). -->
+<script> e identico nos dois casos: -->
+<!--   1. Inline na LP: colar antes de </body> e SEMPRE antes do script do widget, porque o widget chama clickIds(). -->
+<!--   2. GTM: colar como tag Custom HTML com trigger All Pages. Use quando o site e de terceiro e so temos o container. -->
+<!-- Grava cookie `tracker` (365 dias) com ids de clique e UTMs; sem fetch externo. -->
+<!-- O encoder e o widget leem via window.trackerData() e anexam os campos no POST lead_collect. -->
+<script>
+(function(){
+var COOKIE_NAME = 'tracker';
+var TTL_DAYS = 365;
+var MAX_URL_LEN = 500;
+var KEYS = ['gclid','gbraid','wbraid','gad_source','gad_campaignid','ttclid','msclkid','oppref','obref','fbp','fbc','utm_source','utm_medium','utm_campaign','session_start_usec','landing_page_url'];
+function readCookie(){ var out = {}; try { var parts = (document.cookie || '').split(';'); for (var i = 0; i < parts.length; i++) { var kv = parts[i].split('='); var k = (kv[0] || '').trim(); if (k === COOKIE_NAME) { try { out = JSON.parse(decodeURIComponent((kv.slice(1).join('=')) || '{}')) || {}; } catch (e) {} } } } catch (e) {} return out; }
+function writeCookie(data){ try { var exp = new Date(Date.now() + TTL_DAYS * 864e5).toUTCString(); document.cookie = COOKIE_NAME + '=' + encodeURIComponent(JSON.stringify(data)) + '; expires=' + exp + '; path=/; SameSite=Lax'; } catch (e) {} }
+// Corta a URL de pouso. E o unico campo sem tamanho definido, e cookie acima de 4 KB o navegador recusa calado, levando junto o click id.
+function pageUrl(){ try { return String(location.href || '').slice(0, MAX_URL_LEN); } catch (e) { return ''; } }
+function fromUrl(){ var out = {}; try { var q = new URLSearchParams(location.search); out.gclid = q.get('gclid') || ''; out.gbraid = q.get('gbraid') || ''; out.wbraid = q.get('wbraid') || ''; out.gad_source = q.get('gad_source') || ''; out.gad_campaignid = q.get('gad_campaignid') || ''; out.ttclid = q.get('ttclid') || ''; out.msclkid = q.get('msclkid') || ''; out.oppref = q.get('oppref') || ''; out.obref = q.get('obref') || ''; out.fbp = q.get('fbp') || ''; out.fbc = q.get('fbc') || ''; out.utm_source = q.get('utm_source') || ''; out.utm_medium = q.get('utm_medium') || ''; out.utm_campaign = q.get('utm_campaign') || ''; } catch (e) {} return out; }
+function fromCookies(){ var out = { fbp: '', fbc: '' }; try { var parts = (document.cookie || '').split(';'); for (var i = 0; i < parts.length; i++) { var kv = parts[i].split('='); var k = (kv[0] || '').trim(); var v = decodeURIComponent((kv.slice(1).join('=')) || ''); if (k === '_fbp' && !out.fbp) out.fbp = v; if (k === '_fbc' && !out.fbc) out.fbc = v; } } catch (e) {} return out; }
+// Resgate: le o gclid do cookie do proprio Google quando o nosso cookie ainda nao tem.
+// _gcl_aw vale "GCL.<ts>.<gclid>" e _gac_<propriedade> vale "<versao>.<ts>.<gclid>": nos dois o id e o trecho apos o ultimo ponto.
+// O prefixo TEM que sair aqui: o SQL valida com ^[A-Za-z0-9_-]{40,} e o ponto faz o valor cru virar NULL calado.
+// So gclid. gbraid e wbraid vem so da URL, de proposito: click id de iOS lido de cookie gera erro de identificador antigo no Google Ads.
+function gclFromValue(v){ try { var s = decodeURIComponent(v || ''); var i = s.lastIndexOf('.'); return i < 0 ? '' : s.slice(i + 1); } catch (e) { return ''; } }
+function fromGoogleCookies(){ var out = { gclid: '' }; try { var parts = (document.cookie || '').split(';'); var gac = ''; for (var i = 0; i < parts.length; i++) { var kv = parts[i].split('='); var k = (kv[0] || '').trim(); var v = kv.slice(1).join('='); if (k === '_gcl_aw' && !out.gclid) out.gclid = gclFromValue(v); else if (k.indexOf('_gac_') === 0 && !gac) gac = gclFromValue(v); } if (!out.gclid) out.gclid = gac; } catch (e) {} return out; }
+// Precedencia: URL vence o nosso cookie, que vence o cookie do Google. Valor vazio nunca sobrescreve valor cheio.
+function capture(){ var stored = readCookie(); var url = fromUrl(); var ck = fromCookies(); var hasUrl = false; for (var i = 0; i < KEYS.length; i++) { if (url[KEYS[i]]) { hasUrl = true; break; } } var data = {}; for (var j = 0; j < KEYS.length; j++) { var k = KEYS[j]; data[k] = stored[k] || ''; } var rescued = false; if (!data.gclid) { var g = fromGoogleCookies(); if (g.gclid) { data.gclid = g.gclid; rescued = true; } } if (hasUrl) { for (var m = 0; m < KEYS.length; m++) { var k2 = KEYS[m]; if (url[k2]) data[k2] = url[k2]; } if (!data.session_start_usec) data.session_start_usec = String(Date.now() * 1000); if (!data.landing_page_url) data.landing_page_url = pageUrl(); writeCookie(data); return data; } if (!data.fbp && ck.fbp) data.fbp = ck.fbp; if (!data.fbc && ck.fbc) data.fbc = ck.fbc; if (!stored.session_start_usec) { data.session_start_usec = String(Date.now() * 1000); data.landing_page_url = pageUrl(); writeCookie(data); } else if (rescued) { writeCookie(data); } return data; }
+var current = capture();
+window.trackerData = function(){ try { var d = JSON.parse(JSON.stringify(current || {})); try { d.user_agent = (typeof navigator !== 'undefined' && navigator.userAgent) || ''; } catch (e2) {} return d; } catch (e) { return {}; } };
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', capture); } })();
+</script>
+
+<!-- ===== widget WhatsApp (canonico external/doctors/_shared/components/widget-whatsapp, tema Marcia) ===== -->
+<dialog id="wa-modal" aria-label="Falar pelo WhatsApp">
+  <div class="widget">
+    <button type="button" class="wa-close" data-wa-close aria-label="Fechar">&#10006;</button>
+    <!-- tela 1: captura -->
+    <div class="screen active" id="wa-s1">
+      <div class="whead">
+        <span class="avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v3a2 2 0 0 0 2 2h1v-5H6a2 2 0 0 0-2 2z"/><path d="M20 13v3a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 2z"/><path d="M17 18a3 3 0 0 1-3 2.5h-2"/></svg>
+          <span class="on"></span>
+        </span>
+        <div class="who">
+          <span class="nm">Márcia Campello</span>
+          <span class="cred">Psicóloga · CRP 07/09259</span>
+          <span class="cred">Psicoterapia de orientação psicanalítica</span>
+        </div>
+      </div>
+      <div class="online"><span class="dot"></span>Atendimento online para todo o Brasil</div>
+      <div class="wbody">
+        <div class="lead-line">Vamos conversar pelo WhatsApp</div>
+        <label class="field">
+          <span class="lbl">Seu WhatsApp</span>
+          <input id="wa-phone" type="tel" inputmode="numeric" placeholder="(00) 0 0000-0000" autocomplete="tel">
+        </label>
+        <button class="btn" id="wa-go" type="button">
+          <svg class="wa-ic" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.8-.9-2-1s-.5-.15-.7.15-.8 1-1 1.2-.35.2-.65.05a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.65-2.05c-.15-.3 0-.45.15-.6l.45-.5c.15-.2.2-.3.3-.5s0-.4 0-.55-.7-1.65-.95-2.25-.5-.5-.7-.5h-.6c-.2 0-.55.05-.85.35a3.6 3.6 0 0 0-1.1 2.65 6.3 6.3 0 0 0 1.3 3.3 14.3 14.3 0 0 0 5.5 4.85c.75.3 1.35.5 1.8.65.75.25 1.45.2 2 .1.6-.1 1.8-.75 2.05-1.45s.25-1.35.2-1.45-.25-.2-.55-.35zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2z"/></svg>
+          Conversar no WhatsApp
+        </button>
+      </div>
+    </div>
+    <!-- tela 2: aviso de "número desconhecido" -->
+    <div class="screen" id="wa-s2">
+      <div class="warn-body">
+        <div class="notice">
+          <div class="notice-head">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+            Aviso de segurança
+          </div>
+          <p>Ao abrir o WhatsApp, pode aparecer um aviso de <b>"número desconhecido"</b>.</p>
+          <p><b>Isso é normal.</b> O número <b class="num" data-wa-num></b>, da <b>Márcia Campello</b>, é oficial.</p>
+          <p>É só clicar em <b>Continuar</b> para falar com a gente.</p>
+        </div>
+        <button class="btn" id="wa-last-step" type="button">
+          <svg class="wa-ic" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.8-.9-2-1s-.5-.15-.7.15-.8 1-1 1.2-.35.2-.65.05a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.65-2.05c-.15-.3 0-.45.15-.6l.45-.5c.15-.2.2-.3.3-.5s0-.4 0-.55-.7-1.65-.95-2.25-.5-.5-.7-.5h-.6c-.2 0-.55.05-.85.35a3.6 3.6 0 0 0-1.1 2.65 6.3 6.3 0 0 0 1.3 3.3 14.3 14.3 0 0 0 5.5 4.85c.75.3 1.35.5 1.8.65.75.25 1.45.2 2 .1.6-.1 1.8-.75 2.05-1.45s.25-1.35.2-1.45-.25-.2-.55-.35z"/></svg>
+          Continuar para o WhatsApp
+        </button>
+        <p class="num-reinforce">Você vai falar com <b data-wa-num></b></p>
+        <button class="back" id="wa-back" type="button">voltar</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var WEBHOOK_URL = 'https://n8n.srv1732310.hstgr.cloud/webhook/widget-lead?t=marcia';
+  // UNICO lugar do numero do WhatsApp (digitos com DDI). Trocou o numero? Troque so esta linha: o link e o numero exibido no aviso saem daqui.
+  var WA_PHONE = '5551999524202';
+  var WA = 'https://api.whatsapp.com/send?phone=' + WA_PHONE + '&text=' + encodeURIComponent('Oi, vim pelo site da Márcia Campello e gostaria de conversar sobre começar a terapia.');
+  (function(){ var d = WA_PHONE.replace(/\D/g, ''); var f = '(' + d.slice(2,4) + ') ' + d.slice(4,5) + ' ' + d.slice(5,9) + '-' + d.slice(9); document.querySelectorAll('[data-wa-num]').forEach(function(n){ n.textContent = f; }); })();
+  var modal = document.getElementById('wa-modal'), s1 = document.getElementById('wa-s1'), s2 = document.getElementById('wa-s2');
+  function show(el){ s1.classList.remove('active'); s2.classList.remove('active'); el.classList.add('active'); }
+  function openModal(){ show(s1); if(modal.showModal){ if(!modal.open) modal.showModal(); } else { modal.setAttribute('open',''); } setTimeout(function(){ var p=document.getElementById('wa-phone'); if(p) p.focus(); }, 60); }
+  function closeModal(){ if(modal.close) modal.close(); else modal.removeAttribute('open'); }
+  document.querySelectorAll('[data-wa]').forEach(function(b){ b.addEventListener('click', openModal); });
+  modal.querySelectorAll('[data-wa-close]').forEach(function(b){ b.addEventListener('click', closeModal); });
+  modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
+  // validação WhatsApp BR: DDD + 8 ou 9 dígitos (tolera DDI 55). '' = inválido.
+  function waValidPhone(raw){ var d=(raw||'').replace(/\D/g,''); if((d.length===12||d.length===13)&&d.slice(0,2)==='55') d=d.slice(2); return (d.length===10||d.length===11)&&d.charAt(0)!=='0' ? d : ''; }
+  // Normalizacao E.164 do telefone (mesma regra do servidor, conversa.py). Recebe entrada JA VALIDADA de waValidPhone.
+  function telefoneE164(t) { var d = String(t || '').replace(/\D/g, ''); if ((d.length === 10 || d.length === 11) && d.slice(0, 2) !== '55') { d = '55' + d; } if (d.length === 12 && d.slice(0, 2) === '55') { d = d.slice(0, 4) + '9' + d.slice(4); } return d; }
+  // Normalizacao de e-mail (opcional, pra sites que coletam). Retorna '' se invalido.
+  function emailNorm(raw){ var e=(raw||'').trim().toLowerCase(); return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) ? e : ''; }
+  // Captura click id: tracker primeiro (cookie _gcl_aw), depois URL. Retorna sempre as tres chaves, com string vazia quando nao ha valor.
+  function clickIds(){ var q=new URLSearchParams(location.search); var t={}; try{ if(window.trackerData) t=window.trackerData()||{}; }catch(e){} return { gclid: t.gclid || q.get('gclid') || '', gbraid: t.gbraid || q.get('gbraid') || '', wbraid: t.wbraid || q.get('wbraid') || '' }; }
+  function waErr(input,on){ input.classList.toggle('wa-err',on); var m=input.parentNode.querySelector('.wa-err-msg'); if(on&&!m){ m=document.createElement('span'); m.className='wa-err-msg'; m.textContent='Digite seu WhatsApp com DDD (ex.: 31 90000-0000)'; input.parentNode.appendChild(m); } else if(m){ m.style.display=on?'block':'none'; } if(on) input.focus(); }
+  (function(){ var _p=document.getElementById('wa-phone'); if(_p) _p.addEventListener('input',function(){ if(this.classList.contains('wa-err')) waErr(this,false); }); })();
+  document.getElementById('wa-go').addEventListener('click', function(){
+    var input=document.getElementById('wa-phone'), phone=waValidPhone(input.value);
+    if(!phone){ waErr(input,true); return; }
+    phone = telefoneE164(phone);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({event:'lead_whatsapp', user_data:{phone_number:'+' + phone}});
+    if(WEBHOOK_URL){ var sep = WEBHOOK_URL.indexOf('?')<0?'?':'&'; var ids=clickIds(); var qs='phone='+encodeURIComponent(phone)+'&gclid='+encodeURIComponent(ids.gclid)+'&gbraid='+encodeURIComponent(ids.gbraid)+'&wbraid='+encodeURIComponent(ids.wbraid); try{ fetch(WEBHOOK_URL+sep+qs,{method:'POST',keepalive:true}); }catch(e){} }
+    show(s2);
+  });
+  document.getElementById('wa-back').addEventListener('click', function(){ show(s1); });
+  document.getElementById('wa-last-step').addEventListener('click', function(){
+    window.open(WA, '_blank');
+  });
+})();
+</script>
+
+<script>
+/* .reveal: o script so esconde depois de confirmar que roda e que ha IntersectionObserver */
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.documentElement.classList.remove('js'); return;
+  }
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>
