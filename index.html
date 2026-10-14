@@ -148,9 +148,6 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 /* ---------- porque: titulo de um lado, voz e credenciais do outro, credencial em regua ---------- */
 .porque{padding:var(--marcia-e-5) 0 var(--marcia-e-6)}
 .porque .wrap{display:grid;gap:var(--marcia-e-4)}
-.porque .cab{grid-area:cab}
-.porque .texto{grid-area:texto}
-.porque .creds{grid-area:creds}
 .porque .texto p{margin:0 0 var(--marcia-e-3);max-width:34em;color:var(--marcia-ink-2)}
 .porque .texto p:first-child{font-size:var(--marcia-t-lede);line-height:1.6;color:var(--marcia-ink)}
 .creds{list-style:none;margin:0;padding:0;border-top:1px solid var(--marcia-hair-forte);max-width:34em}
@@ -233,6 +230,9 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   .local .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:var(--marcia-e-6);align-items:start}
   .local .linha-l{grid-template-columns:minmax(0,.4fr) minmax(0,1fr);gap:var(--marcia-e-4);align-items:baseline;padding:var(--marcia-e-3) 0}
   .rodape .wrap{grid-template-columns:auto minmax(0,1fr);gap:var(--marcia-e-6);align-items:start}
+  .porque .cab{grid-area:cab}
+  .porque .texto{grid-area:texto}
+  .porque .creds{grid-area:creds}
   .porque .wrap{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);grid-template-areas:"cab texto" "creds texto";grid-template-rows:auto 1fr;column-gap:var(--marcia-e-6);row-gap:var(--marcia-e-5);align-items:start}
   .fato{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:var(--marcia-e-5);align-items:baseline}
   .fato{padding:var(--marcia-e-3) 0}
