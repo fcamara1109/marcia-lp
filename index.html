@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Márcia Campello, Psicóloga | Orientação psicanalítica</title>
 <!--
-Função: site da Márcia Campello (psicóloga, CRP 07/09259), página única na espinha do blueprint de LP de médico. Rodadas 1 a 5: espinha completa (header, hero, autoridade, servicos, porque, prova, beneficios, faq, local, cta-final e rodape; a prova saiu na rodada 4 e voltou na 5 com as avaliações públicas do Google e da Doctoralia, a pedido do Felipe, 20/10/2026), mais o widget de WhatsApp. O texto mora em copy.md (um bloco ## chave por pedaço) e o gabarito verifica.py cobra que o que está aqui bate com ele.
+Função: site da Márcia Campello (psicóloga, CRP 07/09259), página única na espinha do blueprint de LP de médico. Rodadas 1 a 6: espinha completa (header, hero, autoridade, servicos, porque, formas, prova, beneficios, faq, local, cta-final e rodape; a prova saiu na rodada 4 e voltou na 5 com as avaliações públicas do Google e da Doctoralia, a pedido do Felipe, 20/10/2026), mais o widget de WhatsApp. O texto mora em copy.md (um bloco ## chave por pedaço) e o gabarito verifica.py cobra que o que está aqui bate com ele.
 Data: 2026-10-13. Marca: external/doctors/marcia/wiki/concepts/marca-marcia (tokens.css copiado para assets/tokens.css, copia de deploy, não se edita aqui).
 Preview com noindex. O noindex sai por último, junto com o domínio.
 -->
@@ -159,6 +159,17 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 .creds li{padding:var(--marcia-e-2) 0;border-bottom:1px solid var(--marcia-hair);color:var(--marcia-ink);font-weight:var(--marcia-peso-legenda);line-height:1.5}
 .creds li:first-child{font-weight:var(--marcia-peso-botao)}
 
+/* ---------- formas: tres formas de atuacao, o acompanhamento continuo em destaque (painel claro, titulo em fonte de titulo) e as duas portas de entrada em regua. Sem icone, sem grade de cartoes iguais ---------- */
+.formas{border-top:1px solid var(--marcia-hair);padding:var(--marcia-e-5) 0 var(--marcia-e-6)}
+.formas .cab{max-width:38em}
+.formas-lista{list-style:none;margin:var(--marcia-e-5) 0 0;padding:0;display:grid;gap:var(--marcia-e-4)}
+.forma p{margin:0;max-width:34em;color:var(--marcia-ink-2)}
+.forma:not(.principal){padding-top:var(--marcia-e-3);border-top:1px solid var(--marcia-hair-forte)}
+.principal{padding:var(--marcia-e-4);background:var(--marcia-surface);border:1px solid var(--marcia-hair-forte);border-radius:var(--marcia-r-campo);box-shadow:var(--marcia-sombra-foto)}
+.principal h3{margin:var(--marcia-e-2) 0 var(--marcia-e-2);font-family:var(--marcia-display);font-weight:400;font-size:clamp(26px,3vw,34px);letter-spacing:.03em;line-height:1.25}
+.principal p{color:var(--marcia-ink)}
+.principal .filete-g{margin:0}
+
 /* ---------- prova: o que dizem no Google e na Doctoralia. Texto literal, nome e inicial, sem data. Sem cartao: regua em cima de cada fala.
    Celular: faixa que rola para o lado com a proxima fala aparecendo e uma dica escrita. Desktop: tres colunas, tudo a vista ---------- */
 .prova{background:var(--marcia-paper-2);padding:var(--marcia-e-6) 0 var(--marcia-e-5)}
@@ -243,6 +254,8 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   .beneficios ul{grid-template-columns:repeat(3,minmax(0,1fr))}
   .beneficios li{padding:var(--marcia-e-3) var(--marcia-e-4);border-top:0;border-left:1px solid var(--marcia-hair)}
   .beneficios li:first-child{border-left:0;padding-left:0}
+  .formas-lista{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-rows:auto auto;column-gap:var(--marcia-e-6);row-gap:var(--marcia-e-4);align-items:start}
+  .principal{grid-row:1 / span 2;padding:var(--marcia-e-5)}
   .resumo{display:flex;flex-wrap:wrap;gap:0 var(--marcia-e-5)}
   .dica{display:none}
   .rolagem{margin:var(--marcia-e-3) 0 0;padding:0;overflow:visible}
@@ -463,6 +476,20 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
       <li>Formada em Psicologia pela PUCRS (1998)</li>
       <li>Consultório particular desde 1999</li>
       <li>Atendimento online desde 2019</li>
+    </ul>
+  </div>
+</section>
+
+<section class="formas" data-bloco="formas">
+  <div class="wrap">
+    <div class="cab">
+      <h2>Formas de atuação</h2>
+      <span class="filete-g" role="presentation"></span>
+    </div>
+    <ul class="formas-lista">
+      <li class="forma principal reveal" data-principal><span class="filete-g" role="presentation"></span><h3>Acompanhamento contínuo</h3><p>É o caminho principal e o coração do meu trabalho. A psicoterapia de orientação psicanalítica se faz ao longo do tempo, sessão após sessão, online, em encontros de 50 minutos. Um espaço seu para falar e ser ouvida.</p></li>
+      <li class="forma reveal"><h3>Sessão única</h3><p>Uma conversa só, online, de 50 minutos. Serve para quem quer conhecer como é a terapia comigo ou tem uma questão pontual. A conversa pode seguir depois, se você quiser.</p></li>
+      <li class="forma reveal"><h3>Terapia breve (12 sessões)</h3><p>Um percurso curto, com começo e fim combinados, em torno de um tema que você traz. São 12 sessões de 50 minutos, online. No fim, a gente conversa sobre o que vem depois.</p></li>
     </ul>
   </div>
 </section>
