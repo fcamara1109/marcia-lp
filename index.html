@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Márcia Campello, Psicóloga | Orientação psicanalítica</title>
 <!--
-Função: site da Márcia Campello (psicóloga, CRP 07/09259), página única na espinha do blueprint de LP de médico. Rodadas 1 a 4: espinha completa (header, hero, autoridade, servicos, porque, beneficios, faq, local, cta-final e rodape; o bloco prova saiu na rodada 4, a barra de autoridade é a forma da prova), mais o widget de WhatsApp. O texto mora em copy.md (um bloco ## chave por pedaço) e o gabarito verifica.py cobra que o que está aqui bate com ele.
+Função: site da Márcia Campello (psicóloga, CRP 07/09259), página única na espinha do blueprint de LP de médico. Rodadas 1 a 5: espinha completa (header, hero, autoridade, servicos, porque, prova, beneficios, faq, local, cta-final e rodape; a prova saiu na rodada 4 e voltou na 5 com as avaliações públicas do Google e da Doctoralia, a pedido do Felipe, 20/10/2026), mais o widget de WhatsApp. O texto mora em copy.md (um bloco ## chave por pedaço) e o gabarito verifica.py cobra que o que está aqui bate com ele.
 Data: 2026-10-13. Marca: external/doctors/marcia/wiki/concepts/marca-marcia (tokens.css copiado para assets/tokens.css, copia de deploy, não se edita aqui).
 Preview com noindex. O noindex sai por último, junto com o domínio.
 -->
@@ -143,10 +143,10 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 .autoridade li{padding:var(--marcia-e-3) 0;border-top:1px solid var(--marcia-hair);font-family:var(--marcia-display);font-size:clamp(20px,2vw,24px);line-height:1.3;letter-spacing:.02em;color:var(--marcia-ink);text-wrap:balance}
 .autoridade li:first-child{border-top:0}
 
-/* ---------- beneficios: faixa em papel cinza entre porque e faq, 3 respostas a "consigo ser atendida?". Corpo de texto, para nao repetir a barra de autoridade ---------- */
-.beneficios{background:var(--marcia-paper-2);padding:var(--marcia-e-2) 0}
+/* ---------- beneficios: faixa em papel com regua, depois da prova e antes do faq, 3 respostas a "consigo ser atendida?". Corpo de texto, longe da barra de autoridade ---------- */
+.beneficios{border-top:1px solid var(--marcia-hair);border-bottom:1px solid var(--marcia-hair);padding:var(--marcia-e-2) 0}
 .beneficios ul{list-style:none;margin:0;padding:0;display:grid}
-.beneficios li{padding:var(--marcia-e-2) 0;border-top:1px solid var(--marcia-hair-forte);color:var(--marcia-ink-2);line-height:1.5}
+.beneficios li{padding:var(--marcia-e-2) 0;border-top:1px solid var(--marcia-hair);color:var(--marcia-ink-2);line-height:1.5}
 .beneficios li:first-child{border-top:0}
 .beneficios b{font-weight:var(--marcia-peso-botao);color:var(--marcia-ink)}
 
@@ -158,6 +158,27 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 .creds{list-style:none;margin:0;padding:0;border-top:1px solid var(--marcia-hair-forte);max-width:34em}
 .creds li{padding:var(--marcia-e-2) 0;border-bottom:1px solid var(--marcia-hair);color:var(--marcia-ink);font-weight:var(--marcia-peso-legenda);line-height:1.5}
 .creds li:first-child{font-weight:var(--marcia-peso-botao)}
+
+/* ---------- prova: o que dizem no Google e na Doctoralia. Texto literal, nome e inicial, sem data. Sem cartao: regua em cima de cada fala.
+   Celular: faixa que rola para o lado com a proxima fala aparecendo e uma dica escrita. Desktop: tres colunas, tudo a vista ---------- */
+.prova{background:var(--marcia-paper-2);padding:var(--marcia-e-6) 0 var(--marcia-e-5)}
+.prova .cab{max-width:38em}
+.resumo{list-style:none;margin:var(--marcia-e-4) 0 0;padding:0;display:grid;gap:var(--marcia-e-1)}
+.resumo a{display:inline-flex;align-items:center;flex-wrap:wrap;gap:4px 14px;min-height:var(--marcia-toque);color:var(--marcia-ink);font-weight:var(--marcia-peso-botao);text-decoration:underline;text-decoration-color:var(--marcia-hair-forte);text-decoration-thickness:1px;text-underline-offset:.25em}
+.resumo a:hover{text-decoration-color:var(--marcia-ink)}
+.estrelas{width:80px;height:16px;flex:none;color:var(--marcia-graphite)}
+.dica{display:flex;align-items:center;gap:8px;margin:var(--marcia-e-3) 0 var(--marcia-e-1);color:var(--marcia-ink-2)}
+.dica svg{width:16px;height:16px;flex:none;color:var(--marcia-graphite)}
+.rolagem{margin:0 calc(var(--wrap-pad) * -1);padding:0 var(--wrap-pad) var(--marcia-e-2);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--wrap-pad);scrollbar-width:thin;scrollbar-color:var(--marcia-hair-forte) transparent}
+.avals{list-style:none;margin:0;padding:0;display:flex;gap:var(--marcia-e-4)}
+.aval{flex:0 0 min(82%,340px);scroll-snap-align:start;display:flex;flex-direction:column;justify-content:space-between;gap:var(--marcia-e-2);padding-top:var(--marcia-e-3);border-top:1px solid var(--marcia-hair-forte)}
+.aval blockquote{margin:0}
+.aval p{margin:0;max-width:none;color:var(--marcia-ink)}
+.quem{display:flex;align-items:center;justify-content:space-between;gap:var(--marcia-e-2)}
+.nome{font-weight:var(--marcia-peso-botao);color:var(--marcia-ink)}
+.quem a{display:inline-flex;align-items:center;gap:8px;min-height:var(--marcia-toque);padding:0 4px;color:var(--marcia-ink-2);text-decoration:underline;text-decoration-color:var(--marcia-hair-forte);text-underline-offset:.25em}
+.quem a:hover{color:var(--marcia-ink);text-decoration-color:var(--marcia-ink)}
+.quem a svg{width:16px;height:16px;flex:none;color:var(--marcia-graphite)}
 
 /* ---------- faq: details/summary, funciona sem JavaScript. Linha de 44px ou mais ---------- */
 .faq{padding:var(--marcia-e-6) 0 var(--marcia-e-5)}
@@ -220,8 +241,13 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   .autoridade li::before{content:"";display:block;width:28px;height:2px;margin-bottom:var(--marcia-e-2);background:var(--marcia-graphite)}
   .beneficios{padding:var(--marcia-e-1) 0}
   .beneficios ul{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .beneficios li{padding:var(--marcia-e-3) var(--marcia-e-4);border-top:0;border-left:1px solid var(--marcia-hair-forte)}
+  .beneficios li{padding:var(--marcia-e-3) var(--marcia-e-4);border-top:0;border-left:1px solid var(--marcia-hair)}
   .beneficios li:first-child{border-left:0;padding-left:0}
+  .resumo{display:flex;flex-wrap:wrap;gap:0 var(--marcia-e-5)}
+  .dica{display:none}
+  .rolagem{margin:var(--marcia-e-3) 0 0;padding:0;overflow:visible}
+  .avals{display:block;columns:3;column-gap:var(--marcia-e-5)}
+  .aval{break-inside:avoid;margin-bottom:var(--marcia-e-4)}
   .local .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:var(--marcia-e-6);align-items:start}
   .local .linha-l{grid-template-columns:minmax(0,.4fr) minmax(0,1fr);gap:var(--marcia-e-4);align-items:baseline;padding:var(--marcia-e-3) 0}
   .rodape .wrap{grid-template-columns:auto minmax(0,1fr);gap:var(--marcia-e-6);align-items:start}
@@ -438,6 +464,34 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
       <li>Consultório particular desde 1999</li>
       <li>Atendimento online desde 2019</li>
     </ul>
+  </div>
+</section>
+
+<section class="prova" data-bloco="prova">
+  <div class="wrap">
+    <div class="cab">
+      <h2>O que dizem no Google e na Doctoralia</h2>
+      <span class="filete-g" role="presentation"></span>
+    </div>
+    <ul class="resumo">
+      <li><a href="https://maps.google.com/?cid=2418777262544538072" target="_blank" rel="noopener"><svg class="estrelas" viewBox="0 0 100 20" role="img" aria-label="5 de 5 estrelas"><g fill="currentColor"><g transform="translate(0 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(20 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(40 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(60 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(80 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g></g></svg><span>5,0 no Google · 10 avaliações</span></a></li>
+      <li><a href="https://www.doctoralia.com.br/marcia-campello/psicologo/garopaba" target="_blank" rel="noopener"><svg class="estrelas" viewBox="0 0 100 20" role="img" aria-label="5 de 5 estrelas"><g fill="currentColor"><g transform="translate(0 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(20 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(40 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(60 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(80 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g></g></svg><span>5,0 na Doctoralia · 12 opiniões</span></a></li>
+    </ul>
+    <p class="dica leg">Deslize para o lado para ler as demais <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+    <div class="rolagem" tabindex="0" role="region" aria-label="Avaliações, role para o lado">
+      <ul class="avals">
+        <li class="aval"><blockquote><p>Marcia me ajudou superar um dos momentos mais turbulentos da minha minha vida. Recomendo 100%, ótima profissional, muito acolhedora, sempre me senti ouvida e segura. Obrigada por tudo Márcia!</p></blockquote><div class="quem"><span class="nome">Maya E.</span><a href="https://maps.google.com/?cid=2418777262544538072" target="_blank" rel="noopener" aria-label="Ver a avaliação de Maya E. no Google (abre em nova aba)">Google<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></li>
+        <li class="aval"><blockquote><p>Adoro nosso trabalho juntas! Ai de mim se não tivesse este apoio pra encarar as minhas caraminholas</p></blockquote><div class="quem"><span class="nome">Aline</span><a href="https://www.doctoralia.com.br/marcia-campello/psicologo/garopaba" target="_blank" rel="noopener" aria-label="Ver a avaliação de Aline no Doctoralia (abre em nova aba)">Doctoralia<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></li>
+        <li class="aval"><blockquote><p>Profissional e acolhedora na medida certa, entre outras qualidades importantes para uma Psicóloga. Super indico a Marcia.</p></blockquote><div class="quem"><span class="nome">Adri M.</span><a href="https://maps.google.com/?cid=2418777262544538072" target="_blank" rel="noopener" aria-label="Ver a avaliação de Adri M. no Google (abre em nova aba)">Google<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></li>
+        <li class="aval"><blockquote><p>A marcia é uma excelente psicóloga e vem me ajudando há mais de 2 anos com muitas questões e ela é pontual demais</p></blockquote><div class="quem"><span class="nome">Rodrigo</span><a href="https://www.doctoralia.com.br/marcia-campello/psicologo/garopaba" target="_blank" rel="noopener" aria-label="Ver a avaliação de Rodrigo no Doctoralia (abre em nova aba)">Doctoralia<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></li>
+        <li class="aval"><blockquote><p>Márcia é uma profissional experiente e competente. Tem me ajudado no meu processo de auto conhecimento de forma responsável e ativa. Recomendo.</p></blockquote><div class="quem"><span class="nome">Elaine V.</span><a href="https://maps.google.com/?cid=2418777262544538072" target="_blank" rel="noopener" aria-label="Ver a avaliação de Elaine V. no Google (abre em nova aba)">Google<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></li>
+        <li class="aval"><blockquote><p>Comunicação clara e objetiva. Pontualidade com os horários agendados</p></blockquote><div class="quem"><span class="nome">Mirian M.</span><a href="https://www.doctoralia.com.br/marcia-campello/psicologo/garopaba" target="_blank" rel="noopener" aria-label="Ver a avaliação de Mirian M. no Doctoralia (abre em nova aba)">Doctoralia<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></li>
+        <li class="aval"><blockquote><p>Ótima profissional, tem me ajudado muito a entender algumas questões pessoais e lidar com certos problemas</p></blockquote><div class="quem"><span class="nome">Helder L.</span><a href="https://www.doctoralia.com.br/marcia-campello/psicologo/garopaba" target="_blank" rel="noopener" aria-label="Ver a avaliação de Helder L. no Doctoralia (abre em nova aba)">Doctoralia<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></li>
+        <li class="aval"><blockquote><p>Assertiva e acolhedora. Excelente terapeuta, me ajudou a conduzir processos profundos.</p></blockquote><div class="quem"><span class="nome">Debora B.</span><a href="https://www.doctoralia.com.br/marcia-campello/psicologo/garopaba" target="_blank" rel="noopener" aria-label="Ver a avaliação de Debora B. no Doctoralia (abre em nova aba)">Doctoralia<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></li>
+        <li class="aval"><blockquote><p>Márcia é uma ótima psicóloga, tem um olhar empático e cuidadoso com o outro. Indico muito!</p></blockquote><div class="quem"><span class="nome">Carolina</span><a href="https://www.doctoralia.com.br/marcia-campello/psicologo/garopaba" target="_blank" rel="noopener" aria-label="Ver a avaliação de Carolina no Doctoralia (abre em nova aba)">Doctoralia<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></li>
+        <li class="aval"><blockquote><p>A Márcia é extremamente atenciosa e demonstra ser uma profissional aplicada, empática e muito acolhedora. É pontual e comprometida. Estou muito satisfeita!</p></blockquote><div class="quem"><span class="nome">Bruna</span><a href="https://www.doctoralia.com.br/marcia-campello/psicologo/garopaba" target="_blank" rel="noopener" aria-label="Ver a avaliação de Bruna no Doctoralia (abre em nova aba)">Doctoralia<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></li>
+      </ul>
+    </div>
   </div>
 </section>
 
