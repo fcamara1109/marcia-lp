@@ -39,7 +39,17 @@
   /* ---------- marca-texto e detalhe ---------- */
   --marcia-highlight: #EBCDBA;   /* marca-texto atrás de UMA palavra. Tinta sobre ele: 10.74:1 */
   --marcia-line:      var(--marcia-hair);   /* linha fina dos grafismos sobre o claro */
-  --marcia-blue:      #3F5666;   /* azul do sofá, só detalhe: 6.99:1 sobre o off-white. Nunca fundo, nunca botão */
+  --marcia-blue:      #3F5666;   /* azul do sofá: detalhe e fundo de faixa em até 3 áreas do site (Felipe, 24/10/2026): 6.99:1 sobre o off-white. Nunca botão */
+
+  /* ---------- faixas de cor do site (Felipe, 24 e 25/10/2026) ----------
+     Ritmo: off-white, cinza, argila e azul se alternam, vizinhos nunca iguais. Azul do sofá é fundo de faixa em até 3 áreas.
+     Argila clara é superfície de faixa (cartões brancos por cima). Terracota e grafite continuam fora do fundo. */
+  --marcia-clay:       #F3E6DC;   /* argila clara, fundo de faixa: 7.3:1 com a tinta 2, 6.0:1 com a terracota funda */
+  --marcia-clay-deep:  #DDBBA8;   /* argila firme, numeral dos cartões: só ornamento, nunca texto lido */
+  --marcia-on-blue:    #F6F4F0;   /* texto sobre o azul do sofá, 6.99:1 */
+  --marcia-on-blue-2:  #D9D6D1;   /* texto secundário sobre o azul, 5.3:1 */
+  --marcia-blue-line:  rgba(246,244,240,.3);   /* régua sobre o azul, só ornamento */
+  --marcia-star:       #F2B134;   /* estrela do resumo de avaliações (Felipe, 25/10/2026, amarela como no site da Rose). Só ornamento: a nota escrita ao lado carrega a informação */
 
   /* ---------- grafite: detalhe raro no site, fundo só no Instagram ----------
      Hierarquia: off-white e cinza dominam, a terracota é o toque, o grafite é o detalhe

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Márcia Campello, Psicóloga | Orientação psicanalítica</title>
 <!--
-Função: site da Márcia Campello (psicóloga, CRP 07/09259), página única na espinha do blueprint de LP de médico. Rodadas 1 a 6: espinha completa (header, hero, autoridade, servicos, porque, formas, prova, beneficios, faq, local, cta-final e rodape; a prova saiu na rodada 4 e voltou na 5 com as avaliações públicas do Google e da Doctoralia, a pedido do Felipe, 20/10/2026), mais o widget de WhatsApp. O texto mora em copy.md (um bloco ## chave por pedaço) e o gabarito verifica.py cobra que o que está aqui bate com ele.
-Data: 2026-10-13. Marca: external/doctors/marcia/wiki/concepts/marca-marcia (tokens.css copiado para assets/tokens.css, copia de deploy, não se edita aqui).
+Função: site da Márcia Campello (psicóloga, CRP 07/09259), página única na espinha do blueprint de LP de médico. Rodadas 1 a 7 (a 7 promoveu a proposta de cores a pagina principal): espinha (header, hero, autoridade, servicos, porque, formas, prova, local, faq, cta-final e rodape; na rodada 7 a faixa de beneficios saiu e o local subiu para antes do faq, a pedido do Felipe, 25/10/2026; a prova saiu na rodada 4 e voltou na 5 com as avaliações públicas do Google e da Doctoralia, a pedido do Felipe, 20/10/2026), mais o widget de WhatsApp. O texto mora em copy.md (um bloco ## chave por pedaço) e o gabarito verifica.py cobra que o que está aqui bate com ele.
+Data: 2026-10-25. Icones: Lucide v0.475.0 (licenca ISC), embutidos pelo monta.py. Marca: external/doctors/marcia/wiki/concepts/marca-marcia (tokens.css copiado para assets/tokens.css, copia de deploy, não se edita aqui).
 Preview com noindex. O noindex sai por último, junto com o domínio.
 -->
 <meta name="description" content="Psicóloga Márcia Campello (CRP 07/09259). Psicoterapia de orientação psicanalítica para mulheres que querem entender o amor. Online, Brasil e exterior.">
@@ -19,14 +19,14 @@ Preview com noindex. O noindex sai por último, junto com o domínio.
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Márcia Campello">
-<meta property="og:title" content="Entender o que você repete no amor | Márcia Campello, Psicóloga">
+<meta property="og:title" content="Entenda o que você repete no amor | Márcia Campello, Psicóloga">
 <meta property="og:description" content="Psicoterapia de orientação psicanalítica, com consultório desde 1999. Márcia Campello, Psicóloga, CRP 07/09259. Online, Brasil e exterior.">
 <meta property="og:url" content="https://fcamara1109.github.io/marcia-lp/">
 <meta property="og:image" content="https://fcamara1109.github.io/marcia-lp/assets/og-marcia-1200x630.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Entender o que você repete no amor | Márcia Campello, Psicóloga">
+<meta name="twitter:title" content="Entenda o que você repete no amor | Márcia Campello, Psicóloga">
 <meta name="twitter:description" content="Psicoterapia de orientação psicanalítica, com consultório desde 1999. Márcia Campello, Psicóloga, CRP 07/09259. Online, Brasil e exterior.">
 <meta name="twitter:image" content="https://fcamara1109.github.io/marcia-lp/assets/og-marcia-1200x630.png">
 
@@ -107,20 +107,21 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 /* ---------- hero ---------- */
 .hero{position:relative;overflow:hidden;padding:var(--marcia-e-4) 0 var(--marcia-e-6)}
 .hero .glow{position:absolute;inset:0 0 auto 0;height:75%;background:radial-gradient(90% 90% at 50% 0%,var(--marcia-surface) 0%,transparent 70%);pointer-events:none}
-.aneis{position:absolute;pointer-events:none}
+.aneis{position:absolute;pointer-events:none;opacity:.55}
 .aneis circle{fill:none;stroke:var(--marcia-line);stroke-width:1}
 .hero .aneis{right:-150px;top:-40px;width:340px;height:340px}
 .hero .wrap{position:relative;display:grid;gap:var(--marcia-e-3)}
 .hero h1{max-width:20ch}
 .hero .lede{margin:var(--marcia-e-3) 0 0;max-width:30em}
 .hero .cred{margin:var(--marcia-e-3) 0 0;padding-top:var(--marcia-e-2);border-top:1px solid var(--marcia-hair);max-width:34em;color:var(--marcia-ink-2);font-size:var(--marcia-t-corpo);font-weight:var(--marcia-peso-legenda);line-height:1.55}
-.hero .acoes{display:flex;flex-wrap:wrap;align-items:center;gap:6px 28px;margin-top:var(--marcia-e-4)}
-/* celular: o rosto vem antes do H1 (order:-1), pequeno, alinhado a esquerda com o texto. Desktop volta ao lado (order:0) */
-.moldura{position:relative;order:-1;width:120px;height:153px;justify-self:start}
-.moldura .contorno{position:absolute;left:0;top:0;width:120px;height:153px;overflow:visible;pointer-events:none;z-index:0}
+.hero .oferta{margin:var(--marcia-e-4) 0 0;color:var(--marcia-ink);font-size:var(--marcia-t-corpo);font-weight:var(--marcia-peso-botao);line-height:1.4}
+.hero .acoes{display:flex;flex-wrap:wrap;align-items:center;gap:6px 28px;margin-top:var(--marcia-e-2)}
+/* celular: o rosto vem antes do H1 (order:-1), de 150px de largura (rodada 7; era 120px), alinhado a esquerda com o texto. Desktop volta ao lado (order:0) */
+.moldura{position:relative;order:-1;width:150px;height:191px;justify-self:start}
+.moldura .contorno{position:absolute;left:0;top:0;width:150px;height:191px;overflow:visible;pointer-events:none;z-index:0}
 .moldura .contorno path{fill:none;stroke:var(--marcia-line);stroke-width:1;stroke-linecap:round}
 .moldura .contorno.d{display:none}
-.retrato{position:relative;z-index:1;width:120px;height:153px;border-radius:var(--marcia-r-foto);overflow:hidden;box-shadow:var(--marcia-sombra-foto);background:var(--marcia-paper-2)}
+.retrato{position:relative;z-index:1;width:150px;height:191px;border-radius:var(--marcia-r-foto);overflow:hidden;box-shadow:var(--marcia-sombra-foto);background:var(--marcia-paper-2)}
 .retrato img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
 
 /* ---------- servicos ---------- */
@@ -136,28 +137,25 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 .reveal{transition:opacity .7s var(--marcia-ease),transform .7s var(--marcia-ease)}
 .js .reveal:not(.in){opacity:0;transform:translateY(10px)}
 
-/* ---------- autoridade: 3 fatos dela, logo abaixo do hero. Fonte de titulo (Tenor Sans) e filete de grafite, papel com regua.
+/* ---------- autoridade: 3 fatos dela, logo abaixo do hero, cada um com seu icone (Lucide, traco fino). Fonte de titulo (Tenor Sans), papel com regua.
    Sem numero grande: "+25 anos" tem o mesmo tamanho da frase, para nao virar o molde de metrica (numero grande, rotulo pequeno) ---------- */
 .autoridade{border-top:1px solid var(--marcia-hair);border-bottom:1px solid var(--marcia-hair);padding:var(--marcia-e-1) 0}
 .autoridade ul{list-style:none;margin:0;padding:0;display:grid}
-.autoridade li{padding:var(--marcia-e-3) 0;border-top:1px solid var(--marcia-hair);font-family:var(--marcia-display);font-size:clamp(20px,2vw,24px);line-height:1.3;letter-spacing:.02em;color:var(--marcia-ink);text-wrap:balance}
+.autoridade li{padding:var(--marcia-e-3) 0;border-top:1px solid var(--marcia-hair);font-family:var(--marcia-display);font-size:clamp(20px,2vw,24px);line-height:1.3;letter-spacing:.02em;color:var(--marcia-ink);text-wrap:balance;display:flex;align-items:center;gap:var(--marcia-e-2)}
 .autoridade li:first-child{border-top:0}
-
-/* ---------- beneficios: faixa em papel com regua, depois da prova e antes do faq, 3 respostas a "consigo ser atendida?". Corpo de texto, longe da barra de autoridade ---------- */
-.beneficios{border-top:1px solid var(--marcia-hair);border-bottom:1px solid var(--marcia-hair);padding:var(--marcia-e-2) 0}
-.beneficios ul{list-style:none;margin:0;padding:0;display:grid}
-.beneficios li{padding:var(--marcia-e-2) 0;border-top:1px solid var(--marcia-hair);color:var(--marcia-ink-2);line-height:1.5}
-.beneficios li:first-child{border-top:0}
-.beneficios b{font-weight:var(--marcia-peso-botao);color:var(--marcia-ink)}
+.ico{width:28px;height:28px;flex:none}
 
 /* ---------- porque: titulo de um lado, voz e credenciais do outro, credencial em regua ---------- */
 .porque{padding:var(--marcia-e-5) 0 var(--marcia-e-6)}
 .porque .wrap{display:grid;gap:var(--marcia-e-4)}
 .porque .texto p{margin:0 0 var(--marcia-e-3);max-width:34em;color:var(--marcia-ink-2)}
-.porque .texto p:first-child{font-size:var(--marcia-t-lede);line-height:1.6;color:var(--marcia-ink)}
+.redes{margin-top:var(--marcia-e-3)}
+.ig{display:inline-flex;align-items:center;gap:10px;min-height:var(--marcia-toque);padding:0 22px 0 16px;border:1px solid var(--marcia-hair-forte);border-radius:var(--marcia-r-btn);color:var(--marcia-ink);font-weight:var(--marcia-peso-botao);line-height:1.3;text-decoration:none;transition:background var(--marcia-dur) var(--marcia-ease),color var(--marcia-dur) var(--marcia-ease)}
+.ig .ico{width:22px;height:22px;color:var(--marcia-graphite)}
+.ig:hover{background:var(--marcia-ink);color:var(--marcia-paper)}
+.ig:hover .ico{color:var(--marcia-paper)}
 .creds{list-style:none;margin:0;padding:0;border-top:1px solid var(--marcia-hair-forte);max-width:34em}
 .creds li{padding:var(--marcia-e-2) 0;border-bottom:1px solid var(--marcia-hair);color:var(--marcia-ink);font-weight:var(--marcia-peso-legenda);line-height:1.5}
-.creds li:first-child{font-weight:var(--marcia-peso-botao)}
 
 /* ---------- formas: tres formas de atuacao, o acompanhamento continuo em destaque (painel claro, titulo em fonte de titulo) e as duas portas de entrada em regua. Sem icone, sem grade de cartoes iguais ---------- */
 .formas{border-top:1px solid var(--marcia-hair);padding:var(--marcia-e-5) 0 var(--marcia-e-6)}
@@ -177,7 +175,8 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 .resumo{list-style:none;margin:var(--marcia-e-4) 0 0;padding:0;display:grid;gap:var(--marcia-e-1)}
 .resumo a{display:inline-flex;align-items:center;flex-wrap:wrap;gap:4px 14px;min-height:var(--marcia-toque);color:var(--marcia-ink);font-weight:var(--marcia-peso-botao);text-decoration:underline;text-decoration-color:var(--marcia-hair-forte);text-decoration-thickness:1px;text-underline-offset:.25em}
 .resumo a:hover{text-decoration-color:var(--marcia-ink)}
-.estrelas{width:80px;height:16px;flex:none;color:var(--marcia-graphite)}
+.estrelas{width:80px;height:16px;flex:none;color:var(--marcia-star)}
+.resumo .logo{width:24px;height:24px;flex:none}
 .dica{display:flex;align-items:center;gap:8px;margin:var(--marcia-e-3) 0 var(--marcia-e-1);color:var(--marcia-ink-2)}
 .dica svg{width:16px;height:16px;flex:none;color:var(--marcia-graphite)}
 .rolagem{margin:0 calc(var(--wrap-pad) * -1);padding:0 var(--wrap-pad) var(--marcia-e-2);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--wrap-pad);scrollbar-width:thin;scrollbar-color:var(--marcia-hair-forte) transparent}
@@ -207,7 +206,8 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 .local .wrap{display:grid;gap:var(--marcia-e-4)}
 .local .cab p{margin:var(--marcia-e-3) 0 0;max-width:34em;color:var(--marcia-ink-2)}
 .local dl{margin:0;border-bottom:1px solid var(--marcia-hair-forte)}
-.local .linha-l{display:grid;gap:4px;padding:var(--marcia-e-3) 0;border-top:1px solid var(--marcia-hair-forte)}
+.local .linha-l{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:var(--marcia-e-2);row-gap:4px;align-items:start;padding:var(--marcia-e-3) 0;border-top:1px solid var(--marcia-hair-forte)}
+.local .linha-l .ico{grid-row:1 / span 2;margin-top:2px}
 .local dt{font-size:var(--marcia-t-legenda);font-weight:var(--marcia-peso-botao);line-height:1.4;color:var(--marcia-ink-3)}
 .local dd{margin:0;font-size:var(--marcia-t-lede);line-height:1.5;color:var(--marcia-ink)}
 
@@ -227,6 +227,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 .rodape .esp{color:var(--marcia-ink-2)}
 .rodape .marca img{width:40px;height:40px}
 .rodape p{margin:0;max-width:52em}
+.ig-rodape{display:inline-flex;align-items:center;min-height:var(--marcia-toque)}
 
 /* ---------- float (desktop) e sticky (mobile) ---------- */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;justify-content:center;background:var(--marcia-paper);border-top:1px solid var(--marcia-hair);padding:10px 16px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -12px 24px -18px rgba(31,33,36,.35)}
@@ -247,13 +248,8 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   .retrato{width:260px;height:328px}
   .itens{grid-template-columns:repeat(2,minmax(0,1fr))}
   .autoridade ul{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .autoridade li{padding:var(--marcia-e-4) var(--marcia-e-4);border-top:0;border-left:1px solid var(--marcia-hair)}
+  .autoridade li{flex-direction:column;align-items:flex-start;padding:var(--marcia-e-4) var(--marcia-e-4);border-top:0;border-left:1px solid var(--marcia-hair)}
   .autoridade li:first-child{border-left:0;padding-left:0}
-  .autoridade li::before{content:"";display:block;width:28px;height:2px;margin-bottom:var(--marcia-e-2);background:var(--marcia-graphite)}
-  .beneficios{padding:var(--marcia-e-1) 0}
-  .beneficios ul{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .beneficios li{padding:var(--marcia-e-3) var(--marcia-e-4);border-top:0;border-left:1px solid var(--marcia-hair)}
-  .beneficios li:first-child{border-left:0;padding-left:0}
   .formas-lista{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-rows:auto auto;column-gap:var(--marcia-e-6);row-gap:var(--marcia-e-4);align-items:start}
   .principal{grid-row:1 / span 2;padding:var(--marcia-e-5)}
   .resumo{display:flex;flex-wrap:wrap;gap:0 var(--marcia-e-5)}
@@ -262,7 +258,6 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   .avals{display:block;columns:3;column-gap:var(--marcia-e-5)}
   .aval{break-inside:avoid;margin-bottom:var(--marcia-e-4)}
   .local .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:var(--marcia-e-6);align-items:start}
-  .local .linha-l{grid-template-columns:minmax(0,.4fr) minmax(0,1fr);gap:var(--marcia-e-4);align-items:baseline;padding:var(--marcia-e-3) 0}
   .rodape .wrap{grid-template-columns:auto minmax(0,1fr);gap:var(--marcia-e-6);align-items:start}
   .porque .cab{grid-area:cab}
   .porque .texto{grid-area:texto}
@@ -281,6 +276,97 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
   .js .reveal:not(.in){opacity:1;transform:none}
+}
+/* ==========================================================================
+   FAIXAS DE COR E IMAGENS (proposta do Felipe de 24/10/2026, aprovada em 25/10/2026, hoje a pagina principal).
+   Ritmo de faixas: papel (hero) > AZUL > argila > papel > cinza > argila > AZUL > cinza > papel > AZUL.
+   Grafite nunca e fundo (veto da Marcia, 12/10). Terracota nunca e fundo: o botao e a unica mancha quente forte.
+   Azul do sofa: fundo de faixa em ate 3 areas. Tokens (argila, texto sobre o azul) moram no tokens.css da marca.
+   ========================================================================== */
+
+/* ---------- rotulo pequeno acima de cada H2: Figtree 15px, caixa-alta espacada ---------- */
+.rotulo{display:block;margin:0 0 var(--marcia-e-2);font-family:var(--marcia-body);font-size:var(--marcia-t-rotulo);font-weight:600;line-height:1.3;letter-spacing:var(--marcia-track-rotulo);text-transform:uppercase;color:var(--marcia-accent-deep)}
+.local .rotulo{color:var(--marcia-highlight)}
+
+/* ---------- imagens ambiente: decorativas, dessaturadas, sem pessoa ---------- */
+.amb{position:relative;margin:0;overflow:hidden;border-radius:var(--marcia-r-campo);background:var(--marcia-paper-2)}
+.amb img{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;object-fit:cover}
+
+/* ---------- autoridade: faixa azul logo abaixo do hero ---------- */
+.autoridade{background:var(--marcia-blue);border:0;padding:var(--marcia-e-2) 0}
+.autoridade li{color:var(--marcia-on-blue);border-top-color:var(--marcia-blue-line)}
+
+/* ---------- servicos: argila, quatro cartoes numerados ---------- */
+.servicos{background:var(--marcia-clay)}
+.itens{counter-reset:serv;gap:var(--marcia-e-3)}
+.item{counter-increment:serv;padding:var(--marcia-e-4);background:var(--marcia-surface);border:1px solid var(--marcia-hair);border-radius:var(--marcia-r-campo)}
+.item::before{content:counter(serv,decimal-leading-zero);content:counter(serv,decimal-leading-zero) / "";display:block;margin-bottom:var(--marcia-e-2);font-family:var(--marcia-display);font-size:clamp(44px,5vw,60px);line-height:1;letter-spacing:.02em;color:var(--marcia-clay-deep)}
+
+/* ---------- porque: papel, imagem vertical numa coluna ---------- */
+.porque .amb{height:clamp(150px,42vw,230px)}
+.porque .amb img{object-position:50% 62%}
+
+/* ---------- formas: cinza ---------- */
+.formas{background:var(--marcia-paper-2);border-top:0}
+
+/* ---------- prova: argila, avaliacoes em cartao ---------- */
+.prova{background:var(--marcia-clay)}
+.aval{padding:var(--marcia-e-3);background:var(--marcia-surface);border:1px solid var(--marcia-hair);border-radius:var(--marcia-r-campo)}
+
+/* ---------- faq: cinza ---------- */
+.faq{background:var(--marcia-paper-2)}
+
+/* ---------- local: split azul com a imagem da xicara ---------- */
+.local{display:grid;padding:0;background:var(--marcia-blue);color:var(--marcia-on-blue)}
+.local .amb{height:clamp(150px,40vw,220px);border-radius:0}
+.local .amb img{object-position:50% 70%}
+.local .amb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(63,86,102,0) 55%,var(--marcia-blue) 100%)}
+.local .wrap{width:100%;padding-top:var(--marcia-e-4);padding-bottom:var(--marcia-e-5)}
+.local h2{color:var(--marcia-on-blue)}
+.local .filete-g{background:var(--marcia-on-blue-2)}
+.local .cab p{color:var(--marcia-on-blue-2)}
+.local dl,.local .linha-l{border-color:var(--marcia-blue-line)}
+.local dt{color:var(--marcia-on-blue-2)}
+.local dd{color:var(--marcia-on-blue)}
+
+/* ---------- cta final: sombra de folhas bem leve atras do texto ---------- */
+.cta-final .amb-fundo{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;opacity:.5;pointer-events:none}
+
+/* ---------- rodape azul: o simbolo vai num disco off-white (a letra e o arco nao leem sobre o azul) ---------- */
+.rodape{background:var(--marcia-blue);border-top:0;color:var(--marcia-on-blue)}
+.rodape .wm,.rodape .wm b{color:var(--marcia-on-blue)}
+.rodape .wm span,.rodape .esp,.rodape .leg{color:var(--marcia-on-blue-2)}
+.rodape .ig-rodape{color:var(--marcia-on-blue)}
+.rodape .marca img{width:48px;height:48px;padding:6px;border-radius:50%;background:var(--marcia-paper)}
+
+/* ---------- foco visivel sobre o azul (a tinta escura nao se ve ali) ---------- */
+.autoridade :focus-visible,.local :focus-visible,.rodape :focus-visible{outline-color:var(--marcia-on-blue)}
+
+@media (min-width:880px){
+  .autoridade li{border-left-color:var(--marcia-blue-line)}
+  .porque .wrap{grid-template-areas:"cab texto" "creds texto" "img img"}
+  .porque .amb{grid-area:img}
+}
+@media (min-width:960px){
+  .porque .wrap{grid-template-columns:minmax(0,.72fr) minmax(0,1fr);grid-template-areas:"img cab" "img texto" "img creds";grid-template-rows:auto auto 1fr;column-gap:var(--marcia-e-6);row-gap:var(--marcia-e-4)}
+  .porque .amb{height:auto;min-height:480px;align-self:stretch;isolation:isolate;overflow:visible}
+  .porque .amb img{border-radius:var(--marcia-r-campo)}
+  .porque .amb::before{content:"";position:absolute;inset:12px -12px -12px 12px;border:1px solid var(--marcia-line);border-radius:var(--marcia-r-campo);z-index:-1}
+  .local{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .local .amb{height:auto;min-height:420px}
+  .local .amb::after{background:linear-gradient(90deg,rgba(63,86,102,0) 55%,var(--marcia-blue) 100%)}
+  .local .wrap{grid-template-columns:minmax(0,1fr);gap:var(--marcia-e-4);max-width:none;margin:0;padding-top:var(--marcia-e-5);padding-left:var(--marcia-e-6);padding-right:max(var(--wrap-pad),calc((100vw - 1120px) / 2 + var(--wrap-pad)))}
+}
+/* ==========================================================================
+   CELULAR (rodada 7, Felipe, 25/10/2026). A Tenor Sans nao tem negrito: o peso vem do tamanho e de menos espaco entre as letras.
+   H2 de 22 para 28px, tracking de .1em para .05em; o H1 continua maior (34px ou mais). Desktop (880px ou mais) nao muda.
+   A poltrona sobe para o topo do `porque`, acima do rotulo, de ponta a ponta da tela, de cantos retos, em faixa baixa.
+   ========================================================================== */
+@media (max-width:879px){
+  h1{font-size:clamp(34px,8vw,38px);letter-spacing:.04em}
+  h2{font-size:clamp(28px,6.6vw,32px);letter-spacing:.05em}
+  .cta-final h2{font-size:clamp(34px,8vw,38px);letter-spacing:.04em}
+  .porque .amb{order:-1;margin:calc(var(--marcia-e-5) * -1) calc(var(--wrap-pad) * -1) 0;border-radius:0}
 }
 </style>
 <style>
@@ -381,10 +467,10 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 #wa-modal .notice .num,#wa-modal .num-reinforce b{font-family:var(--marcia-body);font-weight:500}
 #wa-modal .num-reinforce{font-size:1rem;color:var(--marcia-ink-2)}
 #wa-modal .back{font-size:1rem;min-height:44px;color:var(--marcia-ink-2)}
-/* float do desktop: terracota da marca, so a partir de 880px (no celular quem assume e o sticky) */
-.wafloat{display:none;right:28px;bottom:28px;width:60px;height:60px;background:var(--marcia-cta-gradient);box-shadow:var(--marcia-sombra-btn);transition:transform var(--marcia-dur) var(--marcia-ease),box-shadow var(--marcia-dur) var(--marcia-ease)}
+/* float do desktop: terracota da marca, so a partir de 880px (no celular quem assume e o sticky). Anel off-white de 3px: sem ele o botao some sobre as faixas azuis (3:1) */
+.wafloat{display:none;right:28px;bottom:28px;width:60px;height:60px;background:var(--marcia-cta-gradient);box-shadow:0 0 0 3px var(--marcia-paper),var(--marcia-sombra-btn);transition:transform var(--marcia-dur) var(--marcia-ease),box-shadow var(--marcia-dur) var(--marcia-ease)}
 .wafloat svg{fill:var(--marcia-on-accent)}
-.wafloat:hover{transform:translateY(-2px);box-shadow:var(--marcia-sombra-btn-hover)}
+.wafloat:hover{transform:translateY(-2px);box-shadow:0 0 0 3px var(--marcia-paper),var(--marcia-sombra-btn-hover)}
 @media (min-width:880px){.wafloat{display:flex}}
 @media (prefers-reduced-motion:reduce){#wa-modal .screen.active{animation:none}}
 /* widget:fim */
@@ -402,7 +488,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
       <span class="wm"><b>Márcia Campello</b><span>Psicóloga · CRP 07/09259</span></span>
     </a>
     <p class="linha">Psicanálise · Online, Brasil e exterior</p>
-    <button class="btn-linha" type="button" data-wa>Conversar</button>
+    <button class="btn-linha" type="button" data-wa>Agendar</button>
   </div>
 </header>
 
@@ -413,11 +499,12 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   <svg class="aneis" viewBox="0 0 300 300" aria-hidden="true"><circle cx="150" cy="150" r="148"/><circle cx="150" cy="150" r="118"/><circle cx="150" cy="150" r="88"/></svg>
   <div class="wrap">
     <div class="copia">
-      <h1>Entender o que você <span class="mt">repete</span> no amor.</h1>
+      <h1>Entenda o que você <span class="mt">repete</span> no amor.</h1>
       <p class="lede">Se a pergunta é “o que ele sente?”, a conversa fica no outro. Em terapia, ela vira: “o que se repete em mim?”</p>
-      <p class="cred">Psicoterapia de orientação psicanalítica freudiana, com consultório particular desde 1999.</p>
+      <p class="cred">Psicanálise freudiana, desde 1999.</p>
+      <p class="oferta">O primeiro papo tem 30 minutos e é gratuito.</p>
       <div class="acoes">
-        <button class="btn" type="button" data-wa>Conversar no WhatsApp <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="btn" type="button" data-wa>Agendar papo gratuito <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <a class="link-seta" href="#servicos">Sobre o que conversamos <svg class="seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
@@ -433,9 +520,9 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 <section class="autoridade" data-bloco="autoridade" aria-label="Quem atende">
   <div class="wrap">
     <ul>
-      <li>+25 anos de clínica</li>
-      <li>Atendimento exclusivo para mulheres</li>
-      <li>Formação com Aline Follmann</li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg><span>+25 anos de clínica</span></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15v7"/><path d="M9 19h6"/><circle cx="12" cy="9" r="6"/></svg><span>Atendimento exclusivo para mulheres</span></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg><span>Formação com Aline Follmann</span></li>
     </ul>
   </div>
 </section>
@@ -443,6 +530,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 <section class="servicos" id="servicos" data-bloco="servicos">
   <div class="wrap">
     <div class="cab">
+      <span class="rotulo">Pontos de partida</span>
       <h2>Sobre o que a gente conversa</h2>
       <span class="filete-g" role="presentation"></span>
       <p>Quatro situações que você talvez reconheça. Não são diagnósticos: são pontos de partida.</p>
@@ -455,40 +543,44 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
     </ul>
     <div class="fecho">
       <p>Se alguma soou familiar, me conte sua história. Sou preparada para te ajudar.</p>
-      <button class="btn" type="button" data-wa>Conversar no WhatsApp <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="btn" type="button" data-wa>Agendar papo gratuito <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     </div>
   </div>
 </section>
 
-<section class="porque" data-bloco="porque">
+<section class="porque" data-bloco="porque" data-split>
   <div class="wrap">
     <div class="cab">
+      <span class="rotulo">Sobre mim</span>
       <h2>Como eu trabalho</h2>
       <span class="filete-g" role="presentation"></span>
     </div>
     <div class="texto">
       <p>Não ensino regra para segurar ou largar alguém. Quem decide é você. O que faço é ir com você atrás do padrão: o que se repete na sua história amorosa, de onde isso vem, e como lidar de forma saudável para prosperar.</p>
-      <p>Atendo em consultório desde 1999, pela orientação psicanalítica freudiana. É uma escola só, e é ela que organiza a conversa: a gente escuta o que você diz e também o jeito de dizer.</p>
       <p>Na sessão, a gente conversa de verdade: 50 minutos, por vídeo, a partir do que você traz. Eu escuto, pergunto e, às vezes, devolvo uma pergunta que você ainda não tinha feito.</p>
+      <div class="redes"><a class="ig" href="https://instagram.com/marciacampello_psi" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg><span>@marciacampello_psi</span></a></div>
     </div>
     <ul class="creds">
       <li>Especialista em Psicoterapia de Orientação Psicanalítica (pós-graduação lato sensu, ITI, 2000 a 2003)</li>
+      <li>Formação em Relacionamentos e Terapia de Casal com Aline Follmann (2026)</li>
       <li>Formada em Psicologia pela PUCRS (1998)</li>
       <li>Consultório particular desde 1999</li>
       <li>Atendimento online desde 2019</li>
     </ul>
+    <figure class="amb"><img src="fotos/amb-poltrona.jpg" width="1200" height="1490" alt="" loading="lazy" decoding="async"></figure>
   </div>
 </section>
 
 <section class="formas" data-bloco="formas">
   <div class="wrap">
     <div class="cab">
+      <span class="rotulo">Por onde começar</span>
       <h2>Formas de atuação</h2>
       <span class="filete-g" role="presentation"></span>
     </div>
     <ul class="formas-lista">
       <li class="forma principal reveal" data-principal><span class="filete-g" role="presentation"></span><h3>Acompanhamento contínuo</h3><p>É o caminho principal e o coração do meu trabalho. A psicoterapia de orientação psicanalítica se faz ao longo do tempo, sessão após sessão, online, em encontros de 50 minutos. Um espaço seu para falar e ser ouvida.</p></li>
-      <li class="forma reveal"><h3>Sessão única</h3><p>Uma conversa só, online, de 50 minutos. Serve para quem quer conhecer como é a terapia comigo ou tem uma questão pontual. A conversa pode seguir depois, se você quiser.</p></li>
+      <li class="forma reveal"><h3>Sessão única</h3><p>Uma conversa só, online, de 50 minutos. Serve para quem tem uma questão pontual. A conversa pode seguir depois, se você quiser.</p></li>
       <li class="forma reveal"><h3>Terapia breve (12 sessões)</h3><p>Um percurso curto, com começo e fim combinados, em torno de um tema que você traz. São 12 sessões de 50 minutos, online. No fim, a gente conversa sobre o que vem depois.</p></li>
     </ul>
   </div>
@@ -497,12 +589,13 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 <section class="prova" data-bloco="prova">
   <div class="wrap">
     <div class="cab">
+      <span class="rotulo">Avaliações públicas</span>
       <h2>O que dizem no Google e na Doctoralia</h2>
       <span class="filete-g" role="presentation"></span>
     </div>
     <ul class="resumo">
-      <li><a href="https://maps.google.com/?cid=2418777262544538072" target="_blank" rel="noopener"><svg class="estrelas" viewBox="0 0 100 20" role="img" aria-label="5 de 5 estrelas"><g fill="currentColor"><g transform="translate(0 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(20 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(40 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(60 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(80 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g></g></svg><span>5,0 no Google · 10 avaliações</span></a></li>
-      <li><a href="https://www.doctoralia.com.br/marcia-campello/psicologo/garopaba" target="_blank" rel="noopener"><svg class="estrelas" viewBox="0 0 100 20" role="img" aria-label="5 de 5 estrelas"><g fill="currentColor"><g transform="translate(0 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(20 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(40 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(60 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(80 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g></g></svg><span>5,0 na Doctoralia · 12 opiniões</span></a></li>
+      <li><a href="https://maps.google.com/?cid=2418777262544538072" target="_blank" rel="noopener"><img class="logo" src="data:image/png;base64,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" alt="Logo do Google" width="24" height="24" decoding="async"><svg class="estrelas" viewBox="0 0 100 20" aria-hidden="true"><g fill="currentColor"><g transform="translate(0 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(20 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(40 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(60 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(80 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g></g></svg><span>5,0 no Google · 10 avaliações</span></a></li>
+      <li><a href="https://www.doctoralia.com.br/marcia-campello/psicologo/garopaba" target="_blank" rel="noopener"><img class="logo" src="data:image/png;base64,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" alt="Logo da Doctoralia" width="24" height="24" decoding="async"><svg class="estrelas" viewBox="0 0 100 20" aria-hidden="true"><g fill="currentColor"><g transform="translate(0 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(20 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(40 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(60 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g><g transform="translate(80 0)"><path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.1 1.4 6.1-5.5-3.2-5.5 3.2 1.4-6.1L1.2 7.8l6.2-.6z"/></g></g></svg><span>5,0 na Doctoralia · 12 opiniões</span></a></li>
     </ul>
     <p class="dica leg">Deslize para o lado para ler as demais <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
     <div class="rolagem" tabindex="0" role="region" aria-label="Avaliações, role para o lado">
@@ -520,54 +613,50 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   </div>
 </section>
 
-<section class="beneficios" data-bloco="beneficios" aria-label="Como funciona o atendimento">
-  <div class="wrap">
-    <ul>
-      <li>Horários marcados <b>até as 21h</b></li>
-      <li>Sessão de <b>50 minutos</b>, por vídeo</li>
-      <li><b>“Oi, Márcia”</b> é o primeiro passo</li>
-    </ul>
-  </div>
-</section>
-
-<section class="faq" data-bloco="faq">
-  <div class="wrap">
-    <h2>Dúvidas antes de começar</h2>
-    <span class="filete-g" role="presentation"></span>
-    <div class="lista">
-      <details open><summary>Como começa a conversa?</summary><p>Você manda uma mensagem pelo WhatsApp. Pode ser só um oi. Por lá, você escolhe um horário para a primeira sessão. Não precisa chegar com a queixa organizada.</p></details>
-      <details><summary>Como funciona o atendimento?</summary><p>As sessões são por vídeo e duram 50 minutos. Atendo de segunda a sexta, das 9h às 21h. Você precisa de internet e de um lugar onde possa falar sem ser interrompida.</p></details>
-      <details><summary>A conversa por vídeo é sigilosa?</summary><p>Sim. Guardar sigilo é um dever da psicóloga, previsto no Código de Ética da psicologia. Antes de começarmos, explico como cuido disso no atendimento por vídeo. Para a conversa ficar reservada, cada uma de nós fica num lugar onde ninguém ouça.</p></details>
-      <details><summary>É para mim?</summary><p>Atendo mulheres adultas. É para você se certas escolhas no amor soam familiares demais e você quer entender por quê. Se procura uma regra para segurar ou largar alguém, não é isso que faço.</p></details>
-      <details><summary>É psicanálise?</summary><p>É psicoterapia de orientação psicanalítica freudiana. Na prática, a conversa não fica só no que aconteceu esta semana: vai atrás da história que vem antes. Eu me apresento como psicóloga, CRP 07/09259.</p></details>
-      <details><summary>Quanto tempo dura a terapia?</summary><p>Não dá para prever, porque depende da história de cada pessoa. O que posso dizer é como começa: sessões de 50 minutos, e a gente vai conversando sobre o ritmo ao longo do caminho.</p></details>
-      <details><summary>E o valor?</summary><p>Informo por mensagem, quando você perguntar, antes de começar. Pode perguntar já na primeira conversa pelo WhatsApp. Assim você decide sabendo.</p></details>
-      <details><summary>E se eu estiver em crise agora?</summary><p>Se você está em risco agora, ligue para o SAMU, 192, ou para o CVV, 188. O WhatsApp deste site serve para marcar a conversa, não para emergência.</p></details>
-    </div>
-  </div>
-</section>
-
-<section class="local" data-bloco="local">
+<section class="local" data-bloco="local" data-split>
+  <figure class="amb"><img src="fotos/amb-xicara.jpg" width="1200" height="896" alt="" loading="lazy" decoding="async"></figure>
   <div class="wrap">
     <div class="cab">
+      <span class="rotulo">Atendimento online</span>
       <h2>Onde eu atendo</h2>
       <span class="filete-g" role="presentation"></span>
       <p>Atendo online, por vídeo, para o Brasil e para o exterior. Você precisa de um celular ou computador com internet e de um lugar onde possa falar sem ser interrompida.</p>
     </div>
     <dl>
-      <div class="linha-l reveal"><dt>Formato</dt><dd>Online, por vídeo, para o Brasil e o exterior. Sessões de 50 minutos</dd></div>
-      <div class="linha-l reveal"><dt>Dias e horários</dt><dd>Segunda a sexta, das 9h às 21h</dd></div>
+      <div class="linha-l reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg><dt>Formato</dt><dd>Sessões de 50 minutos</dd></div>
+      <div class="linha-l reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg><dt>Dias e horários</dt><dd>Segunda a sexta, das 9h às 21h</dd></div>
+      <div class="linha-l reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><dt>Primeiro passo</dt><dd>Um “Oi, Márcia” no WhatsApp</dd></div>
     </dl>
   </div>
 </section>
 
+<section class="faq" data-bloco="faq">
+  <div class="wrap">
+    <span class="rotulo">Antes da primeira conversa</span>
+    <h2>Dúvidas antes de começar</h2>
+    <span class="filete-g" role="presentation"></span>
+    <div class="lista">
+      <details open><summary>Como começa a conversa?</summary><p>Você manda uma mensagem pelo WhatsApp. Pode ser só um oi. Por lá, você escolhe um horário para o primeiro papo, que tem 30 minutos e é gratuito. Não precisa chegar com a queixa organizada.</p></details>
+      <details><summary>Como funciona o atendimento?</summary><p>As sessões são por vídeo e duram 50 minutos. Atendo de segunda a sexta, das 9h às 21h. Você precisa de internet e de um lugar onde possa falar sem ser interrompida.</p></details>
+      <details><summary>A conversa por vídeo é sigilosa?</summary><p>Sim. Guardar sigilo é um dever da psicóloga, previsto no Código de Ética da psicologia. Antes de começarmos, explico como cuido disso no atendimento por vídeo. Para a conversa ficar reservada, cada uma de nós fica num lugar onde ninguém ouça.</p></details>
+      <details><summary>É para mim?</summary><p>Atendo mulheres adultas. É para você se certas escolhas no amor soam familiares demais e você quer entender por quê. Se procura uma regra para segurar ou largar alguém, não é isso que faço.</p></details>
+      <details><summary>É psicanálise?</summary><p>É psicoterapia de orientação psicanalítica freudiana. Na prática, a conversa não fica só no que aconteceu esta semana: vai atrás da história que vem antes. Eu me apresento como psicóloga, CRP 07/09259.</p></details>
+      <details><summary>Quanto tempo dura a terapia?</summary><p>Não dá para prever, porque depende da história de cada pessoa. O que posso dizer é como começa: sessões de 50 minutos, e a gente vai conversando sobre o ritmo ao longo do caminho.</p></details>
+      <details><summary>E o valor?</summary><p>O primeiro papo, de 30 minutos, é gratuito. Informo por mensagem, quando você perguntar, antes de começar. Pode perguntar já na primeira conversa pelo WhatsApp. Assim você decide sabendo.</p></details>
+      <details><summary>E se eu estiver em crise agora?</summary><p>Se você está em risco agora, ligue para o SAMU, 192, ou para o CVV, 188. O WhatsApp deste site serve para marcar a conversa, não para emergência.</p></details>
+    </div>
+  </div>
+</section>
+
 <section class="cta-final" data-bloco="cta-final">
+  <img class="amb-fundo" src="fotos/amb-folhas.jpg" width="1376" height="768" alt="" loading="lazy" decoding="async">
   <div class="glow"></div>
   <svg class="aneis" viewBox="0 0 300 300" aria-hidden="true"><circle cx="150" cy="150" r="148"/><circle cx="150" cy="150" r="118"/><circle cx="150" cy="150" r="88"/></svg>
   <div class="wrap">
+    <span class="rotulo">Primeiro passo</span>
     <h2>Vamos conversar sobre como você ama?</h2>
-    <p>Mande uma mensagem pelo WhatsApp quando quiser. Você escolhe o horário da primeira sessão. O resto a gente conversa lá, no vídeo, no seu ritmo.</p>
-    <button class="btn" type="button" data-wa>Conversar no WhatsApp <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <p>Mande um Whats, é direto comigo.</p>
+    <button class="btn" type="button" data-wa>Agendar papo gratuito <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   </div>
 </section>
 
@@ -582,6 +671,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
     <div class="id">
       <p class="esp leg">Psicanálise · Online, Brasil e exterior</p>
       <p class="leg">Este site tem caráter informativo e não substitui uma avaliação psicológica. Psicoterapia é um processo, e ninguém pode prometer aonde ele chega.</p>
+      <p><a class="ig-rodape" href="https://instagram.com/marciacampello_psi" target="_blank" rel="noopener">Instagram</a></p>
     </div>
   </div>
 </footer>
@@ -593,9 +683,9 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 
 <!-- sticky (mobile) -->
 <div class="sticky">
-  <button class="btn" type="button" data-wa>Conversar no WhatsApp <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button class="btn" type="button" data-wa>Agendar papo gratuito <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   <!-- sem JavaScript o widget nao abre: o noscript mostra um link simples. O numero aqui e o UNICO literal fora de WA_PHONE (JS desligado nao le a constante). Trocou o numero? Troque tambem este, o gabarito confere que sao iguais. -->
-  <noscript><a class="btn" href="https://wa.me/5551999524202">Conversar no WhatsApp</a></noscript>
+  <noscript><a class="btn" href="https://wa.me/5551999524202">Agendar papo gratuito</a></noscript>
 </div>
 
 <!-- tracker de click id. Fonte unica: marketing-agency/sites/_shared/tracker.snippet.html. Nao editar aqui, editar no canonico. -->
