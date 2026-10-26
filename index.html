@@ -199,7 +199,8 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 .faq summary::after{content:"";flex:none;width:18px;height:18px;color:var(--marcia-graphite);background:linear-gradient(currentColor,currentColor) center/100% 1.5px no-repeat,linear-gradient(currentColor,currentColor) center/1.5px 100% no-repeat;transition:transform var(--marcia-dur) var(--marcia-ease)}
 .faq details[open] summary::after{background:linear-gradient(currentColor,currentColor) center/100% 1.5px no-repeat;transform:rotate(180deg)}
 .faq summary:hover{color:var(--marcia-accent-deep)}
-.faq details p{margin:0;padding:0 0 var(--marcia-e-3);max-width:38em;color:var(--marcia-ink-2)}
+.faq details p{margin:0;padding:0 0 var(--marcia-e-2);max-width:38em;color:var(--marcia-ink-2)}
+.faq details p:last-of-type{padding-bottom:var(--marcia-e-3)}
 
 /* ---------- local: online, Brasil e exterior ---------- */
 .local{background:var(--marcia-paper-2);padding:var(--marcia-e-5) 0}
@@ -316,6 +317,19 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 /* ---------- faq: cinza ---------- */
 .faq{background:var(--marcia-paper-2)}
 
+/* ---------- como-funciona (rodada 8): papel, entre a argila da prova e o azul do local. Tres passos com numero em circulo fino (traco da marca, nada de cartao)
+   e um fio entre os circulos. Celular: coluna, circulo a esquerda. Desktop: tres colunas, o fio corre na horizontal ---------- */
+.como-funciona{background:var(--marcia-paper);padding:var(--marcia-e-6) 0}
+.como-funciona .cab{max-width:38em}
+.passos{list-style:none;margin:var(--marcia-e-5) 0 0;padding:0;display:grid;gap:0}
+.passo{position:relative;display:grid;grid-template-columns:52px minmax(0,1fr);column-gap:var(--marcia-e-3);padding-bottom:var(--marcia-e-4)}
+.passo:last-child{padding-bottom:0}
+.passo .num{grid-row:1 / span 2;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border:1px solid var(--marcia-hair-forte);border-radius:50%;font-family:var(--marcia-display);font-size:24px;line-height:1;color:var(--marcia-ink);background:var(--marcia-paper)}
+.passo:not(:last-child)::after{content:"";position:absolute;left:26px;top:60px;bottom:8px;width:1px;background:var(--marcia-hair-forte)}
+.passo h3{margin:6px 0 var(--marcia-e-1)}
+.passo p{margin:0;color:var(--marcia-ink-2)}
+.como-funciona .btn{margin-top:var(--marcia-e-5)}
+
 /* ---------- local: split azul com a imagem da xicara ---------- */
 .local{display:grid;padding:0;background:var(--marcia-blue);color:var(--marcia-on-blue)}
 .local .amb{height:clamp(150px,40vw,220px);border-radius:0}
@@ -343,6 +357,11 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 .autoridade :focus-visible,.local :focus-visible,.rodape :focus-visible{outline-color:var(--marcia-on-blue)}
 
 @media (min-width:880px){
+  .passos{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--marcia-e-5)}
+  .passo{display:block;padding-bottom:0}
+  .passo .num{margin-bottom:var(--marcia-e-3)}
+  .passo:not(:last-child)::after{left:66px;right:calc(var(--marcia-e-5) * -1 + 14px);top:26px;bottom:auto;width:auto;height:1px}
+  .passo h3{margin:0 0 var(--marcia-e-1)}
   .autoridade li{border-left-color:var(--marcia-blue-line)}
   .porque .wrap{grid-template-areas:"cab texto" "creds texto" "img img"}
   .porque .amb{grid-area:img}
@@ -487,7 +506,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
       <img src="assets/simbolo-cor.svg" width="52" height="52" alt="" decoding="async">
       <span class="wm"><b>Márcia Campello</b><span>Psicóloga · CRP 07/09259</span></span>
     </a>
-    <p class="linha">Psicanálise · Online, Brasil e exterior</p>
+    <p class="linha">Psicoterapia · Online, Brasil e exterior</p>
     <button class="btn-linha" type="button" data-wa>Agendar</button>
   </div>
 </header>
@@ -501,10 +520,10 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
     <div class="copia">
       <h1>Entenda o que você <span class="mt">repete</span> no amor.</h1>
       <p class="lede">Se a pergunta é “o que ele sente?”, a conversa fica no outro. Em terapia, ela vira: “o que se repete em mim?”</p>
-      <p class="cred">Psicanálise freudiana, desde 1999.</p>
-      <p class="oferta">O primeiro papo tem 30 minutos e é gratuito.</p>
+      <p class="cred">Psicoterapia fundamentada na psicanálise, desde 1999.</p>
+      <p class="oferta">A primeira conversa tem 30 minutos e é gratuita.</p>
       <div class="acoes">
-        <button class="btn" type="button" data-wa>Agendar papo gratuito <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="btn" type="button" data-wa>Agendar conversa gratuita <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <a class="link-seta" href="#servicos">Sobre o que conversamos <svg class="seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
@@ -543,7 +562,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
     </ul>
     <div class="fecho">
       <p>Se alguma soou familiar, me conte sua história. Sou preparada para te ajudar.</p>
-      <button class="btn" type="button" data-wa>Agendar papo gratuito <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="btn" type="button" data-wa>Agendar conversa gratuita <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     </div>
   </div>
 </section>
@@ -613,19 +632,36 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   </div>
 </section>
 
+<section class="como-funciona" data-bloco="como-funciona">
+  <div class="wrap">
+    <div class="cab">
+      <span class="rotulo">Como funciona</span>
+      <h2>Três passos para começar</h2>
+      <span class="filete-g" role="presentation"></span>
+    </div>
+    <ol class="passos">
+      <li class="passo reveal"><span class="num" aria-hidden="true">1</span><h3>Você me manda uma mensagem</h3><p>Pelo WhatsApp, quando for melhor para você. Pode ser só um “Oi, Márcia”.</p></li>
+      <li class="passo reveal"><span class="num" aria-hidden="true">2</span><h3>A gente faz uma primeira conversa</h3><p>Gratuita, de 30 minutos, por vídeo. Você conta o que está vivendo, eu explico como trabalho e você tira suas dúvidas.</p></li>
+      <li class="passo reveal"><span class="num" aria-hidden="true">3</span><h3>Você decide se quer seguir</h3><p>Se fizer sentido, a gente combina as sessões de 50 minutos, num horário que funcione para você.</p></li>
+    </ol>
+    <button class="btn" type="button" data-wa>Agendar conversa gratuita <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
+</section>
+
 <section class="local" data-bloco="local" data-split>
   <figure class="amb"><img src="fotos/amb-xicara.jpg" width="1200" height="896" alt="" loading="lazy" decoding="async"></figure>
   <div class="wrap">
     <div class="cab">
       <span class="rotulo">Atendimento online</span>
-      <h2>Onde eu atendo</h2>
+      <h2>Para você, onde estiver</h2>
       <span class="filete-g" role="presentation"></span>
-      <p>Atendo online, por vídeo, para o Brasil e para o exterior. Você precisa de um celular ou computador com internet e de um lugar onde possa falar sem ser interrompida.</p>
+      <p>Atendo online, em português, mulheres no Brasil e em qualquer país. Você precisa de um celular ou computador com internet e de um lugar reservado para falar.</p>
     </div>
     <dl>
-      <div class="linha-l reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg><dt>Formato</dt><dd>Sessões de 50 minutos</dd></div>
-      <div class="linha-l reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg><dt>Dias e horários</dt><dd>Segunda a sexta, das 9h às 21h</dd></div>
-      <div class="linha-l reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><dt>Primeiro passo</dt><dd>Um “Oi, Márcia” no WhatsApp</dd></div>
+      <div class="linha-l reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg><dt>Plataforma</dt><dd>Google Meet, por vídeo</dd></div>
+      <div class="linha-l reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><dt>Duração</dt><dd>Sessões de 50 minutos</dd></div>
+      <div class="linha-l reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg><dt>Horários</dt><dd>Segunda a sexta, das 9h às 21h (horário de Brasília), combinados de acordo com o seu fuso</dd></div>
+      <div class="linha-l reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg><dt>Pagamento</dt><dd>Antecipado, por Pix ou cartão</dd></div>
     </dl>
   </div>
 </section>
@@ -636,13 +672,20 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
     <h2>Dúvidas antes de começar</h2>
     <span class="filete-g" role="presentation"></span>
     <div class="lista">
-      <details open><summary>Como começa a conversa?</summary><p>Você manda uma mensagem pelo WhatsApp. Pode ser só um oi. Por lá, você escolhe um horário para o primeiro papo, que tem 30 minutos e é gratuito. Não precisa chegar com a queixa organizada.</p></details>
-      <details><summary>Como funciona o atendimento?</summary><p>As sessões são por vídeo e duram 50 minutos. Atendo de segunda a sexta, das 9h às 21h. Você precisa de internet e de um lugar onde possa falar sem ser interrompida.</p></details>
-      <details><summary>A conversa por vídeo é sigilosa?</summary><p>Sim. Guardar sigilo é um dever da psicóloga, previsto no Código de Ética da psicologia. Antes de começarmos, explico como cuido disso no atendimento por vídeo. Para a conversa ficar reservada, cada uma de nós fica num lugar onde ninguém ouça.</p></details>
-      <details><summary>É para mim?</summary><p>Atendo mulheres adultas. É para você se certas escolhas no amor soam familiares demais e você quer entender por quê. Se procura uma regra para segurar ou largar alguém, não é isso que faço.</p></details>
-      <details><summary>É psicanálise?</summary><p>É psicoterapia de orientação psicanalítica freudiana. Na prática, a conversa não fica só no que aconteceu esta semana: vai atrás da história que vem antes. Eu me apresento como psicóloga, CRP 07/09259.</p></details>
-      <details><summary>Quanto tempo dura a terapia?</summary><p>Não dá para prever, porque depende da história de cada pessoa. O que posso dizer é como começa: sessões de 50 minutos, e a gente vai conversando sobre o ritmo ao longo do caminho.</p></details>
-      <details><summary>E o valor?</summary><p>O primeiro papo, de 30 minutos, é gratuito. Informo por mensagem, quando você perguntar, antes de começar. Pode perguntar já na primeira conversa pelo WhatsApp. Assim você decide sabendo.</p></details>
+      <details open><summary>Como funciona a psicoterapia online?</summary><p>Os atendimentos são realizados por videochamada, pelo Google Meet, com duração aproximada de 50 minutos.</p><p>Você pode fazer a sessão de onde estiver, desde que tenha um espaço reservado, tranquilo e que preserve sua privacidade.</p></details>
+      <details><summary>A terapia online é para mim?</summary><p>A psicoterapia pode ser um espaço importante quando alguma coisa começa a se repetir, quando determinadas relações fazem você sofrer, quando você percebe que está vivendo os mesmos padrões ou quando simplesmente sente que precisa compreender melhor o que está acontecendo com você.</p><p>Ansiedade, dificuldades nos relacionamentos, autoestima, recomeços, sobrecarga emocional e burnout são algumas das questões que podem aparecer no processo terapêutico.</p><p>Você não precisa estar vivendo uma grande crise para procurar terapia.</p></details>
+      <details><summary>Como é a primeira conversa?</summary><p>A primeira conversa é gratuita, tem 30 minutos e é, antes de tudo, um momento para nos conhecermos.</p><p>Você pode falar sobre o que trouxe você até aqui, sobre o que está acontecendo na sua vida e sobre aquilo que gostaria de compreender ou transformar.</p><p>Não precisa chegar sabendo exatamente o que dizer. A partir da sua fala, vamos construindo o caminho do processo terapêutico.</p></details>
+      <details><summary>Qual é a sua abordagem?</summary><p>Meu trabalho é fundamentado na psicanálise e na escuta clínica.</p><p>A terapia é um espaço para compreender aquilo que se repete, reconhecer padrões, elaborar experiências e construir novas possibilidades.</p><p>Não se trata de receber respostas prontas ou alguém dizendo a você o que fazer. Trata-se de poder olhar para sua história, suas escolhas e seus modos de se relacionar de uma maneira diferente.</p></details>
+      <details><summary>Quanto tempo dura cada sessão?</summary><p>Cada sessão tem duração aproximada de 50 minutos.</p></details>
+      <details><summary>Qual é o valor da sessão?</summary><p>A primeira conversa, de 30 minutos, é gratuita. O valor das sessões eu te passo pelo WhatsApp, junto com os horários disponíveis.</p></details>
+      <details><summary>Como é feito o pagamento?</summary><p>Para confirmar o horário escolhido, é solicitado o pagamento antecipado do valor da sessão, via Pix ou cartão.</p></details>
+      <details><summary>Como faço para agendar?</summary><p>Você pode entrar em contato comigo pelo WhatsApp e me contar brevemente o que motivou você a buscar terapia neste momento.</p><p>A partir disso, conversamos sobre o processo e verificamos juntas o melhor dia e horário para o seu atendimento.</p></details>
+      <details><summary>Atende pessoas que moram fora do Brasil?</summary><p>Sim.</p><p>Os atendimentos são realizados online, em português, para mulheres adultas que estejam no Brasil ou em outros países.</p></details>
+      <details><summary>Preciso estar em um lugar específico para fazer a sessão?</summary><p>É importante que você esteja em um espaço onde tenha privacidade e tranquilidade para falar livremente.</p><p>A qualidade da sessão também depende de poder estar presente naquele momento sem interrupções ou outras pessoas por perto.</p></details>
+      <details><summary>Como funciona o sigilo?</summary><p>O atendimento psicológico é realizado em ambiente privado e sigiloso, respeitando os princípios éticos da profissão.</p><p>Por isso, também é importante que você escolha um espaço reservado para realizar sua sessão.</p></details>
+      <details><summary>Quantas sessões eu preciso fazer?</summary><p>Não existe um número de sessões igual para todas as pessoas.</p><p>Cada processo tem seu próprio ritmo e depende das questões que estão sendo trabalhadas, da história de cada pessoa e do caminho construído ao longo da terapia.</p></details>
+      <details><summary>Atende por plano de saúde?</summary><p>Os atendimentos são particulares.</p><p>Caso seu plano de saúde ofereça reembolso para psicoterapia, posso fornecer a documentação necessária referente às sessões realizadas.</p></details>
+      <details><summary>E se eu ainda não tiver certeza se devo fazer terapia?</summary><p>Você não precisa ter todas as respostas antes de começar.</p><p>Às vezes, o primeiro passo é justamente poder falar sobre aquilo que está difícil de compreender sozinha.</p><p>Se alguma coisa vem incomodando você, se determinadas situações continuam se repetindo ou se sente que chegou o momento de olhar para sua história de outra maneira, talvez seja um bom momento para conversar.</p><p>Se fizer sentido para você, podemos conversar.</p></details>
       <details><summary>E se eu estiver em crise agora?</summary><p>Se você está em risco agora, ligue para o SAMU, 192, ou para o CVV, 188. O WhatsApp deste site serve para marcar a conversa, não para emergência.</p></details>
     </div>
   </div>
@@ -656,7 +699,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
     <span class="rotulo">Primeiro passo</span>
     <h2>Vamos conversar sobre como você ama?</h2>
     <p>Mande um Whats, é direto comigo.</p>
-    <button class="btn" type="button" data-wa>Agendar papo gratuito <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="btn" type="button" data-wa>Agendar conversa gratuita <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   </div>
 </section>
 
@@ -669,7 +712,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
       <span class="wm"><b>Márcia Campello</b><span>Psicóloga · CRP 07/09259</span></span>
     </a>
     <div class="id">
-      <p class="esp leg">Psicanálise · Online, Brasil e exterior</p>
+      <p class="esp leg">Psicoterapia · Online, Brasil e exterior</p>
       <p class="leg">Este site tem caráter informativo e não substitui uma avaliação psicológica. Psicoterapia é um processo, e ninguém pode prometer aonde ele chega.</p>
       <p><a class="ig-rodape" href="https://instagram.com/marciacampello_psi" target="_blank" rel="noopener">Instagram</a></p>
     </div>
@@ -683,9 +726,9 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 
 <!-- sticky (mobile) -->
 <div class="sticky">
-  <button class="btn" type="button" data-wa>Agendar papo gratuito <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button class="btn" type="button" data-wa>Agendar conversa gratuita <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   <!-- sem JavaScript o widget nao abre: o noscript mostra um link simples. O numero aqui e o UNICO literal fora de WA_PHONE (JS desligado nao le a constante). Trocou o numero? Troque tambem este, o gabarito confere que sao iguais. -->
-  <noscript><a class="btn" href="https://wa.me/5551999524202">Agendar papo gratuito</a></noscript>
+  <noscript><a class="btn" href="https://wa.me/5551999524202">Agendar conversa gratuita</a></noscript>
 </div>
 
 <!-- tracker de click id. Fonte unica: marketing-agency/sites/_shared/tracker.snippet.html. Nao editar aqui, editar no canonico. -->
