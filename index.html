@@ -420,9 +420,10 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   #wa-modal .screen{display:none;}
   #wa-modal .screen.active{display:block;animation:wafade .3s ease;}
   @keyframes wafade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
-  #wa-modal .whead{background:linear-gradient(135deg,var(--wa-head-a),var(--wa-head-b));color:#fff;padding:1.15rem 1.25rem 1.25rem;display:flex;align-items:center;gap:.85rem;}
+  #wa-modal .whead{background:linear-gradient(135deg,var(--wa-head-a),var(--wa-head-b));color:#fff;padding:1.15rem 3.4rem 1.25rem 1.25rem;display:flex;align-items:center;gap:.85rem;}  /* 3.4rem à direita: o texto não passa por baixo do botão fechar */
   #wa-modal .avatar{flex:none;width:56px;height:56px;border-radius:50%;position:relative;background:rgba(255,255,255,.18);border:2.5px solid rgba(255,255,255,.85);display:grid;place-items:center;}
   #wa-modal .avatar svg{width:30px;height:30px;}
+  #wa-modal .avatar img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 20%;}  /* opcional: foto no lugar do ícone (class="avatar foto") */
   #wa-modal .avatar .on{position:absolute;right:1px;bottom:1px;width:13px;height:13px;border-radius:50%;background:var(--wa);border:2.5px solid var(--wa-head-b);}
   #wa-modal .who{display:flex;flex-direction:column;gap:2px;min-width:0;}
   #wa-modal .nm{font-family:var(--wa-head-font);font-weight:700;font-size:1.15rem;letter-spacing:-.01em;}
@@ -459,33 +460,57 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
    Fonte maior (publico 50+: piso de 15px), Tenor Sans sem negrito sintetico e alvos de 44px. */
 #wa-modal,.wafloat{
   --wa:#25D366;
-  --wa-head-a:var(--marcia-accent);--wa-head-b:var(--marcia-accent-deep);
+  --wa-head-a:var(--marcia-surface);--wa-head-b:var(--marcia-ink);
   --wa-accent:var(--marcia-accent);--wa-accent-d:var(--marcia-accent-deep);
-  --wa-band:var(--marcia-paper-2);--wa-surface:var(--marcia-surface);--wa-line:var(--marcia-hair-forte);
+  --wa-band:var(--marcia-clay);--wa-surface:var(--marcia-surface);--wa-line:var(--marcia-hair-forte);
   --wa-ink:var(--marcia-ink);--wa-muted:var(--marcia-ink-3);
   --wa-head-font:var(--marcia-display);--wa-body-font:var(--marcia-body);
 }
 #wa-modal::backdrop{background:rgba(31,33,36,.55)}
-#wa-modal .widget{box-shadow:var(--marcia-sombra-foto)}
-#wa-modal .wa-close{width:44px;height:44px;top:8px;right:8px;font-size:16px}
-#wa-modal .nm{font-weight:400;font-size:1.25rem;letter-spacing:.06em;text-transform:uppercase}
-#wa-modal .cred{font-size:.9375rem;font-weight:400}
-#wa-modal .online{font-size:.9375rem;font-weight:500;color:var(--marcia-ink)}
-#wa-modal .lead-line{font-weight:400;font-size:1.4rem;letter-spacing:.02em;line-height:1.3}
-#wa-modal .field .lbl{font-size:1rem;font-weight:500;color:var(--marcia-ink)}
+/* modal da Marcia (Felipe, 26/10/2026): header claro e centrado, foto dela com o contorno fino deslocado da marca, sem terracota de fundo.
+   A unica mancha quente forte e o botao. O X mora no canto e o texto do header e centrado e estreito: nunca se cruzam. */
+#wa-modal .widget{width:400px;max-height:calc(100dvh - 24px);overflow-y:auto;border-radius:20px;box-shadow:var(--marcia-sombra-foto)}
+#wa-modal .wa-close{width:44px;height:44px;top:10px;right:10px;background:var(--marcia-paper-2);color:var(--marcia-ink);border:1px solid var(--marcia-hair);transition:background var(--marcia-dur) var(--marcia-ease)}
+#wa-modal .wa-close:hover{background:var(--marcia-clay)}
+#wa-modal .wa-close svg{width:18px;height:18px}
+#wa-modal .whead{flex-direction:column;justify-content:center;gap:.9rem;padding:1.9rem 1.5rem 1.35rem;background:var(--marcia-surface);color:var(--marcia-ink);text-align:center}
+#wa-modal .avatar{width:88px;height:88px;border:0;background:none;display:block;margin:0 6px 0 0}
+#wa-modal .avatar::before{content:"";position:absolute;inset:0;border:1.5px solid var(--marcia-accent);border-radius:50%;transform:translate(6px,5px)}
+#wa-modal .avatar img{position:relative;box-shadow:0 0 0 3px var(--marcia-surface)}
+#wa-modal .who{align-items:center;gap:.3rem}
+#wa-modal .nm{font-weight:400;font-size:1.25rem;letter-spacing:.06em;text-transform:uppercase;color:var(--marcia-ink)}
+#wa-modal .cred{font-size:.9375rem;font-weight:400;color:var(--marcia-ink-2);line-height:1.4}
+#wa-modal .online{justify-content:center;gap:.55rem;padding:.7rem 1.5rem;border-top:1px solid var(--marcia-hair);font-size:.9375rem;font-weight:500;color:var(--marcia-ink)}
+#wa-modal .online .ico{flex:none;width:20px;height:20px;color:var(--marcia-accent-deep)}
+#wa-modal .wbody{padding:1.6rem 1.5rem 1.75rem}
+#wa-modal .lead-line{font-weight:400;font-size:1.45rem;letter-spacing:.02em;line-height:1.3;text-align:center;text-wrap:balance;margin-bottom:1.25rem}
+#wa-modal .field{margin-bottom:.55rem}
+#wa-modal .field .lbl{font-size:1rem;font-weight:500;color:var(--marcia-ink);margin-bottom:.4rem}
 #wa-modal .field input{font-size:1.125rem;height:52px;border-color:var(--marcia-hair-forte)}
 #wa-modal .field input::placeholder{color:var(--marcia-ink-3)}
 #wa-modal .field input:focus{border-color:var(--marcia-ink);box-shadow:0 0 0 3px rgba(165,80,47,.3)}
+#wa-modal .wa-hint{margin:0 0 1.3rem;font-size:.9375rem;line-height:1.45;color:var(--marcia-ink-2)}
 #wa-modal .wa-err-msg{font-size:1rem;font-weight:500;color:var(--marcia-erro)}
 #wa-modal .field input.wa-err,#wa-modal .field input.wa-err:focus{border-color:var(--marcia-erro);box-shadow:0 0 0 3px rgba(160,58,52,.2)}
-#wa-modal .btn{font-family:var(--marcia-body);font-weight:500;font-size:1.0625rem;letter-spacing:.01em;color:var(--marcia-on-accent);background:var(--marcia-cta-gradient);box-shadow:var(--marcia-sombra-btn)}
+#wa-modal .btn{font-family:var(--marcia-body);font-weight:500;font-size:1.0625rem;letter-spacing:.01em;color:var(--marcia-on-accent);background:var(--marcia-cta-gradient);box-shadow:var(--marcia-sombra-btn);border-radius:var(--marcia-r-btn)}
+#wa-modal .btn:hover{filter:none;background:var(--marcia-cta-gradient-hover);box-shadow:var(--marcia-sombra-btn-hover)}
 #wa-modal .btn .wa-ic{fill:currentColor}
-#wa-modal .notice{background:var(--marcia-paper);border-color:var(--marcia-hair-forte)}
-#wa-modal .notice-head{font-family:var(--marcia-body);font-weight:500;font-size:1rem;letter-spacing:.02em}
+#wa-modal :focus-visible{outline:2px solid var(--marcia-ink);outline-offset:3px}
+/* tela 2: o X ocupa a faixa de cima (44px + 10px), o aviso comeca abaixo dela */
+#wa-modal .warn-body{padding:3.5rem 1.5rem 1.6rem}
+#wa-modal .notice{background:var(--marcia-paper);border:1px solid var(--marcia-hair-forte);border-radius:16px;padding:1.25rem 1.3rem 1.35rem}
+#wa-modal .notice-head{padding:0;border-radius:0;background:none;color:var(--marcia-ink);gap:.6rem;margin-bottom:.8rem;font-family:var(--marcia-display);font-weight:400;font-size:1.125rem;letter-spacing:.02em;line-height:1.3}
+#wa-modal .notice-head .ic{flex:none;width:1.5rem;height:1.5rem;color:var(--marcia-accent-deep)}
 #wa-modal .notice p{font-size:1.0625rem}
 #wa-modal .notice .num,#wa-modal .num-reinforce b{font-family:var(--marcia-body);font-weight:500}
 #wa-modal .num-reinforce{font-size:1rem;color:var(--marcia-ink-2)}
-#wa-modal .back{font-size:1rem;min-height:44px;color:var(--marcia-ink-2)}
+#wa-modal .back{font-size:1rem;min-height:44px;color:var(--marcia-ink-2);text-decoration:underline;text-underline-offset:3px}
+@media (max-height:700px){
+  #wa-modal .whead{padding-top:1.5rem;gap:.7rem}
+  #wa-modal .avatar{width:72px;height:72px}
+  #wa-modal .wbody{padding-top:1.25rem}
+  #wa-modal .lead-line{margin-bottom:1rem}
+}
 /* float do desktop: terracota da marca, so a partir de 880px (no celular quem assume e o sticky). Anel off-white de 3px: sem ele o botao some sobre as faixas azuis (3:1) */
 .wafloat{display:none;right:28px;bottom:28px;width:60px;height:60px;background:var(--marcia-cta-gradient);box-shadow:0 0 0 3px var(--marcia-paper),var(--marcia-sombra-btn);transition:transform var(--marcia-dur) var(--marcia-ease),box-shadow var(--marcia-dur) var(--marcia-ease)}
 .wafloat svg{fill:var(--marcia-on-accent)}
@@ -727,8 +752,8 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 <!-- sticky (mobile) -->
 <div class="sticky">
   <button class="btn" type="button" data-wa>Agendar conversa gratuita <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <!-- sem JavaScript o widget nao abre: o noscript mostra um link simples. O numero aqui e o UNICO literal fora de WA_PHONE (JS desligado nao le a constante). Trocou o numero? Troque tambem este, o gabarito confere que sao iguais. -->
-  <noscript><a class="btn" href="https://wa.me/5551999524202">Agendar conversa gratuita</a></noscript>
+  <!-- sem JavaScript o widget nao abre: o noscript mostra um link simples. O numero aqui e o UNICO literal fora de WA_PHONE (JS desligado nao le a constante). Trocou o numero ou a mensagem (copy.md, widget.saudacao)? O texto sai do monta.py; o numero troque tambem aqui, o gabarito confere que sao iguais. -->
+  <noscript><a class="btn" href="https://wa.me/5551999524202?text=Oi%2C%20M%C3%A1rcia!%20Vim%20do%20seu%20site%20e%20queria%20saber%20mais%20sobre%20a%20terapia%20com%20voc%C3%AA.">Agendar conversa gratuita</a></noscript>
 </div>
 
 <!-- tracker de click id. Fonte unica: marketing-agency/sites/_shared/tracker.snippet.html. Nao editar aqui, editar no canonico. -->
@@ -766,30 +791,30 @@ if (document.readyState === 'loading') { document.addEventListener('DOMContentLo
 <!-- ===== widget WhatsApp (canonico external/doctors/_shared/components/widget-whatsapp, tema Marcia) ===== -->
 <dialog id="wa-modal" aria-label="Falar pelo WhatsApp">
   <div class="widget">
-    <button type="button" class="wa-close" data-wa-close aria-label="Fechar">&#10006;</button>
+    <button type="button" class="wa-close" data-wa-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <!-- tela 1: captura -->
     <div class="screen active" id="wa-s1">
       <div class="whead">
-        <span class="avatar">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v3a2 2 0 0 0 2 2h1v-5H6a2 2 0 0 0-2 2z"/><path d="M20 13v3a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 2z"/><path d="M17 18a3 3 0 0 1-3 2.5h-2"/></svg>
-          <span class="on"></span>
+        <span class="avatar foto">
+          <img src="fotos/marcia-busto.jpg" alt="Foto de Márcia Campello, psicóloga" width="96" height="96" decoding="async">
         </span>
         <div class="who">
           <span class="nm">Márcia Campello</span>
           <span class="cred">Psicóloga · CRP 07/09259</span>
-          <span class="cred">Psicoterapia de orientação psicanalítica</span>
+          <span class="cred">Psicoterapia fundamentada na psicanálise</span>
         </div>
       </div>
-      <div class="online"><span class="dot"></span>Atendimento online para todo o Brasil</div>
+      <div class="online"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>Atendimento online · Brasil e exterior</div>
       <div class="wbody">
-        <div class="lead-line">Vamos conversar pelo WhatsApp</div>
+        <div class="lead-line">Agende sua conversa gratuita</div>
         <label class="field">
           <span class="lbl">Seu WhatsApp</span>
-          <input id="wa-phone" type="tel" inputmode="numeric" placeholder="(00) 0 0000-0000" autocomplete="tel">
+          <input id="wa-phone" type="tel" inputmode="tel" placeholder="(00) 0 0000-0000" autocomplete="tel" data-1p-ignore data-lpignore="true" aria-describedby="wa-dica" data-wa-err="Digite com DDD, como 51 9 9999-9999. De fora do Brasil, comece com + e o código do país.">
         </label>
+        <p class="wa-hint" id="wa-dica">Fora do Brasil? Comece com + e o código do país.</p>
         <button class="btn" id="wa-go" type="button">
           <svg class="wa-ic" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.8-.9-2-1s-.5-.15-.7.15-.8 1-1 1.2-.35.2-.65.05a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.65-2.05c-.15-.3 0-.45.15-.6l.45-.5c.15-.2.2-.3.3-.5s0-.4 0-.55-.7-1.65-.95-2.25-.5-.5-.7-.5h-.6c-.2 0-.55.05-.85.35a3.6 3.6 0 0 0-1.1 2.65 6.3 6.3 0 0 0 1.3 3.3 14.3 14.3 0 0 0 5.5 4.85c.75.3 1.35.5 1.8.65.75.25 1.45.2 2 .1.6-.1 1.8-.75 2.05-1.45s.25-1.35.2-1.45-.25-.2-.55-.35zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2z"/></svg>
-          Conversar no WhatsApp
+          Continuar no WhatsApp
         </button>
       </div>
     </div>
@@ -799,11 +824,11 @@ if (document.readyState === 'loading') { document.addEventListener('DOMContentLo
         <div class="notice">
           <div class="notice-head">
             <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
-            Aviso de segurança
+            Antes de abrir o WhatsApp
           </div>
           <p>Ao abrir o WhatsApp, pode aparecer um aviso de <b>"número desconhecido"</b>.</p>
           <p><b>Isso é normal.</b> O número <b class="num" data-wa-num></b>, da <b>Márcia Campello</b>, é oficial.</p>
-          <p>É só clicar em <b>Continuar</b> para falar com a gente.</p>
+          <p>É só clicar em <b>Continuar</b> para falar com a Márcia.</p>
         </div>
         <button class="btn" id="wa-last-step" type="button">
           <svg class="wa-ic" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.8-.9-2-1s-.5-.15-.7.15-.8 1-1 1.2-.35.2-.65.05a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.65-2.05c-.15-.3 0-.45.15-.6l.45-.5c.15-.2.2-.3.3-.5s0-.4 0-.55-.7-1.65-.95-2.25-.5-.5-.7-.5h-.6c-.2 0-.55.05-.85.35a3.6 3.6 0 0 0-1.1 2.65 6.3 6.3 0 0 0 1.3 3.3 14.3 14.3 0 0 0 5.5 4.85c.75.3 1.35.5 1.8.65.75.25 1.45.2 2 .1.6-.1 1.8-.75 2.05-1.45s.25-1.35.2-1.45-.25-.2-.55-.35z"/></svg>
@@ -821,10 +846,10 @@ if (document.readyState === 'loading') { document.addEventListener('DOMContentLo
   var WEBHOOK_URL = 'https://n8n.srv1732310.hstgr.cloud/webhook/widget-lead?t=marcia';
   // UNICO lugar do numero do WhatsApp (digitos com DDI). Trocou o numero? Troque so esta linha: o link e o numero exibido no aviso saem daqui.
   var WA_PHONE = '5551999524202';
-  var WA = 'https://api.whatsapp.com/send?phone=' + WA_PHONE + '&text=' + encodeURIComponent('Oi, vim pelo site da Márcia Campello e gostaria de conversar sobre começar a terapia.');
+  var WA = 'https://wa.me/' + WA_PHONE + '?text=' + encodeURIComponent('Oi, Márcia! Vim do seu site e queria saber mais sobre a terapia com você.');
   (function(){ var d = WA_PHONE.replace(/\D/g, ''); var f = '(' + d.slice(2,4) + ') ' + d.slice(4,5) + ' ' + d.slice(5,9) + '-' + d.slice(9); document.querySelectorAll('[data-wa-num]').forEach(function(n){ n.textContent = f; }); })();
   var modal = document.getElementById('wa-modal'), s1 = document.getElementById('wa-s1'), s2 = document.getElementById('wa-s2');
-  function show(el){ s1.classList.remove('active'); s2.classList.remove('active'); el.classList.add('active'); }
+  function show(el){ s1.classList.remove('active'); s2.classList.remove('active'); el.classList.add('active'); var w=modal.querySelector('.widget'); if(w) w.scrollTop=0; }
   function openModal(){ show(s1); if(modal.showModal){ if(!modal.open) modal.showModal(); } else { modal.setAttribute('open',''); } setTimeout(function(){ var p=document.getElementById('wa-phone'); if(p) p.focus(); }, 60); }
   function closeModal(){ if(modal.close) modal.close(); else modal.removeAttribute('open'); }
   document.querySelectorAll('[data-wa]').forEach(function(b){ b.addEventListener('click', openModal); });
@@ -832,18 +857,21 @@ if (document.readyState === 'loading') { document.addEventListener('DOMContentLo
   modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
   // validação WhatsApp BR: DDD + 8 ou 9 dígitos (tolera DDI 55). '' = inválido.
   function waValidPhone(raw){ var d=(raw||'').replace(/\D/g,''); if((d.length===12||d.length===13)&&d.slice(0,2)==='55') d=d.slice(2); return (d.length===10||d.length===11)&&d.charAt(0)!=='0' ? d : ''; }
+  // Internacional: comeca com "+" e nao e 55 (o 55 cai no validador BR acima). 8 a 15 digitos, sem 0 na frente (E.164). Devolve so os digitos; '' = invalido.
+  function waValidIntl(raw){ if(!/^\s*\+/.test(raw||'')) return ''; var d=raw.replace(/\D/g,''); if(d.slice(0,2)==='55') return ''; return (d.length>=8&&d.length<=15&&d.charAt(0)!=='0') ? d : ''; }
   // Normalizacao E.164 do telefone (mesma regra do servidor, conversa.py). Recebe entrada JA VALIDADA de waValidPhone.
   function telefoneE164(t) { var d = String(t || '').replace(/\D/g, ''); if ((d.length === 10 || d.length === 11) && d.slice(0, 2) !== '55') { d = '55' + d; } if (d.length === 12 && d.slice(0, 2) === '55') { d = d.slice(0, 4) + '9' + d.slice(4); } return d; }
+  // Telefone final em E.164 (so digitos): internacional com "+" ou brasileiro. '' = invalido.
+  function waPhoneE164(raw){ var i=waValidIntl(raw); if(i) return i; var br=waValidPhone(raw); return br ? telefoneE164(br) : ''; }
   // Normalizacao de e-mail (opcional, pra sites que coletam). Retorna '' se invalido.
   function emailNorm(raw){ var e=(raw||'').trim().toLowerCase(); return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) ? e : ''; }
   // Captura click id: tracker primeiro (cookie _gcl_aw), depois URL. Retorna sempre as tres chaves, com string vazia quando nao ha valor.
   function clickIds(){ var q=new URLSearchParams(location.search); var t={}; try{ if(window.trackerData) t=window.trackerData()||{}; }catch(e){} return { gclid: t.gclid || q.get('gclid') || '', gbraid: t.gbraid || q.get('gbraid') || '', wbraid: t.wbraid || q.get('wbraid') || '' }; }
-  function waErr(input,on){ input.classList.toggle('wa-err',on); var m=input.parentNode.querySelector('.wa-err-msg'); if(on&&!m){ m=document.createElement('span'); m.className='wa-err-msg'; m.textContent='Digite seu WhatsApp com DDD (ex.: 31 90000-0000)'; input.parentNode.appendChild(m); } else if(m){ m.style.display=on?'block':'none'; } if(on) input.focus(); }
+  function waErr(input,on){ input.classList.toggle('wa-err',on); var m=input.parentNode.querySelector('.wa-err-msg'); if(on&&!m){ m=document.createElement('span'); m.className='wa-err-msg'; m.textContent=input.getAttribute('data-wa-err')||'Digite seu WhatsApp com DDD (ex.: 31 90000-0000)'; input.parentNode.appendChild(m); } else if(m){ m.style.display=on?'block':'none'; } if(on) input.focus(); }
   (function(){ var _p=document.getElementById('wa-phone'); if(_p) _p.addEventListener('input',function(){ if(this.classList.contains('wa-err')) waErr(this,false); }); })();
   document.getElementById('wa-go').addEventListener('click', function(){
-    var input=document.getElementById('wa-phone'), phone=waValidPhone(input.value);
+    var input=document.getElementById('wa-phone'), phone=waPhoneE164(input.value);
     if(!phone){ waErr(input,true); return; }
-    phone = telefoneE164(phone);
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({event:'lead_whatsapp', user_data:{phone_number:'+' + phone}});
     if(WEBHOOK_URL){ var sep = WEBHOOK_URL.indexOf('?')<0?'?':'&'; var ids=clickIds(); var qs='phone='+encodeURIComponent(phone)+'&gclid='+encodeURIComponent(ids.gclid)+'&gbraid='+encodeURIComponent(ids.gbraid)+'&wbraid='+encodeURIComponent(ids.wbraid); try{ fetch(WEBHOOK_URL+sep+qs,{method:'POST',keepalive:true}); }catch(e){} }
