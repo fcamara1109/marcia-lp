@@ -114,6 +114,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 .hero .lede{margin:var(--marcia-e-3) 0 0;max-width:30em}
 .hero .cred{margin:var(--marcia-e-3) 0 0;padding-top:var(--marcia-e-2);border-top:1px solid var(--marcia-hair);max-width:34em;color:var(--marcia-ink-2);font-size:var(--marcia-t-corpo);font-weight:var(--marcia-peso-legenda);line-height:1.55}
 .hero .oferta{margin:var(--marcia-e-4) 0 0;color:var(--marcia-ink);font-size:var(--marcia-t-corpo);font-weight:var(--marcia-peso-botao);line-height:1.4}
+.hero .oferta strong{font-weight:700}
 .hero .acoes{display:flex;flex-wrap:wrap;align-items:center;gap:6px 28px;margin-top:var(--marcia-e-2)}
 /* celular: o rosto vem antes do H1 (order:-1), de 150px de largura (rodada 7; era 120px), alinhado a esquerda com o texto. Desktop volta ao lado (order:0) */
 .moldura{position:relative;order:-1;width:150px;height:191px;justify-self:start}
@@ -156,7 +157,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 .creds{list-style:none;margin:0;padding:0;border-top:1px solid var(--marcia-hair-forte);max-width:34em}
 .creds li{padding:var(--marcia-e-2) 0;border-bottom:1px solid var(--marcia-hair);color:var(--marcia-ink);font-weight:var(--marcia-peso-legenda);line-height:1.5}
 
-/* ---------- formas: tres formas de atuacao, o acompanhamento continuo em destaque (painel claro, titulo em fonte de titulo) e as duas portas de entrada em regua. Sem icone, sem grade de cartoes iguais ---------- */
+/* ---------- formas: tres formas de atuacao, o acompanhamento continuo em destaque ---------- */
 .formas{border-top:1px solid var(--marcia-hair);padding:var(--marcia-e-5) 0 var(--marcia-e-6)}
 .formas .cab{max-width:38em}
 .formas-lista{list-style:none;margin:var(--marcia-e-5) 0 0;padding:0;display:grid;gap:var(--marcia-e-4)}
@@ -166,6 +167,13 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 .principal h3{margin:var(--marcia-e-2) 0 var(--marcia-e-2);font-family:var(--marcia-display);font-weight:400;font-size:clamp(26px,3vw,34px);letter-spacing:.03em;line-height:1.25}
 .principal p{color:var(--marcia-ink)}
 .principal .filete-g{margin:0}
+.passo-tipo,.forma-tipo{display:flex;align-items:flex-start;gap:8px;width:max-content;max-width:100%;margin:0 0 var(--marcia-e-2);font-weight:600;line-height:1.3;letter-spacing:.01em;color:var(--marcia-accent-deep)}
+.passo-tipo{font-size:20px}
+.forma-tipo{font-size:18px;margin-bottom:var(--marcia-e-1)}
+.passo-tipo .tipo-icone,.forma-tipo .tipo-icone{width:24px;height:24px;flex:none}
+.passo-tipo>span,.forma-tipo>span{min-width:0}
+.formas-aviso{margin:var(--marcia-e-3) 0 0;color:var(--marcia-ink-2)}
+.principal .forma-tipo{margin-top:var(--marcia-e-2)}
 
 /* ---------- prova: o que dizem no Google e na Doctoralia. Texto literal, nome e inicial, sem data. Sem cartao: regua em cima de cada fala.
    Celular: faixa que rola para o lado com a proxima fala aparecendo e uma dica escrita. Desktop: tres colunas, tudo a vista ---------- */
@@ -316,7 +324,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 /* ---------- faq: cinza ---------- */
 .faq{background:var(--marcia-paper-2)}
 
-/* ---------- como-funciona (rodada 8): papel, entre a argila da prova e o azul do local. Tres passos com numero em circulo fino (traco da marca, nada de cartao)
+/* ---------- como-funciona: papel, apos servicos. Tres passos com numero em circulo fino
    e um fio entre os circulos. Celular: coluna, circulo a esquerda. Desktop: tres colunas, o fio corre na horizontal ---------- */
 .como-funciona{background:var(--marcia-paper);padding:var(--marcia-e-6) 0}
 .como-funciona .cab{max-width:38em}
@@ -327,6 +335,10 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 .passo:not(:last-child)::after{content:"";position:absolute;left:26px;top:60px;bottom:8px;width:1px;background:var(--marcia-hair-forte)}
 .passo h3{margin:6px 0 var(--marcia-e-1)}
 .passo p{margin:0;color:var(--marcia-ink-2)}
+.passo.passo-pago{padding:var(--marcia-e-3);background:var(--marcia-surface);border:1px solid var(--marcia-hair-forte);border-radius:var(--marcia-r-campo)}
+.passo:nth-child(n+2) .num{grid-row:1 / span 3}
+.passo h3,.passo .passo-tipo,.passo p{grid-column:2}
+.passo-pago .num{color:var(--marcia-on-accent);background:var(--marcia-accent);border-color:var(--marcia-accent)}
 .como-funciona .btn{margin-top:var(--marcia-e-5)}
 
 /* ---------- local: split azul com a imagem da xicara ---------- */
@@ -361,6 +373,8 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   .passo .num{margin-bottom:var(--marcia-e-3)}
   .passo:not(:last-child)::after{left:66px;right:calc(var(--marcia-e-5) * -1 + 14px);top:26px;bottom:auto;width:auto;height:1px}
   .passo h3{margin:0 0 var(--marcia-e-1)}
+  .passo-pago{margin-top:calc(var(--marcia-e-3) * -1)}
+  .passo h3,.passo .passo-tipo,.passo p{grid-column:auto}
   .autoridade li{border-left-color:var(--marcia-blue-line)}
   .porque .wrap{grid-template-areas:"cab texto" "creds texto" "img img"}
   .porque .amb{grid-area:img}
@@ -386,6 +400,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   .cta-final h2{font-size:clamp(34px,8vw,38px);letter-spacing:.04em}
   .porque .amb{order:-1;margin:calc(var(--marcia-e-5) * -1) calc(var(--wrap-pad) * -1) 0;border-radius:0}
 }
+@media (max-width:400px){.passo{column-gap:var(--marcia-e-2)}.passo-pago{grid-template-columns:44px minmax(0,1fr)}.passo-pago .num{width:44px;height:44px}}
 </style>
 <style>
 /* widget:inicio */
@@ -504,11 +519,27 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 #wa-modal .notice .num,#wa-modal .num-reinforce b{font-family:var(--marcia-body);font-weight:500}
 #wa-modal .num-reinforce{font-size:1rem;color:var(--marcia-ink-2)}
 #wa-modal .back{font-size:1rem;min-height:44px;color:var(--marcia-ink-2);text-decoration:underline;text-underline-offset:3px}
+#wa-modal .wa-beneficios{display:grid;gap:10px;list-style:none;padding:0;margin:0 0 1.25rem;color:var(--marcia-ink);font-size:1rem;line-height:1.5}
+#wa-modal .wa-beneficios li{display:flex;align-items:flex-start;gap:10px;min-width:0}
+#wa-modal .wa-beneficios strong{min-width:0;font-weight:700}
+#wa-modal .wa-beneficios svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--marcia-accent-deep)}
 @media (max-height:700px){
   #wa-modal .whead{padding-top:1.5rem;gap:.7rem}
   #wa-modal .avatar{width:72px;height:72px}
   #wa-modal .wbody{padding-top:1.25rem}
   #wa-modal .lead-line{margin-bottom:1rem}
+}
+@media (max-height:760px){
+  #wa-modal .whead{padding:14px 1.25rem 12px;gap:8px}
+  #wa-modal .avatar{width:56px;height:56px}
+  #wa-modal .who{gap:2px}
+  #wa-modal .online{padding:8px 1rem}
+  #wa-modal .wbody{padding:14px 1.25rem 16px}
+  #wa-modal .lead-line{margin-bottom:10px}
+  #wa-modal .wa-beneficios{gap:8px;margin-bottom:14px}
+  #wa-modal .field input{height:48px}
+  #wa-modal .wa-hint{margin-bottom:14px}
+  #wa-modal .wa-actions{position:sticky;bottom:0;z-index:2;margin:0 -1.25rem -16px;padding:8px 1.25rem 16px;background:var(--marcia-surface)}
 }
 /* float do desktop: terracota da marca, so a partir de 880px (no celular quem assume e o sticky). Anel off-white de 3px: sem ele o botao some sobre as faixas azuis (3:1) */
 .wafloat{display:none;right:28px;bottom:28px;width:60px;height:60px;background:var(--marcia-cta-gradient);box-shadow:0 0 0 3px var(--marcia-paper),var(--marcia-sombra-btn);transition:transform var(--marcia-dur) var(--marcia-ease),box-shadow var(--marcia-dur) var(--marcia-ease)}
@@ -545,9 +576,9 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
       <h1>Entenda o que você <span class="mt">repete</span> no amor.</h1>
       <p class="lede">Se a pergunta é “o que ele sente?”, a conversa fica no outro. Em terapia, ela vira: “o que se repete em mim?”</p>
       <p class="cred">Psicoterapia fundamentada na psicanálise, desde 1999.</p>
-      <p class="oferta">A primeira conversa tem 30 minutos e é gratuita.</p>
+      <p class="oferta"><strong>A primeira conversa é gratuita.</strong> Sessões recorrentes são pagas.</p>
       <div class="acoes">
-        <button class="btn" type="button" data-wa>Agendar conversa gratuita <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="btn" type="button" data-wa>Agendar primeira conversa <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <a class="link-seta" href="#servicos">Sobre o que conversamos <svg class="seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
@@ -586,8 +617,24 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
     </ul>
     <div class="fecho">
       <p>Se alguma soou familiar, me conte sua história. Sou preparada para te ajudar.</p>
-      <button class="btn" type="button" data-wa>Agendar conversa gratuita <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="btn" type="button" data-wa>Agendar primeira conversa <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     </div>
+  </div>
+</section>
+
+<section class="como-funciona" data-bloco="como-funciona">
+  <div class="wrap">
+    <div class="cab">
+      <span class="rotulo">Como funciona</span>
+      <h2>Três passos para começar</h2>
+      <span class="filete-g" role="presentation"></span>
+    </div>
+    <ol class="passos">
+      <li class="passo reveal"><span class="num" aria-hidden="true">1</span><h3>Você me manda uma mensagem</h3><p>Pelo WhatsApp, quando for melhor para você. Pode ser só um “Oi, Márcia”.</p></li>
+      <li class="passo reveal"><span class="num" aria-hidden="true">2</span><h3>A gente faz uma primeira conversa</h3><span class="passo-tipo"><svg class="tipo-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8M12 8v13M12 8H8.5a2.5 2.5 0 1 1 2.45-3c.53 1.05 1.05 3 1.05 3ZM12 8h3.5a2.5 2.5 0 1 0-2.45-3C12.52 6.05 12 8 12 8Z"/></svg><span>Gratuita · 30 minutos</span></span><p>Por vídeo, você conta o que está vivendo, eu explico como trabalho e você tira suas dúvidas.</p></li>
+      <li class="passo passo-pago reveal"><span class="num" aria-hidden="true">3</span><h3>Você decide se quer seguir</h3><span class="passo-tipo"><svg class="tipo-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg><span>Pagas · 50 minutos</span></span><p>Se fizer sentido, começamos as sessões de 50 minutos, num horário que funcione para você. As sessões recorrentes são pagas.</p></li>
+    </ol>
+    <button class="btn" type="button" data-wa>Agendar primeira conversa <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   </div>
 </section>
 
@@ -617,14 +664,15 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 <section class="formas" data-bloco="formas">
   <div class="wrap">
     <div class="cab">
-      <span class="rotulo">Por onde começar</span>
+      <span class="rotulo">Escolha como seguir</span>
       <h2>Formas de atuação</h2>
       <span class="filete-g" role="presentation"></span>
+      <p class="formas-aviso">Todas as opções abaixo são pagas.</p>
     </div>
     <ul class="formas-lista">
-      <li class="forma principal reveal" data-principal><span class="filete-g" role="presentation"></span><h3>Acompanhamento contínuo</h3><p>É o caminho principal e o coração do meu trabalho. A psicoterapia de orientação psicanalítica se faz ao longo do tempo, sessão após sessão, online, em encontros de 50 minutos. Um espaço seu para falar e ser ouvida.</p></li>
-      <li class="forma reveal"><h3>Sessão única</h3><p>Uma conversa só, online, de 50 minutos. Serve para quem tem uma questão pontual. A conversa pode seguir depois, se você quiser.</p></li>
-      <li class="forma reveal"><h3>Terapia breve (12 sessões)</h3><p>Um percurso curto, com começo e fim combinados, em torno de um tema que você traz. São 12 sessões de 50 minutos, online. No fim, a gente conversa sobre o que vem depois.</p></li>
+      <li class="forma principal reveal" data-principal><span class="filete-g" role="presentation"></span><span class="forma-tipo"><svg class="tipo-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Atendimento pago"><title>Atendimento pago</title><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg><span>Recorrente</span></span><h3>Acompanhamento contínuo</h3><p>É o caminho principal e o coração do meu trabalho. A psicoterapia de orientação psicanalítica se faz ao longo do tempo, sessão após sessão, online, em encontros de 50 minutos. Um espaço seu para falar e ser ouvida.</p></li>
+      <li class="forma reveal"><span class="forma-tipo"><svg class="tipo-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Atendimento pago"><title>Atendimento pago</title><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg><span>Uma sessão</span></span><h3>Sessão única</h3><p>Uma conversa só, online, de 50 minutos. Serve para quem tem uma questão pontual. A conversa pode seguir depois, se você quiser.</p></li>
+      <li class="forma reveal"><span class="forma-tipo"><svg class="tipo-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Atendimento pago"><title>Atendimento pago</title><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg><span>12 sessões</span></span><h3>Terapia breve (12 sessões)</h3><p>Um percurso curto, com começo e fim combinados, em torno de um tema que você traz. São 12 sessões de 50 minutos, online. No fim, a gente conversa sobre o que vem depois.</p></li>
     </ul>
   </div>
 </section>
@@ -656,21 +704,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   </div>
 </section>
 
-<section class="como-funciona" data-bloco="como-funciona">
-  <div class="wrap">
-    <div class="cab">
-      <span class="rotulo">Como funciona</span>
-      <h2>Três passos para começar</h2>
-      <span class="filete-g" role="presentation"></span>
-    </div>
-    <ol class="passos">
-      <li class="passo reveal"><span class="num" aria-hidden="true">1</span><h3>Você me manda uma mensagem</h3><p>Pelo WhatsApp, quando for melhor para você. Pode ser só um “Oi, Márcia”.</p></li>
-      <li class="passo reveal"><span class="num" aria-hidden="true">2</span><h3>A gente faz uma primeira conversa</h3><p>Gratuita, de 30 minutos, por vídeo. Você conta o que está vivendo, eu explico como trabalho e você tira suas dúvidas.</p></li>
-      <li class="passo reveal"><span class="num" aria-hidden="true">3</span><h3>Você decide se quer seguir</h3><p>Se fizer sentido, a gente combina as sessões de 50 minutos, num horário que funcione para você.</p></li>
-    </ol>
-    <button class="btn" type="button" data-wa>Agendar conversa gratuita <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  </div>
-</section>
+
 
 <section class="local" data-bloco="local" data-split>
   <figure class="amb"><img src="fotos/amb-xicara.jpg" width="1200" height="896" alt="" loading="lazy" decoding="async"></figure>
@@ -701,7 +735,7 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
       <details><summary>Como é a primeira conversa?</summary><p>A primeira conversa é gratuita, tem 30 minutos e é, antes de tudo, um momento para nos conhecermos.</p><p>Você pode falar sobre o que trouxe você até aqui, sobre o que está acontecendo na sua vida e sobre aquilo que gostaria de compreender ou transformar.</p><p>Não precisa chegar sabendo exatamente o que dizer. A partir da sua fala, vamos construindo o caminho do processo terapêutico.</p></details>
       <details><summary>Qual é a sua abordagem?</summary><p>Meu trabalho é fundamentado na psicanálise e na escuta clínica.</p><p>A terapia é um espaço para compreender aquilo que se repete, reconhecer padrões, elaborar experiências e construir novas possibilidades.</p><p>Não se trata de receber respostas prontas ou alguém dizendo a você o que fazer. Trata-se de poder olhar para sua história, suas escolhas e seus modos de se relacionar de uma maneira diferente.</p></details>
       <details><summary>Quanto tempo dura cada sessão?</summary><p>Cada sessão tem duração aproximada de 50 minutos.</p></details>
-      <details><summary>Qual é o valor da sessão?</summary><p>A primeira conversa, de 30 minutos, é gratuita. O valor das sessões eu te passo pelo WhatsApp, junto com os horários disponíveis.</p></details>
+      <details><summary>Qual é o valor da sessão?</summary><p>As sessões recorrentes são pagas. O valor das sessões eu te passo pelo WhatsApp, junto com os horários disponíveis. Somente a primeira conversa, de 30 minutos, é gratuita.</p></details>
       <details><summary>Como é feito o pagamento?</summary><p>Para confirmar o horário escolhido, é solicitado o pagamento antecipado do valor da sessão, via Pix ou cartão.</p></details>
       <details><summary>Como faço para agendar?</summary><p>Você pode entrar em contato comigo pelo WhatsApp e me contar brevemente o que motivou você a buscar terapia neste momento.</p><p>A partir disso, conversamos sobre o processo e verificamos juntas o melhor dia e horário para o seu atendimento.</p></details>
       <details><summary>Atende pessoas que moram fora do Brasil?</summary><p>Sim.</p><p>Os atendimentos são realizados online, em português, para mulheres adultas que estejam no Brasil ou em outros países.</p></details>
@@ -722,8 +756,8 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
   <div class="wrap">
     <span class="rotulo">Primeiro passo</span>
     <h2>Vamos conversar sobre como você ama?</h2>
-    <p>Mande um Whats, é direto comigo.</p>
-    <button class="btn" type="button" data-wa>Agendar conversa gratuita <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <p>Dê o primeiro passo, você não tem nada a perder.</p>
+    <button class="btn" type="button" data-wa>Agendar primeira conversa <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   </div>
 </section>
 
@@ -750,9 +784,9 @@ h3{margin:0 0 var(--marcia-e-1);font-family:var(--marcia-body);font-weight:var(-
 
 <!-- sticky (mobile) -->
 <div class="sticky">
-  <button class="btn" type="button" data-wa>Agendar conversa gratuita <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button class="btn" type="button" data-wa>Agendar primeira conversa <svg class="seta-b" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   <!-- sem JavaScript o widget nao abre: o noscript mostra um link simples. O numero aqui e o UNICO literal fora de WA_PHONE (JS desligado nao le a constante). Trocou o numero ou a mensagem (copy.md, widget.saudacao)? O texto sai do monta.py; o numero troque tambem aqui, o gabarito confere que sao iguais. -->
-  <noscript><a class="btn" href="https://wa.me/5551999524202?text=Oi%2C%20M%C3%A1rcia!%20Vim%20do%20seu%20site%20e%20queria%20saber%20mais%20sobre%20a%20terapia%20com%20voc%C3%AA.">Agendar conversa gratuita</a></noscript>
+  <noscript><a class="btn" href="https://wa.me/5551999524202?text=Oi%2C%20M%C3%A1rcia!%20Vim%20do%20seu%20site%20e%20queria%20saber%20mais%20sobre%20a%20terapia%20com%20voc%C3%AA.">Agendar primeira conversa</a></noscript>
 </div>
 
 <!-- tracker de click id. Fonte unica: marketing-agency/sites/_shared/tracker.snippet.html. Nao editar aqui, editar no canonico. -->
@@ -800,21 +834,26 @@ if (document.readyState === 'loading') { document.addEventListener('DOMContentLo
         <div class="who">
           <span class="nm">Márcia Campello</span>
           <span class="cred">Psicóloga · CRP 07/09259</span>
-          <span class="cred">Psicoterapia fundamentada na psicanálise</span>
         </div>
       </div>
       <div class="online"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>Atendimento online · Brasil e Exterior</div>
       <div class="wbody">
-        <div class="lead-line">Agende sua conversa gratuita</div>
+        <div class="lead-line">Agende sua primeira conversa</div>
+<ul class="wa-beneficios">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><strong>Primeira conversa gratuita</strong></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><strong>Sessões recorrentes pagas</strong></li>
+        </ul>
         <label class="field">
           <span class="lbl">Seu WhatsApp</span>
           <input id="wa-phone" type="tel" inputmode="tel" placeholder="(00) 0 0000-0000" autocomplete="tel" data-1p-ignore data-lpignore="true" aria-describedby="wa-dica" data-wa-err="Digite com DDD, como 51 9 9999-9999. De fora do Brasil, comece com + e o código do país.">
         </label>
         <p class="wa-hint" id="wa-dica">Fora do Brasil? Comece com + e o código do país.</p>
+        <div class="wa-actions">
         <button class="btn" id="wa-go" type="button">
           <svg class="wa-ic" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.8-.9-2-1s-.5-.15-.7.15-.8 1-1 1.2-.35.2-.65.05a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.65-2.05c-.15-.3 0-.45.15-.6l.45-.5c.15-.2.2-.3.3-.5s0-.4 0-.55-.7-1.65-.95-2.25-.5-.5-.7-.5h-.6c-.2 0-.55.05-.85.35a3.6 3.6 0 0 0-1.1 2.65 6.3 6.3 0 0 0 1.3 3.3 14.3 14.3 0 0 0 5.5 4.85c.75.3 1.35.5 1.8.65.75.25 1.45.2 2 .1.6-.1 1.8-.75 2.05-1.45s.25-1.35.2-1.45-.25-.2-.55-.35zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2z"/></svg>
           Continuar no WhatsApp
         </button>
+        </div>
       </div>
     </div>
     <!-- tela 2: aviso de "número desconhecido" -->
